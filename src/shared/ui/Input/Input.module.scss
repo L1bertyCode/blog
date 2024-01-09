@@ -9,13 +9,24 @@
 }
 
 .input {
+  padding: 10px 20px;
+  border-radius: var(--b-raduis-s);
   border: 0;
   outline: none;
-  cursor: default;
-  background-color: var(--inverted-bg-color);
-  color: var(--inverted-text-color);
+  cursor: pointer;
 }
 
 .readOnly {
   opacity: var(--opacity50);
+  cursor: default;
+}
+
+.primary {
+  background-color: var(--inverted-bg-color);
+  color: var(--inverted-text-color);
+}
+
+.inverted {
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }

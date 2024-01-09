@@ -10,6 +10,7 @@ import {
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./Input.module.scss";
+type InputColorType = "primary" | "inverted";
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
   "value" | "onChange" | "readOnly" | "type"
@@ -24,6 +25,7 @@ interface InputProps extends HTMLInputProps {
   onChange?: (value: string) => void;
   autoFocus?: boolean;
   readOnly?: boolean;
+  colorType?: InputColorType;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -37,6 +39,7 @@ export const Input = memo((props: InputProps) => {
     onChange,
     autoFocus = false,
     readOnly,
+    colorType = "primary",
     ...otherProps
   } = props;
   const onChangeHandler = (
@@ -76,7 +79,7 @@ export const Input = memo((props: InputProps) => {
         className={classNames(
           s.input,
           { [s.readOnly]: readOnly },
-          []
+          [s[colorType]]
         )}
       />
     </div>

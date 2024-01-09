@@ -92,6 +92,7 @@ const LoginForm = memo((props: LoginFormProps) => {
           />
         )}
         <Input
+          colorType="inverted"
           autoFocus={true}
           label={t("Username")}
           className={s.input}
@@ -103,6 +104,7 @@ const LoginForm = memo((props: LoginFormProps) => {
           className={s.input}
           onChange={onChangePassword}
           value={password}
+          colorType="inverted"
         />
         <Button
           className={s.loginBtn}

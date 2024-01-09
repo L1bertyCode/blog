@@ -2,7 +2,6 @@ import {
   MouseEvent,
   MutableRefObject,
   ReactNode,
-  memo,
   useCallback,
   useEffect,
   useRef,

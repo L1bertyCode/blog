@@ -1,6 +1,8 @@
 import { AboutPage } from "@/pages/AboutPage";
 import { MainPage } from "@/pages/MainPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
+import { PortfolioItemPage } from "@/pages/PortfolioItemPage";
+import { PortfolioListPage } from "@/pages/PortfolioListPage";
 import { ProfilePage } from "@/pages/ProfilePage";
 import { ReactNode } from "react";
 import { RouteProps } from "react-router-dom";
@@ -9,6 +11,9 @@ export enum AppRoutes {
   MAIN = "main",
   ABOUT = "about",
   PROFILE = "profile",
+  PORTFOLIO_LIST = "portfolio_list",
+  PORTFOLIO_ITEM = "portfolio_item",
+  //last
   NOTFOUND = "not-found",
 }
 export type AppRouteProps = RouteProps & {
@@ -21,8 +26,11 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: "/",
   [AppRoutes.ABOUT]: "/about",
   [AppRoutes.PROFILE]: "/profile",
+  [AppRoutes.PORTFOLIO_LIST]: "/portfolio",
+  [AppRoutes.PORTFOLIO_ITEM]: "/portfolio/", //:id
   [AppRoutes.NOTFOUND]: "/*",
 };
+//for Array
 interface RoutesItem {
   element: ReactNode;
   path: string;
@@ -42,6 +50,16 @@ export const routesConfig: Record<
   [AppRoutes.PROFILE]: {
     path: RoutePath.profile,
     element: <ProfilePage />,
+    authOnly: true,
+  },
+  [AppRoutes.PORTFOLIO_LIST]: {
+    path: RoutePath.portfolio_list,
+    element: <PortfolioListPage />,
+    authOnly: true,
+  },
+  [AppRoutes.PORTFOLIO_ITEM]: {
+    path: RoutePath.portfolio_item + ":id",
+    element: <PortfolioItemPage />,
     authOnly: true,
   },
   [AppRoutes.NOTFOUND]: {
