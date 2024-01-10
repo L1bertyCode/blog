@@ -13,6 +13,8 @@ export enum AppRoutes {
   PROFILE = "profile",
   PORTFOLIO_LIST = "portfolio_list",
   PORTFOLIO_ITEM = "portfolio_item",
+  ARTICLES = "artciles",
+  ARTICLE_DETAILS = "portfolio_details",
   //last
   NOTFOUND = "not-found",
 }
@@ -28,6 +30,8 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.PROFILE]: "/profile",
   [AppRoutes.PORTFOLIO_LIST]: "/portfolio",
   [AppRoutes.PORTFOLIO_ITEM]: "/portfolio/", //:id
+  [AppRoutes.ARTICLES]: "/article",
+  [AppRoutes.ARTICLE_DETAILS]: "/article/", //:id
   [AppRoutes.NOTFOUND]: "/*",
 };
 //for Array
@@ -59,6 +63,16 @@ export const routesConfig: Record<
   },
   [AppRoutes.PORTFOLIO_ITEM]: {
     path: RoutePath.portfolio_item + ":id",
+    element: <PortfolioItemPage />,
+    authOnly: true,
+  },
+  [AppRoutes.ARTICLES]: {
+    path: RoutePath.artciles,
+    element: <PortfolioListPage />,
+    authOnly: true,
+  },
+  [AppRoutes.ARTICLE_DETAILS]: {
+    path: RoutePath.artciles + ":id",
     element: <PortfolioItemPage />,
     authOnly: true,
   },
