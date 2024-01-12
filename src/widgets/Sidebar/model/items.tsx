@@ -3,6 +3,7 @@ import MainIcon from "@/shared/assets/icons/main-20-20.svg";
 import AboutIcon from "@/shared/assets/icons/about-20-20.svg";
 import ProfileIcon from "@/shared/assets/icons/profile-20-20.svg";
 import PortfolioIcon from "@/shared/assets/icons/portfolio-20-20.svg";
+import ArticlesIcon from "@/shared/assets/icons/portfolio-20-20.svg";
 export interface SidebarItemInterace {
   path: string;
   text: string;
@@ -22,6 +23,12 @@ export const sidebatItemsList: SidebarItemInterace[] = [
     path: RoutePath.portfolio_list,
     Icon: PortfolioIcon,
     text: "Porfolio",
+    authOnly: true,
+  },
+  {
+    path: RoutePath.artciles,
+    Icon: ArticlesIcon,
+    text: "Articles",
     authOnly: true,
   },
 ];

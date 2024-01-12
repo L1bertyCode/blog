@@ -1,4 +1,6 @@
 import { AboutPage } from "@/pages/AboutPage";
+import { ArticleDetailsPage } from "@/pages/ArticleDetailsPage";
+import { ArticleListPage } from "@/pages/ArticleListPage";
 import { MainPage } from "@/pages/MainPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { PortfolioItemPage } from "@/pages/PortfolioItemPage";
@@ -12,9 +14,9 @@ export enum AppRoutes {
   ABOUT = "about",
   PROFILE = "profile",
   PORTFOLIO_LIST = "portfolio_list",
-  PORTFOLIO_ITEM = "portfolio_item",
+  PORTFOLIO_ITEM = "portfolio_details",
   ARTICLES = "artciles",
-  ARTICLE_DETAILS = "portfolio_details",
+  ARTICLE_DETAILS = "artciles_details",
   //last
   NOTFOUND = "not-found",
 }
@@ -30,8 +32,8 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.PROFILE]: "/profile",
   [AppRoutes.PORTFOLIO_LIST]: "/portfolio",
   [AppRoutes.PORTFOLIO_ITEM]: "/portfolio/", //:id
-  [AppRoutes.ARTICLES]: "/article",
-  [AppRoutes.ARTICLE_DETAILS]: "/article/", //:id
+  [AppRoutes.ARTICLES]: "/articles",
+  [AppRoutes.ARTICLE_DETAILS]: "/articles/", //:id
   [AppRoutes.NOTFOUND]: "/*",
 };
 //for Array
@@ -62,18 +64,18 @@ export const routesConfig: Record<
     authOnly: true,
   },
   [AppRoutes.PORTFOLIO_ITEM]: {
-    path: RoutePath.portfolio_item + ":id",
+    path: RoutePath.portfolio_details + ":id",
     element: <PortfolioItemPage />,
     authOnly: true,
   },
   [AppRoutes.ARTICLES]: {
     path: RoutePath.artciles,
-    element: <PortfolioListPage />,
+    element: <ArticleListPage />,
     authOnly: true,
   },
   [AppRoutes.ARTICLE_DETAILS]: {
-    path: RoutePath.artciles + ":id",
-    element: <PortfolioItemPage />,
+    path: RoutePath.artciles_details + ":id",
+    element: <ArticleDetailsPage />,
     authOnly: true,
   },
   [AppRoutes.NOTFOUND]: {
