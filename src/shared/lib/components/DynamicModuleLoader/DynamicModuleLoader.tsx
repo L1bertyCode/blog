@@ -28,6 +28,7 @@ export function DynamicModuleLoader(
         name as StateSchemaKey,
         reducer
       );
+
       dispatch({ type: `@INIT ${name} reducer` });
     });
 

@@ -1,3 +1,4 @@
+import { ArticleDetailsSchema } from "@/entities/Article";
 import { CounterSchema } from "@/entities/Counter";
 import { ProfileSchema } from "@/entities/Profile";
 import { UserSchema } from "@/entities/User";
@@ -16,6 +17,7 @@ export interface StateSchema {
   profile: ProfileSchema;
   //Async reducers
   loginForm?: LoginSchema;
+  articleDetails?: ArticleDetailsSchema;
 }
 export type StateSchemaKey = keyof StateSchema;
 
@@ -33,5 +35,5 @@ export interface ReduxStoreWithManager
   reducerManager: ReducerManager;
 }
 export interface ThunkExtraArgs {
-  api:AxiosInstance
+  api: AxiosInstance;
 }

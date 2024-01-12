@@ -9,6 +9,8 @@ import { userReducer } from "@/entities/User";
 import { createReducerManager } from "./reducerManager";
 import { $api } from "@/shared/api/api";
 
+import { profileReducer } from "@/entities/Profile/model/slice/profileSlice";
+
 export function createReduxStore(
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>
@@ -18,6 +20,7 @@ export function createReduxStore(
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
+    profile: profileReducer,
   };
   const reducerManager = createReducerManager(rootReducers);
 
