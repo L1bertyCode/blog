@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
@@ -8,17 +8,22 @@ import {
   ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { artcileDetailsReducer } from "../../model/slice/artcileSlice";
+import { fetchArticleById } from "../../model/services/fetchArticleById";
+import { useParams } from "react-router-dom";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 
 interface ArticleDetailsProps {
   className?: string;
+  id?: string;
 }
 const reducers: ReducersList = {
   articleDetails: artcileDetailsReducer,
 };
 export const ArticleDetails = memo(
   (props: ArticleDetailsProps) => {
-    const { className } = props;
+    const { className, id } = props;
     const { t } = useTranslation();
+
     return (
       <DynamicModuleLoader
         reducers={reducers}
@@ -29,7 +34,7 @@ export const ArticleDetails = memo(
             className,
           ])}
         >
-          <div>ArticleDetails</div>
+          <div>ArticleDetails id={id}</div>
         </div>
       </DynamicModuleLoader>
     );

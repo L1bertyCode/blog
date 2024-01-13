@@ -1,9 +1,12 @@
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./ArticleDetailsPage.module.scss";
 import { ArticleDetails } from "@/entities/Article";
+import { useParams } from "react-router-dom";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
+import { fetchArticleById } from "@/entities/Article/model/services/fetchArticleById";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -13,13 +16,30 @@ const ArticleDetailsPage = memo(
   (props: ArticleDetailsPageProps) => {
     const { className } = props;
     const { t } = useTranslation();
+    const { id } = useParams<{ id: string }>();
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+      if (id) {
+        dispatch(fetchArticleById(id));
+      }
+    }, [dispatch, id]);
+    if (!id) {
+      <div
+        className={classNames(s.articleDetailsPage, {}, [
+          className,
+        ])}
+      >
+        {t("Article not found")}
+      </div>;
+    }
     return (
       <div
         className={classNames(s.articleDetailsPage, {}, [
           className,
         ])}
       >
-        <ArticleDetails />
+        <ArticleDetails id={id} />
       </div>
     );
   }
