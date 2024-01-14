@@ -7,8 +7,8 @@ import s from "./Skeleton.module.scss";
 type ColorType = "primary" | "inverted";
 interface SkeletonProps {
   className?: string;
-  width?: string | number;
-  height?: string | number;
+  width?: string;
+  height?: string;
   borderRadius?: string;
   colorType?: ColorType;
 }
@@ -18,7 +18,7 @@ export const Skeleton = memo((props: SkeletonProps) => {
     width = "100px",
     height = "100px",
     borderRadius,
-    colorType = "inverted",
+    colorType = "primary",
   } = props;
   const { t } = useTranslation();
   const styles: CSSProperties = {

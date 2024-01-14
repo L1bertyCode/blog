@@ -23,5 +23,18 @@ export const Dark: Story = {
 
 export const Blue: Story = {
   decorators: [ThemeDecorator(Theme.BLUE)],
-  render: () => <Skeleton />,
+  render: () => <Skeleton  />,
+};
+export const LightCircle: Story = {
+  render: () => <Skeleton borderRadius="50%"/>,
+};
+
+export const DarkCircle: Story = {
+  decorators: [ThemeDecorator(Theme.DARK)],
+  render: () => <Skeleton borderRadius="50%"/>,
+};
+
+export const BlueCircle: Story = {
+  decorators: [ThemeDecorator(Theme.BLUE)],
+  render: () => <Skeleton  borderRadius="50%"/>,
 };

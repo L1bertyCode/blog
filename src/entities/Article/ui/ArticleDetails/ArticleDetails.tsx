@@ -16,6 +16,7 @@ import { getArticleDetailsIsLoading } from "../../model/selectors/getArticleDeta
 import { getArticleDetailsData } from "../../model/selectors/getArticleDetailsData/getArticleDetailsData";
 import { getArticleDetailsError } from "../../model/selectors/getArticleDetailsError/getArticleDetailsError";
 import { Text } from "@/shared/ui/Text/Text";
+import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 
 interface ArticleDetailsProps {
   className?: string;
@@ -35,7 +36,37 @@ export const ArticleDetails = memo(
     const error = useSelector(getArticleDetailsError);
     let content;
     if (isLoading) {
-      content = <div>laoding</div>;
+      content = (
+        <div>
+          <Skeleton
+            className={s.avatar}
+            width="200px"
+            height="200px"
+            borderRadius="50%"
+          />
+          <Skeleton
+            className={s.title}
+            width="300px"
+            height="24px"
+          />
+          <Skeleton
+            className={s.skeleton}
+            width="600px"
+            height="24px"
+          />
+          <Skeleton
+            className={s.skeleton}
+            width="90%"
+            height="200px"
+          />
+          <Skeleton
+            className={s.skeleton}
+            width="90%"
+            height="200px"
+            colorType="primary"
+          />
+        </div>
+      );
     } else if (error) {
       content = (
         <Text
