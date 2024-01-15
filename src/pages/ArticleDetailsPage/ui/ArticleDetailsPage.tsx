@@ -9,39 +9,39 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { fetchArticleById } from "@/entities/Article/model/services/fetchArticleById";
 
 interface ArticleDetailsPageProps {
-  className?: string;
+ className?: string;
 }
 
 const ArticleDetailsPage = memo(
-  (props: ArticleDetailsPageProps) => {
-    const { className } = props;
-    const { t } = useTranslation();
-    const { id } = useParams<{ id: string }>();
-    const dispatch = useAppDispatch();
+ (props: ArticleDetailsPageProps) => {
+  const { className } = props;
+  const { t } = useTranslation();
+  const { id } = useParams<{ id: string }>();
+  const dispatch = useAppDispatch();
 
-    useEffect(() => {
-      if (id) {
-        dispatch(fetchArticleById(id));
-      }
-    }, [dispatch, id]);
-    if (!id) {
-      <div
-        className={classNames(s.articleDetailsPage, {}, [
-          className,
-        ])}
-      >
-        {t("Article not found")}
-      </div>;
-    }
-    return (
-      <div
-        className={classNames(s.articleDetailsPage, {}, [
-          className,
-        ])}
-      >
-        <ArticleDetails id={id} />
-      </div>
-    );
+  useEffect(() => {
+   if (id) {
+    dispatch(fetchArticleById(id));
+   }
+  }, [dispatch, id]);
+  if (!id) {
+   <div
+    className={classNames(s.articleDetailsPage, {}, [
+     className,
+    ])}
+   >
+    {t("Article not found")}
+   </div>;
   }
+  return (
+   <div
+    className={classNames(s.articleDetailsPage, {}, [
+     className,
+    ])}
+   >
+    <ArticleDetails id={id} />
+   </div>
+  );
+ }
 );
 export default ArticleDetailsPage;

@@ -1,15 +1,16 @@
 .articleDetails {
-  color: var(--inverted-bg-color);
+ color: var(--inverted-bg-color);
 }
 
 .avatar {
-  margin: 0 auto;
+ margin: 0 auto;
+ display: block;
 }
 
 .title {
-  margin-top: 20px;
+ margin-top: 20px;
 }
 
 .skeleton {
-  margin-top: 15px;
+ margin-top: 15px;
 }

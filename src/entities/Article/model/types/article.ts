@@ -34,7 +34,7 @@ export const ArticleType = {
 export interface Article {
   id: string;
   title: string;
-  description: string;
+  subtitle: string;
   img: string;
   views: number;
   createdAt: string;

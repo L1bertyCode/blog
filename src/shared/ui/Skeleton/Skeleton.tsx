@@ -6,33 +6,33 @@ import s from "./Skeleton.module.scss";
 
 type ColorType = "primary" | "inverted";
 interface SkeletonProps {
-  className?: string;
-  width?: string;
-  height?: string;
-  borderRadius?: string;
-  colorType?: ColorType;
+ className?: string;
+ width?: string;
+ height?: string;
+ borderRadius?: string;
+ colorType?: ColorType;
 }
 export const Skeleton = memo((props: SkeletonProps) => {
-  const {
+ const {
+  className,
+  width = "100px",
+  height = "100px",
+  borderRadius,
+  colorType = "primary",
+ } = props;
+ const { t } = useTranslation();
+ const styles: CSSProperties = {
+  width,
+  height,
+  borderRadius,
+ };
+ return (
+  <div
+   className={classNames(s.skeleton, {}, [
     className,
-    width = "100px",
-    height = "100px",
-    borderRadius,
-    colorType = "primary",
-  } = props;
-  const { t } = useTranslation();
-  const styles: CSSProperties = {
-    width,
-    height,
-    borderRadius,
-  };
-  return (
-    <div
-      className={classNames(s.skeleton, {}, [
-        className,
-        s[colorType],
-      ])}
-      style={styles}
-    ></div>
-  );
+    s[colorType],
+   ])}
+   style={styles}
+  ></div>
+ );
 });
