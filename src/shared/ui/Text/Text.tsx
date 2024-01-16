@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./Text.module.scss";
-type TextColorType = "normal" | "inverted" | "error";
+type TextColorType = "primary" | "inverted" | "error";
 type TextAlign = "left" | "center" | "right";
 type TextSize = "s" | "m" | "l" | "xl";
 interface TextProps {
@@ -20,16 +20,18 @@ export const Text = memo((props: TextProps) => {
   className,
   title,
   text,
-  colorType = "normal",
+  colorType = "primary",
   align = "left",
+  size = "m",
  } = props;
  const { t } = useTranslation();
  return (
   <div
    className={classNames(s.textWrapper, {}, [
-    className,
     s[colorType],
     s[align],
+    s[size],
+    className,
    ])}
   >
    {title && <p className={s.title}>{title}</p>}

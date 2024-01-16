@@ -1,33 +1,56 @@
 // .textWrapper {
 // }
-.title {
-  font: var(--font-l);
-}
 
-.text {
-  font: var(--font-m);
-}
-
-.normal {
-  color: var(--text-color);
+.primary {
+ color: var(--text-color);
 }
 
 .inverted {
-  color: var(--inverted-text-color);
+ color: var(--inverted-text-color);
 }
 
 .error {
-  color: var(--red-dark);
+ color: var(--red-dark);
 }
 
 .center {
-  text-align: center;
+ text-align: center;
 }
 
 .left {
-  text-align: left;
+ text-align: left;
 }
 
 .right {
-  text-align: right;
+ text-align: right;
+}
+
+.s {
+ .title {
+  font: var(--font-m);
+ }
+
+ .text {
+  font: var(--font-s);
+ }
+}
+
+.m {
+ .title {
+  font: var(--font-l);
+ }
+
+ .text {
+  font: var(--font-m);
+ }
+}
+
+.l {
+ .title {
+  font: var(--font-xl);
+ }
+
+ .text {
+  font: var(--font-l);
+ }
 }

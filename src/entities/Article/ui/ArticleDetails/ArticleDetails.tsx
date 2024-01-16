@@ -1,4 +1,4 @@
-import { memo, useEffect } from "react";
+import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
@@ -18,6 +18,13 @@ import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import EyeIcon from "@/shared/assets/icons/eye-20-20.svg";
 import CalendarIcon from "@/shared/assets/icons/calendar-20-20.svg";
 import { Icon } from "@/shared/ui/Icon/Icon";
+import {
+ ArticleBlock,
+ ArticleBlockType,
+} from "../../model/types/article";
+import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
+import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
+import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 interface ArticleDetailsProps {
  className?: string;
  id?: string;
@@ -32,6 +39,38 @@ export const ArticleDetails = memo(
   const isLoading = useSelector(getArticleDetailsIsLoading);
   const data = useSelector(getArticleDetailsData);
   const error = useSelector(getArticleDetailsError);
+
+  const renderBlock = useCallback((block: ArticleBlock) => {
+   switch (block.type) {
+    case ArticleBlockType.CODE:
+     return (
+      <ArticleCodeBlockComponent
+       block={block}
+       key={block.id}
+       className={s.block}
+      />
+     );
+    case ArticleBlockType.IMAGE:
+     return (
+      <ArticleImageBlockComponent
+       block={block}
+       key={block.id}
+       className={s.block}
+      />
+     );
+    case ArticleBlockType.TEXT:
+     return (
+      <ArticleTextBlockComponent
+       block={block}
+       key={block.id}
+       className={s.block}
+      />
+     );
+    default:
+     return null;
+   }
+  }, []);
+
   let content;
   if (isLoading) {
    content = (
@@ -83,22 +122,20 @@ export const ArticleDetails = memo(
      />
      <Text title={data?.title} />
      <Text text={data?.subtitle} />
-     <div>
-      <Icon
-       onClick={() => {
-        alert("1");
-       }}
-       Svg={EyeIcon}
-      />
+     <div className={s.item}>
+      <Icon Svg={EyeIcon} className={s.icon} />
       <Text text={String(data?.views)} />
      </div>
-     <div>
-      <Icon Svg={CalendarIcon} />
+     <div className={s.item}>
+      <Icon Svg={CalendarIcon} className={s.icon} />
       <Text text={data?.createdAt} />
      </div>
+     {data?.blocks.map(renderBlock)}
+     {data?.blocks.map(renderBlock)}
     </>
    );
   }
+
   return (
    <DynamicModuleLoader
     reducers={reducers}

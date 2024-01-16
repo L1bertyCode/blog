@@ -5,64 +5,72 @@ import { ThemeDecorator } from "@/shared/config/StorybookDecorators";
 import { Theme } from "@/app/providers/ThemeProvider/ui/ThemeProvider";
 
 const meta: Meta<typeof Text> = {
-  component: Text,
-  title: "shared/Text",
+ component: Text,
+ title: "shared/Text",
 };
 
 export default meta;
 type Story = StoryObj<typeof Text>;
 
 export const TitleAndText: Story = {
-  render: () => <Text title="title" text="text" />,
+ render: () => <Text title="title" text="text" />,
 };
 
 export const onlyTitle: Story = {
-  render: () => <Text title="title" />,
+ render: () => <Text title="title" />,
 };
 
 export const onlyText: Story = {
-  render: () => <Text text="text" />,
+ render: () => <Text text="text" />,
 };
 export const TitleAndTextDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  render: () => <Text title="title" text="text" />,
+ decorators: [ThemeDecorator(Theme.DARK)],
+ render: () => <Text title="title" text="text" />,
 };
 
 export const onlyTitleDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  render: () => <Text title="title" />,
+ decorators: [ThemeDecorator(Theme.DARK)],
+ render: () => <Text title="title" />,
 };
 
 export const onlyTextDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  render: () => <Text text="text" />,
+ decorators: [ThemeDecorator(Theme.DARK)],
+ render: () => <Text text="text" />,
 };
 export const TitleAndTextBlue: Story = {
-  decorators: [ThemeDecorator(Theme.BLUE)],
-  render: () => <Text title="title" text="text" />,
+ decorators: [ThemeDecorator(Theme.BLUE)],
+ render: () => <Text title="title" text="text" />,
 };
 
 export const onlyTitleBlue: Story = {
-  decorators: [ThemeDecorator(Theme.BLUE)],
-  render: () => <Text title="title" />,
+ decorators: [ThemeDecorator(Theme.BLUE)],
+ render: () => <Text title="title" />,
 };
 
 export const onlyTextBlue: Story = {
-  decorators: [ThemeDecorator(Theme.BLUE)],
-  render: () => <Text text="text" />,
+ decorators: [ThemeDecorator(Theme.BLUE)],
+ render: () => <Text text="text" />,
 };
 export const TitleAndTextError: Story = {
-  render: () => (
-    <Text title="title" text="text" colorType={"error"} />
-  ),
+ render: () => (
+  <Text title="title" text="text" colorType={"error"} />
+ ),
 };
 
 export const onlyTitleErrorBlue: Story = {
-  decorators: [ThemeDecorator(Theme.BLUE)],
-  render: () => <Text title="title" colorType={"error"} />,
+ decorators: [ThemeDecorator(Theme.BLUE)],
+ render: () => <Text title="title" colorType={"error"} />,
 };
 
 export const onlyTextErrorDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  render: () => <Text text="text" colorType={"error"} />,
+ decorators: [ThemeDecorator(Theme.DARK)],
+ render: () => <Text text="text" colorType={"error"} />,
+};
+export const TitleAndTextDarkS: Story = {
+ decorators: [ThemeDecorator(Theme.DARK)],
+ render: () => <Text title="title" text="text" size="s" />,
+};
+export const TitleAndTextDarkL: Story = {
+ decorators: [ThemeDecorator(Theme.DARK)],
+ render: () => <Text title="title" text="text" size="l" />,
 };
