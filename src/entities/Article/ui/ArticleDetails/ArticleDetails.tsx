@@ -1,4 +1,4 @@
-import { memo, useCallback } from "react";
+import { memo, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
@@ -25,6 +25,8 @@ import {
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
+import { fetchArticleById } from "../../model/services/fetchArticleById";
 interface ArticleDetailsProps {
  className?: string;
  id?: string;
@@ -39,7 +41,12 @@ export const ArticleDetails = memo(
   const isLoading = useSelector(getArticleDetailsIsLoading);
   const data = useSelector(getArticleDetailsData);
   const error = useSelector(getArticleDetailsError);
-
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+   if (id && __PROJECT__ !== "storybook") {
+    dispatch(fetchArticleById(id));
+   }
+  }, [dispatch, id]);
   const renderBlock = useCallback((block: ArticleBlock) => {
    switch (block.type) {
     case ArticleBlockType.CODE:

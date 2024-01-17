@@ -17,13 +17,7 @@ const ArticleDetailsPage = memo(
   const { className } = props;
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
-  const dispatch = useAppDispatch();
 
-  useEffect(() => {
-   if (id) {
-    dispatch(fetchArticleById(id));
-   }
-  }, [dispatch, id]);
   if (!id) {
    <div
     className={classNames(s.articleDetailsPage, {}, [
