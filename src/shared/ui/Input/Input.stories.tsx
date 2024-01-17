@@ -5,24 +5,23 @@ import { ThemeDecorator } from "@/shared/config/StorybookDecorators";
 import { Theme } from "@/app/providers/ThemeProvider/ui/ThemeProvider";
 
 const meta: Meta<typeof Input> = {
-  component: Input,
-  title: "shared/Input",
+ component: Input,
+ title: "shared/Input",
 };
 
 export default meta;
 type Story = StoryObj<typeof Input>;
 
 export const Light: Story = {
-  render: () => <Input label={"Username"} />,
+ render: () => <Input autoFocus label={"Username"} />,
 };
 
 export const Dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  render: () => <Input label={"Username"} />,
+ decorators: [ThemeDecorator(Theme.DARK)],
+ render: () => <Input autoFocus label={"Username"} />,
 };
 
-
 export const Blue: Story = {
-  decorators: [ThemeDecorator(Theme.BLUE)],
-  render: () => <Input label={"Username"} />,
+ decorators: [ThemeDecorator(Theme.BLUE)],
+ render: () => <Input autoFocus label={"Username"} />,
 };

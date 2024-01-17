@@ -80,5 +80,6 @@
   "Country": "Страна",
   "Currency": "Валюта",
   "Firstname and lastname name are required": "Имя и фамилия обязательны",
-  "There was an error loading the article": "Произошла ошибка при загрузке статьи"
+  "There was an error loading the article": "Произошла ошибка при загрузке статьи",
+  "Copy": "Копировать"
 }

@@ -4,6 +4,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { ArticleImageBlock } from "../../model/types/article";
 
 import s from "./ArticleImageBlockComponent.module.scss";
+import { Text } from "@/shared/ui/Text/Text";
 
 interface ArticleImageBlockComponentProps {
  className?: string;
@@ -12,17 +13,24 @@ interface ArticleImageBlockComponentProps {
 
 export const ArticleImageBlockComponent = memo(
  (props: ArticleImageBlockComponentProps) => {
-  const { className } = props;
+  const { className, block } = props;
   const { t } = useTranslation();
   return (
    <div
-   className={classNames(
+    className={classNames(
      s.articleImageBlockComponent,
      {},
      [className]
-   )}
+    )}
    >
-    <div>ArticleImageBlockComponent</div>
+    <img
+     className={s.img}
+     src={block?.src}
+     alt={block?.title || "image"}
+    />
+    {block?.title && (
+     <Text align="center" text={block?.title} />
+    )}
    </div>
   );
  }
