@@ -16,3 +16,9 @@
  width: 150px;
  height: 150px;
 }
+
+.empty {
+ content: "";
+ border-radius: 50%;
+ background-color: var(--inverted-bg-color);
+}

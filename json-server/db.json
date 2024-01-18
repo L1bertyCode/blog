@@ -950,19 +950,16 @@
   {
    "id": "1",
    "text": "some comment",
-   "porfolioId": "1",
    "userId": "1"
   },
   {
    "id": "2",
    "text": "some comment 2",
-   "porfolioId": "2",
    "userId": "1"
   },
   {
    "id": "3",
    "text": "some comment",
-   "porfolioId": "3",
    "userId": "1"
   }
  ],

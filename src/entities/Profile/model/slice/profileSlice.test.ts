@@ -8,9 +8,7 @@ import {
   profileActions,
   profileReducer,
 } from "./profileSlice";
-import { StateSchema } from "@/app/providers/StoreProvider";
 import { updateProfileData } from "../services/updateProfileData/updateProfileData";
-import { AsyncThunkPendingActionCreator } from "@reduxjs/toolkit/dist/createAsyncThunk";
 
 describe("profileSlice", () => {
   const data = {

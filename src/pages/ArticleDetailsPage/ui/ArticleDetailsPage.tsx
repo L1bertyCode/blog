@@ -7,6 +7,8 @@ import { ArticleDetails } from "@/entities/Article";
 import { useParams } from "react-router-dom";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { fetchArticleById } from "@/entities/Article/model/services/fetchArticleById";
+import { Text } from "@/shared/ui/Text/Text";
+import { CommentList } from "@/entities/Comment";
 
 interface ArticleDetailsPageProps {
  className?: string;
@@ -34,6 +36,8 @@ const ArticleDetailsPage = memo(
     ])}
    >
     <ArticleDetails id={id} />
+    <Text className={s.commentsTitle} title={t("Comments")} />
+    <CommentList />
    </div>
   );
  }
