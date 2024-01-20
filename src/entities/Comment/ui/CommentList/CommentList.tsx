@@ -16,40 +16,8 @@ interface CommentListProps {
 
 export const CommentList = memo(
  (props: CommentListProps) => {
-  const {
-   className,
-   comments = [
-    {
-     id: "1",
-     text: "some comment",
-     user: {
-      id: 1,
-      username: "admin",
-     },
-    },
-    {
-     id: "2",
-     text: "some comment 2",
-     user: {
-      id: 1,
-      username: "admin",
-     },
-    },
-    {
-     id: "3",
-     text: "some comment",
-     user: {
-      id: 1,
-      username: "admin",
-     },
-    },
-   ],
-   isLoading,
-  } = props;
+  const { className, comments, isLoading } = props;
   const { t } = useTranslation();
-  if (isLoading) {
-   return <Skeleton />;
-  }
   return (
    <div
     className={classNames(s.commentList, {}, [className])}
@@ -59,6 +27,7 @@ export const CommentList = memo(
       <CommentItem
        commentDetails={commentDetails as Comment}
        key={commentDetails.id}
+       isLoading={isLoading}
       />
      ))
     ) : (

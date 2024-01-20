@@ -1,4 +1,4 @@
-export { validateProfileErrors } from "./model/type/profile";
+export { validateProfileErrors } from "./model/types/profile";
 
 export { getProfileValidateErrors } from "./model/selectors/getProfileValidateErrors/getProfileValidateErrors";
 export { updateProfileData } from "./model/services/updateProfileData/updateProfileData";
@@ -11,11 +11,11 @@ export { ProfileCard } from "./ui/ProfileCard/ProfileCard";
 export { fetchProfileData } from "./model/services/fetchProfileData/fetchProfileData";
 
 export {
-  profileActions,
-  profileReducer,
-} from "./model/slice/profileSlice";
+ profileActions,
+ profileReducer,
+} from "./model/slices/profileSlice";
 
 export {
-  Profile,
-  ProfileSchema,
-} from "./model/type/profile";
+ Profile,
+ ProfileSchema,
+} from "./model/types/profile";
