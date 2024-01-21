@@ -7,11 +7,18 @@ import { ArticleDetails } from "@/entities/Article";
 import { useParams } from "react-router-dom";
 import { Text } from "@/shared/ui/Text/Text";
 import { CommentList } from "@/entities/Comment";
+import {
+ DynamicModuleLoader,
+ ReducersList,
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { articleDetailsCommentsReducer } from "../model/slices/articleDetailsCommentsSlice";
 
 interface ArticleDetailsPageProps {
  className?: string;
 }
-
+const reducers: ReducersList = {
+ articleDetailsComments: articleDetailsCommentsReducer,
+};
 const ArticleDetailsPage = memo(
  (props: ArticleDetailsPageProps) => {
   const { className } = props;
@@ -28,18 +35,23 @@ const ArticleDetailsPage = memo(
    </div>;
   }
   return (
-   <div
-    className={classNames(s.articleDetailsPage, {}, [
-     className,
-    ])}
+   <DynamicModuleLoader
+    reducers={reducers}
+    removeAfterUnmount
    >
-    <ArticleDetails id={id} />
-    <Text
-     className={s.commentsTitle}
-     title={t("Comments")}
-    />
-    <CommentList isLoading={false} comments={[]} />
-   </div>
+    <div
+     className={classNames(s.articleDetailsPage, {}, [
+      className,
+     ])}
+    >
+     <ArticleDetails id={id} />
+     <Text
+      className={s.commentsTitle}
+      title={t("Comments")}
+     />
+     <CommentList isLoading={false} comments={[]} />
+    </div>
+   </DynamicModuleLoader>
   );
  }
 );
