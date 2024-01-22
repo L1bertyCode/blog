@@ -1,14 +1,19 @@
 import { StateSchema } from "@/app/providers/StoreProvider";
 import { Comment } from "@/entities/Comment";
 import {
+ EntityId,
  createEntityAdapter,
  createSlice,
 } from "@reduxjs/toolkit";
 import { ArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema";
 
-const commentsAdapter = createEntityAdapter<Comment>({
- //@ts-ignore
+const commentsAdapter = createEntityAdapter<
+ Comment,
+ EntityId
+>({
  selectId: (comment: Comment) => comment.id,
+ sortComparer: (comment: Comment) =>
+  comment.id.localeCompare(comment.id),
 });
 export const getArticleDetailsComments =
  commentsAdapter.getSelectors<StateSchema>(

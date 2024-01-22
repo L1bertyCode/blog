@@ -10,6 +10,7 @@ import { createReducerManager } from "./reducerManager";
 import { $api } from "@/shared/api/api";
 
 import { profileReducer } from "@/entities/Profile/model/slices/profileSlice";
+import { articleDetailsCommentsReducer } from "@/pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice";
 
 export function createReduxStore(
  initialState?: StateSchema,
