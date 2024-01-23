@@ -2,46 +2,61 @@ import { StateSchema } from "@/app/providers/StoreProvider";
 import { Comment } from "@/entities/Comment";
 import {
  EntityId,
+ PayloadAction,
  createEntityAdapter,
  createSlice,
 } from "@reduxjs/toolkit";
 import { ArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema";
+import { fetchCommentsByArticleId } from "../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 
 const commentsAdapter = createEntityAdapter<
  Comment,
  EntityId
 >({
  selectId: (comment: Comment) => comment.id,
- sortComparer: (comment: Comment) =>
-  comment.id.localeCompare(comment.id),
 });
 export const getArticleDetailsComments =
  commentsAdapter.getSelectors<StateSchema>(
   (state) =>
    state.articleDetailsComments ||
-   commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>(
-    {
-     isLoading: false,
-     ids: ["1", "2"],
-     entities: {
-      "1": {
-       id: "1",
-       text: "some comment",
-       user: { id: "1", username: "user" },
-      },
-      "2": {
-       id: "2",
-       text: "some comment",
-       user: { id: "1", username: "user" },
-      },
-     },
-    }
-   )
+   commentsAdapter.getInitialState()
  );
 const articleDetailsCommentsSlice = createSlice({
  name: "articleDetailsComments",
- initialState: commentsAdapter.getInitialState(),
+ initialState:
+  commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>(
+   {
+    isLoading: false,
+    ids: [],
+    entities: {
+   
+    },
+   }
+  ),
  reducers: {},
+ extraReducers: (builder) => {
+  builder.addCase(
+   fetchCommentsByArticleId.pending,
+   (state) => {
+    state.error = undefined;
+    state.isLoading = true;
+   }
+  );
+  builder.addCase(
+   fetchCommentsByArticleId.rejected,
+   (state, action) => {
+    state.isLoading = false;
+    state.error = action.payload;
+   }
+  );
+  builder.addCase(
+   fetchCommentsByArticleId.fulfilled,
+   (state, action: PayloadAction<Comment[]>) => {
+    state.isLoading = false;
+    commentsAdapter.setAll(state, action.payload);
+   }
+  );
+ },
 });
 export const { reducer: articleDetailsCommentsReducer } =
  articleDetailsCommentsSlice;

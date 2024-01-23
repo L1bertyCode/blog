@@ -11,7 +11,18 @@ import {
  DynamicModuleLoader,
  ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { articleDetailsCommentsReducer } from "../model/slices/articleDetailsCommentsSlice";
+import {
+ articleDetailsCommentsReducer,
+ getArticleDetailsComments,
+} from "../model/slices/articleDetailsCommentsSlice";
+import { useSelector } from "react-redux";
+import {
+ getArticleDetailsCommentsError,
+ getArticleDetailsCommentsIsLoading,
+} from "../model/selectors/comments";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
+import { fetchCommentsByArticleId } from "../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 
 interface ArticleDetailsPageProps {
  className?: string;
@@ -21,10 +32,23 @@ const reducers: ReducersList = {
 };
 const ArticleDetailsPage = memo(
  (props: ArticleDetailsPageProps) => {
+  const dispatch = useAppDispatch();
   const { className } = props;
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
+  const comments = useSelector(
+   getArticleDetailsComments.selectAll
+  );
+  const commentsIsLoading = useSelector(
+   getArticleDetailsCommentsIsLoading
+  );
+  const coimmentsError = useSelector(
+   getArticleDetailsCommentsError
+  );
 
+  useInitialEffect(() => {
+   dispatch(fetchCommentsByArticleId(id));
+  });
   if (!id) {
    <div
     className={classNames(s.articleDetailsPage, {}, [
@@ -49,7 +73,10 @@ const ArticleDetailsPage = memo(
       className={s.commentsTitle}
       title={t("Comments")}
      />
-     <CommentList isLoading={false} comments={[]} />
+     <CommentList
+      isLoading={commentsIsLoading}
+      comments={comments}
+     />
     </div>
    </DynamicModuleLoader>
   );

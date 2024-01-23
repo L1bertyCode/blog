@@ -949,18 +949,13 @@
  "comments": [
   {
    "id": "1",
-   "text": "some comment",
-   "userId": "1"
+   "text": "some comments",
+   "user": { "id": "1", "username": "user" }
   },
   {
    "id": "2",
-   "text": "some comment 2",
-   "userId": "1"
-  },
-  {
-   "id": "3",
    "text": "some comment",
-   "userId": "1"
+   "user": { "id": "1", "username": "user" }
   }
  ],
  "users": [
