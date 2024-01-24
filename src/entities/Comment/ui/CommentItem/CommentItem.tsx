@@ -7,6 +7,8 @@ import { Comment } from "../../model/types/comment";
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Text } from "@/shared/ui/Text/Text";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { AppLink } from "@/shared/ui/AppLink/AppLink";
+import { RoutePath } from "@/shared/config/routes/routesConfig";
 
 interface CommentItemProps {
  className?: string;
@@ -40,10 +42,11 @@ export const CommentItem = memo(
    <div
     className={classNames(s.commentItem, {}, [className])}
    >
-    <div className={s.userInfo}>
+    <AppLink
+      to={RoutePath.profile + commentDetails.user.id} className={s.userInfo}>
      <Avatar className={s.avatar} />
      <Text text={commentDetails?.user.username} />
-    </div>
+    </AppLink>
     <Text text={commentDetails?.text} />
    </div>
   );

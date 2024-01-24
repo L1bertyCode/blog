@@ -10,78 +10,78 @@ import { ReactNode } from "react";
 import { RouteProps } from "react-router-dom";
 
 export enum AppRoutes {
-  MAIN = "main",
-  ABOUT = "about",
-  PROFILE = "profile",
-  PORTFOLIO_LIST = "portfolio_list",
-  PORTFOLIO_ITEM = "portfolio_details",
-  ARTICLES = "artciles",
-  ARTICLE_DETAILS = "artciles_details",
-  //last
-  NOTFOUND = "not-found",
+ MAIN = "main",
+ ABOUT = "about",
+ PROFILE = "profile",
+ PORTFOLIO_LIST = "portfolio_list",
+ PORTFOLIO_ITEM = "portfolio_details",
+ ARTICLES = "artciles",
+ ARTICLE_DETAILS = "artciles_details",
+ //last
+ NOTFOUND = "not-found",
 }
 export type AppRouteProps = RouteProps & {
-  authOnly?: boolean;
+ authOnly?: boolean;
 };
 type ExtendsRouteProps = AppRouteProps & {
-  icon?: ReactNode;
+ icon?: ReactNode;
 };
 export const RoutePath: Record<AppRoutes, string> = {
-  [AppRoutes.MAIN]: "/",
-  [AppRoutes.ABOUT]: "/about",
-  [AppRoutes.PROFILE]: "/profile",
-  [AppRoutes.PORTFOLIO_LIST]: "/portfolio",
-  [AppRoutes.PORTFOLIO_ITEM]: "/portfolio/", //:id
-  [AppRoutes.ARTICLES]: "/articles",
-  [AppRoutes.ARTICLE_DETAILS]: "/articles/", //:id
-  [AppRoutes.NOTFOUND]: "/*",
+ [AppRoutes.MAIN]: "/",
+ [AppRoutes.ABOUT]: "/about",
+ [AppRoutes.PROFILE]: "/profile/", //:id
+ [AppRoutes.PORTFOLIO_LIST]: "/portfolio",
+ [AppRoutes.PORTFOLIO_ITEM]: "/portfolio/", //:id
+ [AppRoutes.ARTICLES]: "/articles",
+ [AppRoutes.ARTICLE_DETAILS]: "/articles/", //:id
+ [AppRoutes.NOTFOUND]: "/*",
 };
 //for Array
 interface RoutesItem {
-  element: ReactNode;
-  path: string;
+ element: ReactNode;
+ path: string;
 }
 export const routesConfig: Record<
-  AppRoutes,
-  ExtendsRouteProps
+ AppRoutes,
+ ExtendsRouteProps
 > = {
-  [AppRoutes.MAIN]: {
-    path: RoutePath.main,
-    element: <MainPage />,
-  },
-  [AppRoutes.ABOUT]: {
-    path: RoutePath.about,
-    element: <AboutPage />,
-  },
-  [AppRoutes.PROFILE]: {
-    path: RoutePath.profile,
-    element: <ProfilePage />,
-    authOnly: true,
-  },
-  [AppRoutes.PORTFOLIO_LIST]: {
-    path: RoutePath.portfolio_list,
-    element: <PortfolioListPage />,
-    authOnly: true,
-  },
-  [AppRoutes.PORTFOLIO_ITEM]: {
-    path: RoutePath.portfolio_details + ":id",
-    element: <PortfolioItemPage />,
-    authOnly: true,
-  },
-  [AppRoutes.ARTICLES]: {
-    path: RoutePath.artciles,
-    element: <ArticleListPage />,
-    authOnly: true,
-  },
-  [AppRoutes.ARTICLE_DETAILS]: {
-    path: RoutePath.artciles_details + ":id",
-    element: <ArticleDetailsPage />,
-    authOnly: true,
-  },
-  [AppRoutes.NOTFOUND]: {
-    path: RoutePath["not-found"],
-    element: <NotFoundPage />,
-  },
+ [AppRoutes.MAIN]: {
+  path: RoutePath.main,
+  element: <MainPage />,
+ },
+ [AppRoutes.ABOUT]: {
+  path: RoutePath.about,
+  element: <AboutPage />,
+ },
+ [AppRoutes.PROFILE]: {
+  path: RoutePath.profile + ":id",
+  element: <ProfilePage />,
+  authOnly: true,
+ },
+ [AppRoutes.PORTFOLIO_LIST]: {
+  path: RoutePath.portfolio_list,
+  element: <PortfolioListPage />,
+  authOnly: true,
+ },
+ [AppRoutes.PORTFOLIO_ITEM]: {
+  path: RoutePath.portfolio_details + ":id",
+  element: <PortfolioItemPage />,
+  authOnly: true,
+ },
+ [AppRoutes.ARTICLES]: {
+  path: RoutePath.artciles,
+  element: <ArticleListPage />,
+  authOnly: true,
+ },
+ [AppRoutes.ARTICLE_DETAILS]: {
+  path: RoutePath.artciles_details + ":id",
+  element: <ArticleDetailsPage />,
+  authOnly: true,
+ },
+ [AppRoutes.NOTFOUND]: {
+  path: RoutePath["not-found"],
+  element: <NotFoundPage />,
+ },
 };
 // export const routesConfigArray: RoutesItem[] = [
 //   { element: <MainPage />, path: "/" },

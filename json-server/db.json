@@ -950,12 +950,12 @@
   {
    "id": "1",
    "text": "some comments",
-   "user": { "id": "1", "username": "user" }
+   "user": { "id": "1", "username": "admin" }
   },
   {
    "id": "2",
    "text": "some comment",
-   "user": { "id": "1", "username": "user" }
+   "user": { "id": "2", "username": "user" }
   }
  ],
  "users": [
@@ -974,14 +974,28 @@
    "avatar": "avatar1"
   }
  ],
- "profile": {
-  "firstname": "F",
-  "lastname": "Ln",
-  "age": 20,
-  "currency": "EUR",
-  "country": "German",
-  "city": "Boston",
-  "username": "admin",
-  "avatar": "avatar1"
- }
+ "profile": [
+  {
+   "id": "1",
+   "firstname": "F",
+   "lastname": "Ln",
+   "age": 20,
+   "currency": "EUR",
+   "country": "German",
+   "city": "Boston",
+   "username": "admin",
+   "avatar": "avatar1"
+  },
+  {
+   "id": "2",
+   "firstname": "F2",
+   "lastname": "Ln2",
+   "age": 20,
+   "currency": "USD",
+   "country": "USA",
+   "city": "Boston2",
+   "username": "user",
+   "avatar": "avatar1"
+  }
+ ]
 }

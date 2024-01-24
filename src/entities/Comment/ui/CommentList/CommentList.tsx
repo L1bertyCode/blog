@@ -6,7 +6,6 @@ import s from "./CommentList.module.scss";
 import { Comment } from "../../model/types/comment";
 import { CommentItem } from "../CommentItem/CommentItem";
 import { Text } from "@/shared/ui/Text/Text";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 
 interface CommentListProps {
  className?: string;

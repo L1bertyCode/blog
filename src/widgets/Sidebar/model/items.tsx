@@ -14,7 +14,7 @@ export const sidebatItemsList: SidebarItemInterace[] = [
   { path: RoutePath.main, Icon: MainIcon, text: "Main" },
   { path: RoutePath.about, Icon: AboutIcon, text: "About" },
   {
-    path: RoutePath.profile,
+    path: RoutePath.profile+"1",
     Icon: ProfileIcon,
     text: "Profile",
     authOnly: true,

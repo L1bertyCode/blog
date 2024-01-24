@@ -56,7 +56,7 @@ export const ProfileCard = memo(
    onChangeCurrency,
    onChangeCountry,
   } = props;
-  const dispatch = useAppDispatch();
+
   const readOnly = useSelector(getProfileReadOnly);
   const { t } = useTranslation();
 

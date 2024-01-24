@@ -5,19 +5,22 @@ import { Profile } from "../../types/profile";
 
 export const fetchProfileData = createAsyncThunk<
  Profile,
- void,
+ string,
  { rejectValue: string; extra: ThunkExtraArgs }
->("profile/fetchProfileData", async (_, thunkAPI) => {
- try {
-  const response = await thunkAPI.extra.api.get<Profile>(
-   "profile"
-  );
-  if (!response.data) {
-   throw new Error();
+>(
+ "profile/fetchProfileData",
+ async (profileId, thunkAPI) => {
+  try {
+   const response = await thunkAPI.extra.api.get<Profile>(
+    `profile/${profileId}`
+   );
+   if (!response.data) {
+    throw new Error();
+   }
+   return response.data;
+  } catch (e) {
+   console.log(e);
+   return thunkAPI.rejectWithValue("Error");
   }
-  return response.data;
- } catch (e) {
-  console.log(e);
-  return thunkAPI.rejectWithValue("Error");
  }
-});
+);

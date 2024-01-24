@@ -23,6 +23,7 @@ import {
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { fetchCommentsByArticleId } from "../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { AddCommentForm } from "@/features/addCommentForm/ui/AddCommentForm";
 
 interface ArticleDetailsPageProps {
  className?: string;
@@ -73,6 +74,7 @@ const ArticleDetailsPage = memo(
       className={s.commentsTitle}
       title={t("Comments")}
      />
+     <AddCommentForm />
      <CommentList
       isLoading={commentsIsLoading}
       comments={comments}
