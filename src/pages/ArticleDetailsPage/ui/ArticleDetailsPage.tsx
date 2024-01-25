@@ -23,7 +23,7 @@ import {
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { fetchCommentsByArticleId } from "../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { AddCommentForm } from "@/features/addCommentForm/ui/AddCommentForm";
+import { AddCommentForm } from "@/features/addCommentForm";
 
 interface ArticleDetailsPageProps {
  className?: string;
@@ -31,7 +31,7 @@ interface ArticleDetailsPageProps {
 const reducers: ReducersList = {
  articleDetailsComments: articleDetailsCommentsReducer,
 };
-const ArticleDetailsPage = memo(
+export const ArticleDetailsPage = memo(
  (props: ArticleDetailsPageProps) => {
   const dispatch = useAppDispatch();
   const { className } = props;

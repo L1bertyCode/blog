@@ -27,7 +27,7 @@ const reducers: ReducersList = {
  addCommentForm: addCommentFormReducer,
 };
 
-export const AddCommentForm = memo(
+const AddCommentForm = memo(
  (props: AddCommentFormProps) => {
   const { className } = props;
   const { t } = useTranslation();
@@ -40,11 +40,15 @@ export const AddCommentForm = memo(
    },
    [dispatch]
   );
+  const onSendComment = () =>
+   useCallback(
+    () => {
+     dispatch(onSendComment());
+    },
+    [dispatch]
+   );
   return (
-   <DynamicModuleLoader
-    reducers={reducers}
-    
-   >
+   <DynamicModuleLoader reducers={reducers}>
     <div
      className={classNames(s.addCommentForm, {}, [
       className,
@@ -54,10 +58,14 @@ export const AddCommentForm = memo(
       placeholder={t("Enter comment text")}
       value={text}
       onChange={onCommentChancge}
+      className={s.input}
      />
-     <Button variant="outline">{t("Send")}</Button>
+     <Button onClick={onSendComment} variant="outline">
+      {t("Send")}
+     </Button>
     </div>
    </DynamicModuleLoader>
   );
  }
 );
+export default AddCommentForm;
