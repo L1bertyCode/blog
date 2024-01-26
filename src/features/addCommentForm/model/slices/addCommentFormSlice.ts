@@ -2,41 +2,33 @@ import {
  PayloadAction,
  createSlice,
 } from "@reduxjs/toolkit";
-import { addCommentFormSchema } from "../types/addCommentForm";
+import { AddCommentFormSchema } from "../types/addCommentForm";
 
-const initialState: addCommentFormSchema = {
- text: undefined,
+const initialState: AddCommentFormSchema = {
+ text: "",
 };
 
 export const addCommentFormSlice = createSlice({
- name: "addCommentFormSlice",
- initialState,
+ name: "addCommentForm",
+ initialState: initialState,
  reducers: {
   setText: (state, action: PayloadAction<string>) => {
    state.text = action.payload;
   },
  },
-//  extraReducers: (builder) => {
-//   builder.addCase(loginByUsername.pending, (state) => {
-//    state.error = undefined;
-//    state.isLoading = true;
-//   });
-//   builder.addCase(
-//    loginByUsername.rejected,
-//    (state, action) => {
-//     state.isLoading = false;
-//     state.error = action.payload;
-//    }
-//   );
-//   builder.addCase(
-//    loginByUsername.fulfilled,
-//    (state, action) => {
-//     state.isLoading = false;
-//    }
-//   );
-//  },
+ //   extraReducers:(builder)=>{
+ //     builder.addCase(.pending,state=>(
+ //         state.error=undefined
+ //     ))
+ //     builder.addCase(.fulfilled,state=>(
+ //         state.error=undefined
+ //        state.text = "";
+ //     ))
+ //     builder.addCase(.rejected,state=>(
+ //         state.error=undefined
+ //     ))
+ //   }
 });
-
 export const { actions: addCommentFormActions } =
  addCommentFormSlice;
 export const { reducer: addCommentFormReducer } =

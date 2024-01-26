@@ -9,7 +9,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getAddCommentFormText } from "../../selectors/addCommentFormSelectors";
 import { getArticleDetailsData } from "@/entities/Article";
 
-export const loginByUsername = createAsyncThunk<
+export const sendComment = createAsyncThunk<
  Comment,
  void,
  {

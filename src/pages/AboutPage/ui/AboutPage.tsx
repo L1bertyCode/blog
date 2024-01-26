@@ -1,8 +1,12 @@
 import { useTranslation } from "react-i18next";
 import s from "./AboutPage.module.scss";
 function AboutPage() {
-  const { t } = useTranslation();
-  return <div className={s.aboutPage}>{t("About")}</div>;
+ const { t } = useTranslation();
+ return (
+  <div className={s.aboutPage}>
+   <div>{t("About")}</div>
+  </div>
+ );
 }
 
 export default AboutPage;

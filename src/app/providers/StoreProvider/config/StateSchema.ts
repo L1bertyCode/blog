@@ -3,7 +3,7 @@ import { CounterSchema } from "@/entities/Counter";
 import { ProfileSchema } from "@/entities/Profile";
 import { UserSchema } from "@/entities/User";
 import { LoginSchema } from "@/features/AuthByUsername";
-import { addCommentFormSchema } from "@/features/addCommentForm";
+import { AddCommentFormSchema } from "@/features/addCommentForm";
 import { ArticleDetailsCommentsSchema } from "@/pages/ArticleDetailsPage";
 import {
  EnhancedStore,
@@ -21,7 +21,7 @@ export interface StateSchema {
  loginForm?: LoginSchema;
  articleDetails?: ArticleDetailsSchema;
  articleDetailsComments?: ArticleDetailsCommentsSchema;
- addCommentForm?: addCommentFormSchema;
+ addCommentForm?: AddCommentFormSchema;
 }
 export type StateSchemaKey = keyof StateSchema;
 

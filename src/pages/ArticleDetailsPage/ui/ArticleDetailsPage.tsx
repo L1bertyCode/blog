@@ -43,7 +43,7 @@ export const ArticleDetailsPage = memo(
   const commentsIsLoading = useSelector(
    getArticleDetailsCommentsIsLoading
   );
-  const coimmentsError = useSelector(
+  const commentsError = useSelector(
    getArticleDetailsCommentsError
   );
 
@@ -60,10 +60,7 @@ export const ArticleDetailsPage = memo(
    </div>;
   }
   return (
-   <DynamicModuleLoader
-    reducers={reducers}
-    removeAfterUnmount
-   >
+   <DynamicModuleLoader reducers={reducers}>
     <div
      className={classNames(s.articleDetailsPage, {}, [
       className,
@@ -74,7 +71,7 @@ export const ArticleDetailsPage = memo(
       className={s.commentsTitle}
       title={t("Comments")}
      />
-     <AddCommentForm />
+
      <CommentList
       isLoading={commentsIsLoading}
       comments={comments}
