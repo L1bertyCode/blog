@@ -23,7 +23,6 @@ import {
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { fetchCommentsByArticleId } from "../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { AddCommentForm } from "@/features/addCommentForm";
 
 interface ArticleDetailsPageProps {
  className?: string;

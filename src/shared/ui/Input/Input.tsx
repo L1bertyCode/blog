@@ -55,7 +55,7 @@ export const Input = memo((props: InputProps) => {
  }, []);
 
  return (
-  <>
+  <div>
    {label ? (
     <label className={s.label} htmlFor={id}>
      {label}
@@ -77,6 +77,6 @@ export const Input = memo((props: InputProps) => {
      [s[colorType], className]
     )}
    />
-  </>
+  </div>
  );
 });
