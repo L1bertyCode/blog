@@ -1,9 +1,13 @@
-.input {
+.textarea {
  padding: 10px 20px;
  border-radius: var(--b-raduis-s);
  border: 0;
  outline: none;
  cursor: pointer;
+ resize: none;
+ height: fit-content;
+ word-wrap: break-word;
+ overflow-wrap: break-word;
 }
 
 .readOnly {

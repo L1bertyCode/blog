@@ -84,5 +84,6 @@
   "Currency": "Currency",
   "Firstname and lastname name are required": "Firstname and lastname name are required",
   "There was an error loading the article": "There was an error loading the article",
-  "Copy": "Copy"
+  "Copy": "Copy",
+  "Type comment": "Type comment"
 }

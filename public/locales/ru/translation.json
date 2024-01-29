@@ -81,5 +81,6 @@
   "Currency": "Валюта",
   "Firstname and lastname name are required": "Имя и фамилия обязательны",
   "There was an error loading the article": "Произошла ошибка при загрузке статьи",
-  "Copy": "Копировать"
+  "Copy": "Копировать",
+  "Type comment": "Введите комментарий"
 }

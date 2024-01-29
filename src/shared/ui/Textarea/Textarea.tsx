@@ -1,23 +1,21 @@
 import {
  ChangeEvent,
- HTMLInputTypeAttribute,
- InputHTMLAttributes,
  MutableRefObject,
+ TextareaHTMLAttributes,
  memo,
  useEffect,
  useRef,
 } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
-import s from "./Input.module.scss";
-type InputColorType = "primary" | "inverted";
-type HTMLInputProps = Omit<
- InputHTMLAttributes<HTMLInputElement>,
+import s from "./Textarea.module.scss";
+type TextareaColorType = "primary" | "inverted";
+type HTMLTextareaProps = Omit<
+ TextareaHTMLAttributes<HTMLTextAreaElement>,
  "value" | "onChange" | "readOnly" | "type"
 >;
-interface InputProps extends HTMLInputProps {
+interface TextareaProps extends HTMLTextareaProps {
  className?: string;
- type?: HTMLInputTypeAttribute;
  placeholder?: string;
  label?: string;
  id?: string;
@@ -25,13 +23,12 @@ interface InputProps extends HTMLInputProps {
  onChange?: (value: string) => void;
  autoFocus?: boolean;
  readOnly?: boolean;
- colorType?: InputColorType;
+ colorType?: TextareaColorType;
 }
 
-export const Input = memo((props: InputProps) => {
+export const Textarea = memo((props: TextareaProps) => {
  const {
   className,
-  type,
   placeholder = "",
   label,
   id,
@@ -43,11 +40,13 @@ export const Input = memo((props: InputProps) => {
   ...otherProps
  } = props;
  const onChangeHandler = (
-  e: ChangeEvent<HTMLInputElement>
+  e: ChangeEvent<HTMLTextAreaElement>
  ) => {
   onChange?.(e.target.value);
  };
- const ref = useRef() as MutableRefObject<HTMLInputElement>;
+ 
+ const ref =
+  useRef() as MutableRefObject<HTMLTextAreaElement>;
  useEffect(() => {
   if (autoFocus && ref?.current) {
    ref?.current?.focus();
@@ -55,18 +54,17 @@ export const Input = memo((props: InputProps) => {
  }, []);
 
  return (
-  <input
+  <textarea
    {...otherProps}
    ref={ref}
    value={value}
    onChange={onChangeHandler}
    placeholder={placeholder}
-   type={type}
    id={id}
    autoFocus={autoFocus}
    readOnly={readOnly}
    className={classNames(
-    s.input,
+    s.textarea,
     { [s.readOnly]: readOnly },
     [s[colorType], className]
    )}
