@@ -7,34 +7,32 @@ import { getCounterValue } from "../model/selectors/getCounterValue/getCounterVa
 interface CounterProps {}
 
 export const Counter = (props: CounterProps) => {
-  const dispatch = useDispatch();
-  const counterValue = useSelector(getCounterValue);
-  const {} = props;
-  const increment = () => {
-    dispatch(counterActions.increment());
-  };
-  const deccrement = () => {
-    dispatch(counterActions.decrement());
-  };
-  return (
-    <div>
-      <h1 data-testid="counter-value-title">
-        {counterValue}
-      </h1>
-      <Button
-        data-testid="increment-btn"
-        variant="outline"
-        onClick={increment}
-      >
-        +
-      </Button>
-      <Button
-        data-testid="deccrement-btn"
-        variant="outline"
-        onClick={deccrement}
-      >
-        -
-      </Button>
-    </div>
-  );
+ const dispatch = useDispatch();
+ const counterValue = useSelector(getCounterValue);
+ const {} = props;
+ const increment = () => {
+  dispatch(counterActions.increment());
+ };
+ const deccrement = () => {
+  dispatch(counterActions.decrement());
+ };
+ return (
+  <div>
+   <h1 data-testid="counter-value-title">{counterValue}</h1>
+   <Button
+    data-testid="increment-btn"
+    variant="outlined"
+    onClick={increment}
+   >
+    +
+   </Button>
+   <Button
+    data-testid="deccrement-btn"
+    variant="outlined"
+    onClick={deccrement}
+   >
+    -
+   </Button>
+  </div>
+ );
 };

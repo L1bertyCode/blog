@@ -6,28 +6,23 @@ import s from "./PageError.module.scss";
 import { Button } from "@/shared/ui/Button/Button";
 
 interface PageErrorProps {
-  className?: string;
+ className?: string;
 }
 
 export const PageError = memo((props: PageErrorProps) => {
-  const reloadPage = () => {
-    location.reload();
-  };
-  const { className } = props;
-  const { t } = useTranslation();
-  return (
-    <div
-      className={classNames(s.pageError, {}, [className])}
-    >
-      <p className={s.text}>
-        {t("An unexpected error occurred")}
-      </p>
-      <Button
-        variant="outline"
-        onClick={reloadPage}
-      >
-        {t("Refresh the page")}
-      </Button>
-    </div>
-  );
+ const reloadPage = () => {
+  location.reload();
+ };
+ const { className } = props;
+ const { t } = useTranslation();
+ return (
+  <div className={classNames(s.pageError, {}, [className])}>
+   <p className={s.text}>
+    {t("An unexpected error occurred")}
+   </p>
+   <Button variant="outlined" onClick={reloadPage}>
+    {t("Refresh the page")}
+   </Button>
+  </div>
+ );
 });

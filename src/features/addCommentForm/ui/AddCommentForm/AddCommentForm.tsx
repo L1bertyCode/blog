@@ -21,12 +21,11 @@ const AddCommentForm = memo(
      className,
     ])}
    >
-  
     <Textarea
      placeholder={t("Type comment")}
      className={s.input}
     />
-    <Button variant="outline">{t("Send")}</Button>
+    <Button variant="outlined">{t("Send")}</Button>
    </div>
   );
  }
