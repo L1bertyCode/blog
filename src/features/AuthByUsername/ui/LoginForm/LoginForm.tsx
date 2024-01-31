@@ -108,7 +108,7 @@ const LoginForm = memo((props: LoginFormProps) => {
         />
         <Button
           className={s.loginBtn}
-          variant="outline-inverted"
+          variant="outlined-inverted"
           onClick={onLogin}
           disabled={isLoading}
         >

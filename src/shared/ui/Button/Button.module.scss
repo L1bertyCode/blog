@@ -21,30 +21,30 @@
   color: var(--inverted-text-color);
 }
 
-.outline,
-.outline-inverted,
-.outline-save,
-.outline-red {
+.outlined,
+.outlined-inverted,
+.outlined-save,
+.outlined-red {
   padding: 5px 10px;
   border-radius: var(--b-raduis-s);
 }
 
-.outline {
+.outlined {
   color: var(--text-color);
   border: 2px solid var(--text-color);
 }
 
-.outline-inverted {
+.outlined-inverted {
   color: var(--inverted-text-color);
   border: 2px solid var(--inverted-text-color);
 }
 
-.outline-red {
+.outlined-red {
   color: var(--red-light);
   border: 2px solid var(--red-light);
 }
 
-.outline-save {
+.outlined-save {
   color: var(--save-color);
   border: 2px solid var(--save-color);
 }

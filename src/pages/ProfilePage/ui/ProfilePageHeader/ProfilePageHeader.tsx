@@ -50,14 +50,14 @@ export const ProfilePageHeader = memo(
      <div className={s.editBtns}>
       <Button
        className={s.saveBtn}
-       variant="outline-save"
+       variant="outlined-save"
        onClick={onSaveUpdateProfile}
       >
        {t("Save")}
       </Button>
       <Button
        className={s.editBtn}
-       variant="outline-red"
+       variant="outlined-red"
        onClick={onCancelUpdateProfile}
       >
        {t("Cancel")}

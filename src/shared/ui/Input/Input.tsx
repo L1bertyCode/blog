@@ -42,6 +42,7 @@ export const Input = memo((props: InputProps) => {
   colorType = "primary",
   ...otherProps
  } = props;
+
  const onChangeHandler = (
   e: ChangeEvent<HTMLInputElement>
  ) => {

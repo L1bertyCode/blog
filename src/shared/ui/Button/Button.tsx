@@ -8,9 +8,9 @@ import {
 type ButtonVariant =
  | "clear"
  | "clear-inverted"
- | "outline-save"
- | "outline-red"
- | "outline-inverted"
+ | "outlined-save"
+ | "outlined-red"
+ | "outlined-inverted"
  | "outlined"
  | "filled"
  | "filled-inverted";

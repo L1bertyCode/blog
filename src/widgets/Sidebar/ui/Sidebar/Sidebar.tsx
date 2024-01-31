@@ -54,7 +54,7 @@ export function Sidebar(props: SidebarProps) {
       </div>
       <Button
         data-testid="sidebar-toggle"
-        variant="outline-inverted"
+        variant="outlined-inverted"
         onClick={changeCollapse}
         className={s.btnCollapsed}
       >

@@ -66,7 +66,7 @@ export const ArticleDetailsPage = memo(
       className,
      ])}
     >
-     {/* <ArticleDetails id={id} /> */}
+     <ArticleDetails id={id} />
 
      <AddCommentForm/>
      <Text
