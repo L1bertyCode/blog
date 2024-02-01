@@ -1,4 +1,4 @@
-import { memo, useEffect } from "react";
+import { memo, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
@@ -24,6 +24,7 @@ import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { fetchCommentsByArticleId } from "../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { AddCommentForm } from "@/features/addCommentForm";
+import { addCommetnForArticle } from "../model/services/addCommetnForArticle/addCommetnForArticle";
 
 interface ArticleDetailsPageProps {
  className?: string;
@@ -46,7 +47,12 @@ export const ArticleDetailsPage = memo(
   const commentsError = useSelector(
    getArticleDetailsCommentsError
   );
-
+  const onSendComment = useCallback(
+   (text: string) => {
+    dispatch(addCommetnForArticle(text));
+   },
+   [dispatch]
+  );
   useInitialEffect(() => {
    dispatch(fetchCommentsByArticleId(id));
   });
@@ -68,7 +74,7 @@ export const ArticleDetailsPage = memo(
     >
      <ArticleDetails id={id} />
 
-     <AddCommentForm/>
+     <AddCommentForm onSendComment={onSendComment} />
      <Text
       className={s.commentsTitle}
       title={t("Comments")}

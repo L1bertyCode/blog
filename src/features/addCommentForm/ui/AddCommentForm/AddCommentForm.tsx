@@ -17,10 +17,10 @@ import {
  DynamicModuleLoader,
  ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { sendComment } from "../../model/services/sendComment/sendComment";
 
-interface AddCommentFormProps {
+export interface AddCommentFormProps {
  className?: string;
+ onSendComment: (text: string) => void;
 }
 
 const reducres: ReducersList = {
@@ -29,7 +29,7 @@ const reducres: ReducersList = {
 
 const AddCommentForm = memo(
  (props: AddCommentFormProps) => {
-  const { className } = props;
+  const { className, onSendComment } = props;
   const { t } = useTranslation();
   const text = useSelector(getAddCommentFormText);
   const error = useSelector(getAddCommentFormError);
@@ -41,10 +41,11 @@ const AddCommentForm = memo(
    },
    [dispatch]
   );
+  const onSendHandler = useCallback(() => {
+   onSendComment(text || "");
+   onCommentTextChange("");
+  }, [dispatch, onSendComment, onCommentTextChange, text]);
 
-  const onSendComment = useCallback(() => {
-   dispatch(sendComment());
-  }, [dispatch]);
   return (
    <DynamicModuleLoader reducers={reducres}>
     <div
@@ -58,7 +59,7 @@ const AddCommentForm = memo(
       placeholder={t("Type comment")}
       className={s.input}
      />
-     <Button onClick={onSendComment} variant="outlined">
+     <Button onClick={onSendHandler} variant="outlined">
       {t("Send")}
      </Button>
     </div>
