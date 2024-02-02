@@ -13,7 +13,7 @@ import { RoutePath } from "@/shared/config/routes/routesConfig";
 interface CommentItemProps {
  className?: string;
  isLoading?: boolean;
- commentDetails: Comment;
+ commentDetails?: Comment;
 }
 
 export const CommentItem = memo(
@@ -38,12 +38,17 @@ export const CommentItem = memo(
     </div>
    );
   }
+  if (!commentDetails) {
+   return null;
+  }
   return (
    <div
     className={classNames(s.commentItem, {}, [className])}
    >
     <AppLink
-      to={RoutePath.profile + commentDetails.user.id} className={s.userInfo}>
+     to={RoutePath.profile + commentDetails.user.id}
+     className={s.userInfo}
+    >
      <Avatar className={s.avatar} />
      <Text text={commentDetails?.user.username} />
     </AppLink>

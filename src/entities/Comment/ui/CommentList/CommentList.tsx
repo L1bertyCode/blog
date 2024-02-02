@@ -9,29 +9,39 @@ import { Text } from "@/shared/ui/Text/Text";
 
 interface CommentListProps {
  className?: string;
- comments?: Comment[];
  isLoading?: boolean;
+ comments?: Comment[];
 }
 
 export const CommentList = memo(
  (props: CommentListProps) => {
   const { className, comments, isLoading } = props;
   const { t } = useTranslation();
+  if (isLoading) {
+   return (
+    <div
+     className={classNames(s.commentList, {}, [className])}
+    >
+     <CommentItem isLoading />
+     <CommentItem isLoading />
+     <CommentItem isLoading />
+    </div>
+   );
+  }
+  if (!comments?.length) {
+   return <Text text={t("No comments")} />;
+  }
   return (
    <div
     className={classNames(s.commentList, {}, [className])}
    >
-    {comments?.length ? (
-     comments.map((commentDetails) => (
-      <CommentItem
-       commentDetails={commentDetails as Comment}
-       key={commentDetails.id}
-       isLoading={isLoading}
-      />
-     ))
-    ) : (
-     <Text text={t("No comments")} />
-    )}
+    {comments?.map((commentDetails) => (
+     <CommentItem
+      commentDetails={commentDetails as Comment}
+      key={commentDetails.id}
+      isLoading={isLoading}
+     />
+    ))}
    </div>
   );
  }
