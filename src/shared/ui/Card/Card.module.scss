@@ -1,16 +1,16 @@
 .card {
-  padding: 15px;
-  border-radius: 12px;
+ padding: 15px;
+ border-radius: 12px;
 }
 
-.normal {
-  background: var(--card-bg);
+.clear {
+ background: none;
 }
 
-.outlined {
-  border: 1px solid var(--primary-color);
+.primary {
+ background: var(--inverted-bg-color);
 }
 
-.fullWidth {
-  width: 100%;
+.secondary {
+ background: var(--bg-color);
 }

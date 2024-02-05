@@ -7,6 +7,7 @@ import {
  Article,
  ArticleView,
 } from "../../model/types/article";
+import { ArticlesListItem } from "../ArticlesListItem/ArticlesListItem";
 
 interface ArticlesListProps {
  className?: string;
@@ -24,11 +25,16 @@ export const ArticlesList = memo(
    view = ArticleView.SMALL,
   } = props;
   const { t } = useTranslation();
+  const renderArticle = (article: Article) => (
+   <ArticlesListItem article={article} view={view} />
+  );
   return (
    <div
     className={classNames(s.articlesList, {}, [className])}
    >
-    <div>ArticlesList</div>
+    {articles?.map((articleItem: Article) =>
+     renderArticle(articleItem)
+    )}
    </div>
   );
  }
