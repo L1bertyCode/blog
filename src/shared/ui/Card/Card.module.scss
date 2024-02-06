@@ -1,6 +1,5 @@
 .card {
- padding: 15px;
- border-radius: 12px;
+ width: fit-content;
 }
 
 .clear {
@@ -9,8 +8,46 @@
 
 .primary {
  background: var(--inverted-bg-color);
+ color: var(--bg-color);
 }
 
 .secondary {
  background: var(--bg-color);
+ color: var(--inverted-bg-color);
+}
+
+.gap_0 {
+ padding: 0;
+}
+
+.gap_8 {
+ padding: 12px;
+}
+
+.gap_16 {
+ padding: 16px;
+}
+
+.gap_24 {
+ padding: 24px;
+}
+
+.rad_none {
+ border-radius: none;
+}
+
+.rad_s {
+ border-radius: var(--b-raduis-s);
+}
+
+.rad_m {
+ border-radius: var(--b-raduis-m);
+}
+
+.rad_l {
+ border-radius: var(--b-raduis-l);
+}
+
+.rad_xl {
+ border-radius: var(--b-raduis-xl);
 }

@@ -25,15 +25,19 @@ export const ArticlesList = memo(
    view = ArticleView.SMALL,
   } = props;
   const { t } = useTranslation();
-  const renderArticle = (article: Article) => (
-   <ArticlesListItem article={article} view={view} />
+  const renderArticle = (article: Article, key: string) => (
+   <ArticlesListItem
+    key={key}
+    article={article}
+    view={view}
+   />
   );
   return (
    <div
     className={classNames(s.articlesList, {}, [className])}
    >
-    {articles?.map((articleItem: Article) =>
-     renderArticle(articleItem)
+    {articles?.map((articleItem: Article, i) =>
+     renderArticle(articleItem, articleItem?.title + i)
     )}
    </div>
   );
