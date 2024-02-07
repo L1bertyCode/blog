@@ -11,6 +11,7 @@ import {
 import { Card } from "@/shared/ui/Card/Card";
 import { Icon } from "@/shared/ui/Icon/Icon";
 import { Image } from "@/shared/ui/Image/Image";
+import { Text } from "@/shared/ui/Text/Text";
 
 interface ArticlesListItemProps {
  className?: string;
@@ -44,12 +45,30 @@ export const ArticlesListItem = memo(
      s[view],
     ])}
    >
-    <Image src={article?.img} alt={article?.title} />
-    <div>{article?.title}</div>
-    <div className={s.view}>
-     <Icon Svg={EyeIcon} />
-     {article?.views}
+    <div className={s.imageWrapper}>
+     <Image
+      className={s.img}
+      src={article?.img}
+      alt={article?.title}
+     />
+
+     <Text
+      colorType="error"
+      className={s.createdAt}
+      text={article?.createdAt}
+     />
     </div>
+    <div className={s.info}>
+     <Text
+      className={s.types}
+      text={article?.type.join(", ")}
+     />
+     <div className={s.views}>
+      <Icon Svg={EyeIcon} />
+      <Text text={String(article?.views)} />
+     </div>
+    </div>
+    <Text className={s.title} text={article?.title} />
    </Card>
   );
  }

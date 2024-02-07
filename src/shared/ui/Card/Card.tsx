@@ -25,11 +25,11 @@ const mapPaddingToClass: Record<CardPadding, string> = {
  "24": "gap_24",
 };
 const mapBorderRadiusToClass: Record<CardRadius, string> = {
- none: "rad_none",
- s: "rad_s",
- m: "rad_m",
- l: "rad_l",
- xl: "rad_xl",
+ none: "radius_none",
+ s: "radius_s",
+ m: "radius_m",
+ l: "radius_l",
+ xl: "radius_xl",
 };
 export const Card = (props: CardProps) => {
  const {
@@ -37,7 +37,7 @@ export const Card = (props: CardProps) => {
   children,
   colorType = "primary",
   padding = "8",
-  borderRadius = "s",
+  borderRadius = "m",
   width,
   height,
   ...otherProps

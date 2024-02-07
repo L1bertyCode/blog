@@ -1,7 +1,3 @@
-.card {
- width: fit-content;
-}
-
 .clear {
  background: none;
 }
@@ -32,22 +28,22 @@
  padding: 24px;
 }
 
-.rad_none {
+.radius_none {
  border-radius: none;
 }
 
-.rad_s {
+.radius_s {
  border-radius: var(--b-raduis-s);
 }
 
-.rad_m {
+.radius_m {
  border-radius: var(--b-raduis-m);
 }
 
-.rad_l {
+.radius_l {
  border-radius: var(--b-raduis-l);
 }
 
-.rad_xl {
+.radius_xl {
  border-radius: var(--b-raduis-xl);
 }

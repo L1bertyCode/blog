@@ -3,7 +3,11 @@ import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./Text.module.scss";
-type TextColorType = "primary" | "inverted" | "error";
+type TextColorType =
+ | "primary"
+ | "inverted"
+ | "error"
+ | "accent";
 type TextAlign = "left" | "center" | "right";
 type TextSize = "s" | "m" | "l" | "xl";
 interface TextProps {

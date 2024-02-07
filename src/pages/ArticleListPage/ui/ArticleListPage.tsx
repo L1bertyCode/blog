@@ -11,13 +11,13 @@ interface ArticleListPageProps {
 const articlesList = [
  {
   id: "1",
-  title: "Javascript news ",
+  title: "Javascript news Javascript news ",
   subtitle: "Что нового в JS за 2022 год?",
   img: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
   views: 1022,
   createdAt: "26.04.2022",
   userId: "1",
-  type: ["IT"],
+  type: ["IT", "SCINCE", "IT", "IT", "IT", "IT"],
   blocks: [
    {
     id: "1",
@@ -862,7 +862,7 @@ const articlesList = [
   blocks: [],
   id: "wJnxNrV",
  },
-] as Article  [];
+] as Article[];
 const ArticleListPage = memo(
  (props: ArticleListPageProps) => {
   const { className } = props;
