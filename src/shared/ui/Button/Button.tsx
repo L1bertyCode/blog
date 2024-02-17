@@ -13,7 +13,8 @@ type ButtonVariant =
  | "outlined-inverted"
  | "outlined"
  | "filled"
- | "filled-inverted";
+ | "filled-inverted"
+ | "outlined-accent";
 interface ButtonProps
  extends ButtonHTMLAttributes<HTMLButtonElement> {
  children: ReactNode;

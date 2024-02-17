@@ -48,6 +48,7 @@ export const ArticleDetails = memo(
    }
   }, [dispatch, id]);
   const renderBlock = useCallback((block: ArticleBlock) => {
+    
    switch (block.type) {
     case ArticleBlockType.CODE:
      return (

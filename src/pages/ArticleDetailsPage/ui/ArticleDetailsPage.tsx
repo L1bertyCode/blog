@@ -4,7 +4,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./ArticleDetailsPage.module.scss";
 import { ArticleDetails } from "@/entities/Article";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Text } from "@/shared/ui/Text/Text";
 import { CommentList } from "@/entities/Comment";
 import {
@@ -25,6 +25,8 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { fetchCommentsByArticleId } from "../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { AddCommentForm } from "@/features/addCommentForm";
 import { addCommetnForArticle } from "../model/services/addCommetnForArticle/addCommetnForArticle";
+import { Button } from "@/shared/ui/Button/Button";
+import { RoutePath } from "@/shared/config/routes/routesConfig";
 
 interface ArticleDetailsPageProps {
  className?: string;
@@ -56,6 +58,10 @@ export const ArticleDetailsPage = memo(
   useInitialEffect(() => {
    dispatch(fetchCommentsByArticleId(id));
   });
+  const navigate = useNavigate();
+  const onBackToList = useCallback(() => {
+   navigate(-1);
+  }, [RoutePath.artciles]);
   if (!id) {
    <div
     className={classNames(s.articleDetailsPage, {}, [
@@ -72,6 +78,9 @@ export const ArticleDetailsPage = memo(
       className,
      ])}
     >
+     <Button onClick={onBackToList} variant="outlined">
+      {t("Back to list")}
+     </Button>
      <ArticleDetails id={id} />
 
      <AddCommentForm onSendComment={onSendComment} />

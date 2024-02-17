@@ -9,26 +9,34 @@ import s from "./ArticleTextBlockComponent.module.scss";
 interface ArticleTextBlockComponentProps {
  className?: string;
  block: ArticleTextBlock;
+ colorType?: "primary" | "inverted";
 }
 
 export const ArticleTextBlockComponent = memo(
  (props: ArticleTextBlockComponentProps) => {
-  const { className, block } = props;
+  const { className, block, colorType = "primary" } = props;
   const { t } = useTranslation();
   return (
    <div
-   className={classNames(
-     s.articleTextBlockComponent,
-     {},
-     [className]
-   )}
+    className={classNames(s.articleTextBlockComponent, {}, [
+     className,
+    ])}
    >
     {block.title && (
-     <Text className={s.title} title={block.title} />
+     <Text
+      colorType={colorType}
+      className={s.title}
+      title={block.title}
+     />
     )}
     {block.paragraphs &&
      block.paragraphs.map((p) => (
-      <Text className={s.paragraph} key={p.slice(0, 20)} text={p} />
+      <Text
+       colorType={colorType}
+       className={s.paragraph}
+       key={p.slice(0, 20)}
+       text={p}
+      />
      ))}
    </div>
   );

@@ -15,6 +15,7 @@
   "Avatar": "Avatar",
   "Avatart": "Avatart",
   "Avate": "Avate",
+  "Back to list": "Back to list",
   "C": "C",
   "Cancel": "Cancel",
   "City": "City",
@@ -47,6 +48,26 @@
   "Passord": "Passord",
   "Password": "Password",
   "Profile": "Profile",
+  "Read More": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
+  "Read more": {
+    "": {
+      "": ""
+    }
+  },
+  "Read ore": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
+  "ReadMore": "ReadMore",
   "Refresh the page": "Refresh the page",
   "Sa": "Sa",
   "Save": "Save",
@@ -67,6 +88,14 @@
   "country": "country",
   "currency": "currency",
   "name": "name",
+  "rea": "rea",
+  "read more": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "urrency": "urrency",
   "username": "username",
   "сountry": "сountry"
