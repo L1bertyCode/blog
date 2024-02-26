@@ -47,6 +47,7 @@ export const Card = (props: CardProps) => {
   mapBorderRadiusToClass[borderRadius];
  return (
   <div
+   style={{ width: width, height: height }}
    className={classNames(s.card, {}, [
     className,
     s[colorType],

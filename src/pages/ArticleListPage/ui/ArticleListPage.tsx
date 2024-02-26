@@ -1,9 +1,15 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./ArticleListPage.module.scss";
-import { Article, ArticlesList } from "@/entities/Article";
+import {
+ Article,
+ ArticleView,
+ ArticlesList,
+} from "@/entities/Article";
+import { Button } from "@/shared/ui/Button/Button";
+import { ArticleViewSelector } from "@/features/ArticleViewSelector";
 
 interface ArticleListPageProps {
  className?: string;
@@ -867,13 +873,21 @@ const ArticleListPage = memo(
  (props: ArticleListPageProps) => {
   const { className } = props;
   const { t } = useTranslation();
+  const [view, setView] = useState<ArticleView>(
+   ArticleView.SMALL
+  );
+  const onViewClick = (view: ArticleView) => setView(view);
   return (
    <div
     className={classNames(s.articleListPage, {}, [
      className,
     ])}
    >
-    <ArticlesList articles={articlesList} />
+    <ArticleViewSelector
+     view={view}
+     onViewClick={onViewClick}
+    />
+    <ArticlesList view={view} articles={articlesList} />
    </div>
   );
  }

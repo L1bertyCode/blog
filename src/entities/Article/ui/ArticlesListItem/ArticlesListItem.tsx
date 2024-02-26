@@ -32,6 +32,7 @@ export const ArticlesListItem = memo(
   const { className, article, view } = props;
   const { t } = useTranslation();
   console.log("article?.user", article?.user);
+  
   const navigate = useNavigate();
   const onOpenArticle = useCallback(() => {
    navigate(RoutePath.artciles_details + article?.id);

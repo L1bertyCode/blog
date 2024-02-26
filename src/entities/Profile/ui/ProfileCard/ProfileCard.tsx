@@ -10,7 +10,7 @@ import { Profile } from "../../model/types/profile";
 import { Loader } from "@/shared/ui/Loader/Loader";
 import { useSelector } from "react-redux";
 import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
+
 import img from "@/shared/assets/tests/storybook.jpg";
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import {
@@ -147,11 +147,13 @@ export const ProfileCard = memo(
         value={userChangeData?.currency}
         readOnly={readOnly}
         onChange={onChangeCurrency}
+        className={s.input}
        />
        <CountrySelect
         value={userChangeData?.country}
         readOnly={readOnly}
         onChange={onChangeCountry}
+        className={s.input}
        />
       </div>
      </>

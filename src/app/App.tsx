@@ -5,8 +5,6 @@ import { Suspense, useEffect } from "react";
 import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
 
-import { useTheme } from "@/shared/lib/hooks/useTheme";
-
 import { PageLoader } from "@/widgets/PageLoader";
 import { AppRouter } from "./providers/AppRouter";
 import { useDispatch, useSelector } from "react-redux";
