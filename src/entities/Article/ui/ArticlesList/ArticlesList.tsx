@@ -36,8 +36,8 @@ export const ArticlesList = memo(
    <div
     className={classNames(s.articlesList, {}, [className])}
    >
-    {articles?.map((articleItem: Article, i) =>
-     renderArticle(articleItem, articleItem?.id + i)
+    {articles?.map((articleItem: Article) =>
+     renderArticle(articleItem, articleItem?.id )
     )}
    </div>
   );

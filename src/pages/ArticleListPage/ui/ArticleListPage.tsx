@@ -8,7 +8,7 @@ import {
  ArticleView,
  ArticlesList,
 } from "@/entities/Article";
-import { Button } from "@/shared/ui/Button/Button";
+
 import { ArticleViewSelector } from "@/features/ArticleViewSelector";
 
 interface ArticleListPageProps {
@@ -462,7 +462,7 @@ const articlesList = [
   ],
  },
  {
-  id: "18",
+  id: "19",
   title: "Научная статья - Биология",
   subtitle: "БиологиЯ",
   img: "https://www.science.edu/acellus/wp-content/uploads/2016/12/Biology-Gen-Honors-720x380.jpg",
