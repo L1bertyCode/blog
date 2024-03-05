@@ -8,6 +8,7 @@ import {
  ArticleView,
 } from "../../model/types/article";
 import { ArticlesListItem } from "../ArticlesListItem/ArticlesListItem";
+import { ArticlesListItemSkeleton } from "../ArticlesListItem/ArticlesListItemSkeleton";
 
 interface ArticlesListProps {
  className?: string;
@@ -25,6 +26,20 @@ export const ArticlesList = memo(
    view = ArticleView.SMALL,
   } = props;
   const { t } = useTranslation();
+
+  if (isLoading) {
+   return (
+    <div
+     className={classNames(s.articlesList, {}, [className])}
+    >
+     {new Array(view === ArticleView.SMALL ? 9 : 3)
+      .fill(0)
+      .map((item, i) => (
+       <ArticlesListItemSkeleton key={i} view={view} />
+      ))}
+    </div>
+   );
+  }
   const renderArticle = (article: Article, key: string) => (
    <ArticlesListItem
     key={key}
@@ -37,7 +52,7 @@ export const ArticlesList = memo(
     className={classNames(s.articlesList, {}, [className])}
    >
     {articles?.map((articleItem: Article) =>
-     renderArticle(articleItem, articleItem?.id )
+     renderArticle(articleItem, articleItem?.id)
     )}
    </div>
   );

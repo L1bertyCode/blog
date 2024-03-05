@@ -1,20 +1,13 @@
-import { memo, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib/classNames/classNames";
+import type { Meta, StoryObj } from "@storybook/react";
 
-import s from "./ArticleListPage.module.scss";
+import { ArticlesListItem } from "./ArticlesListItem";
+import { ThemeDecorator } from "@/shared/config/StorybookDecorators";
+import { Theme } from "@/app/providers/ThemeProvider/ui/ThemeProvider";
 import {
  Article,
  ArticleView,
- ArticlesList,
-} from "@/entities/Article";
-
-import { ArticleViewSelector } from "@/features/ArticleViewSelector";
-
-interface ArticleListPageProps {
- className?: string;
-}
-const articles = {
+} from "../../model/types/article";
+const article = {
  id: "1",
  title: "Javascript news Javascript news ",
  subtitle: "Что нового в JS за 2022 год?",
@@ -86,27 +79,62 @@ const articles = {
   },
  ],
 } as Article;
-const ArticleListPage = memo(
- (props: ArticleListPageProps) => {
-  const { className } = props;
-  const { t } = useTranslation();
-  const [view, setView] = useState<ArticleView>(
-   ArticleView.SMALL
-  );
-  const onViewClick = (view: ArticleView) => setView(view);
-  return (
-   <div
-    className={classNames(s.articleListPage, {}, [
-     className,
-    ])}
-   >
-    <ArticleViewSelector
-     view={view}
-     onViewClick={onViewClick}
-    />
-    <ArticlesList view={view} articles={[]} />
-   </div>
-  );
- }
-);
-export default ArticleListPage;
+const meta: Meta<typeof ArticlesListItem> = {
+ component: ArticlesListItem,
+ title: "entties/Articles/ArticlesListItem",
+};
+
+export default meta;
+type Story = StoryObj<typeof ArticlesListItem>;
+export const LightBig: Story = {
+ render: () => (
+  <ArticlesListItem
+   article={article}
+   view={ArticleView.BIG}
+  />
+ ),
+};
+export const DarkBig: Story = {
+ decorators: [ThemeDecorator(Theme.DARK)],
+ render: () => (
+  <ArticlesListItem
+   article={article}
+   view={ArticleView.BIG}
+  />
+ ),
+};
+export const BlueBig: Story = {
+ decorators: [ThemeDecorator(Theme.BLUE)],
+ render: () => (
+  <ArticlesListItem
+   article={article}
+   view={ArticleView.BIG}
+  />
+ ),
+};
+export const LightSmall: Story = {
+ render: () => (
+  <ArticlesListItem
+   article={article}
+   view={ArticleView.SMALL}
+  />
+ ),
+};
+export const DarkSmall: Story = {
+ decorators: [ThemeDecorator(Theme.DARK)],
+ render: () => (
+  <ArticlesListItem
+   article={article}
+   view={ArticleView.SMALL}
+  />
+ ),
+};
+export const BlueSmall: Story = {
+ decorators: [ThemeDecorator(Theme.BLUE)],
+ render: () => (
+  <ArticlesListItem
+   article={article}
+   view={ArticleView.SMALL}
+  />
+ ),
+};

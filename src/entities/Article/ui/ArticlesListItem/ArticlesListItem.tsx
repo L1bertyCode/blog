@@ -23,7 +23,6 @@ import { RoutePath } from "@/shared/config/routes/routesConfig";
 interface ArticlesListItemProps {
  className?: string;
  article?: Article;
- isLoading?: boolean;
  view: ArticleView;
 }
 

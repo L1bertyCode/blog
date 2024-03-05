@@ -43,17 +43,16 @@
    display: block;
    transition-delay: var(--transition-delay);
   }
+
   .imageWrapper {
    &::after {
     content: "";
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    inset: 0;
     background: var(--inverted-bg-color);
     opacity: var(--opacity50);
    }
+
    .btn {
     display: block;
    }
@@ -80,12 +79,14 @@
   align-items: center;
  }
 
- .title p {
+ .title {
   margin-top: 8px;
-  width: 170px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  p {
+   width: 170px;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+  }
  }
 }
 
@@ -96,6 +97,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 12px;
 
   .user {
    display: flex;
