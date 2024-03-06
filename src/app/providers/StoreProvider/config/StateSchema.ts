@@ -6,6 +6,7 @@ import { LoginSchema } from "@/features/AuthByUsername";
 import { AddCommentFormSchema } from "@/features/addCommentForm";
 
 import { ArticleDetailsCommentsSchema } from "@/pages/ArticleDetailsPage";
+import { ArticleListPageSchema } from "@/pages/ArticleListPage";
 import {
  EnhancedStore,
  Reducer,
@@ -23,6 +24,7 @@ export interface StateSchema {
  articleDetails?: ArticleDetailsSchema;
  articleDetailsComments?: ArticleDetailsCommentsSchema;
  addCommentForm?: AddCommentFormSchema;
+ articleListPage?: ArticleListPageSchema;
 }
 export type StateSchemaKey = keyof StateSchema;
 
