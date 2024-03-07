@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { Modal } from "@/shared/ui/Modal/Modal";
+
 import { classNames } from "@/shared/lib/classNames/classNames";
 import s from "./Navbar.module.scss";
 import { Button } from "@/shared/ui/Button/Button";

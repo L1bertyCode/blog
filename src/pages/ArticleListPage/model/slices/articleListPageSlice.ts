@@ -7,6 +7,7 @@ import {
  createSlice,
 } from "@reduxjs/toolkit";
 import { ArticleListPageSchema } from "../types/articleListPageSchema";
+import { fetchArticleList } from "../services/fetchArticleList/fetchArticleList";
 
 const articlesAdapter = createEntityAdapter<
  Article,
@@ -14,7 +15,7 @@ const articlesAdapter = createEntityAdapter<
 >({
  selectId: (article: Article) => article.id,
 });
-export const getArticleList =
+export const getArticlesList =
  articlesAdapter.getSelectors<StateSchema>(
   (state) =>
    state.articleListPage ||
@@ -29,10 +30,26 @@ export const articleListPageSlice = createSlice({
    entities: {},
    view: ArticleView.SMALL,
   }),
- reducers: {
-  setView: (state, action: PayloadAction<ArticleView>) => {
-   state.view = action.payload;
-  },
+ reducers: {},
+ extraReducers: (builder) => {
+  builder.addCase(fetchArticleList.pending, (state) => {
+   state.error = undefined;
+   state.isLoading = true;
+  });
+  builder.addCase(
+   fetchArticleList.rejected,
+   (state, action) => {
+    state.isLoading = false;
+    state.error = action.payload;
+   }
+  );
+  builder.addCase(
+   fetchArticleList.fulfilled,
+   (state, action: PayloadAction<Article[]>) => {
+    state.isLoading = false;
+    articlesAdapter.setAll(state, action.payload);
+   }
+  );
  },
 });
 export const {

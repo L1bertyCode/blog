@@ -28,9 +28,7 @@ const articleDetailsCommentsSlice = createSlice({
    {
     isLoading: false,
     ids: [],
-    entities: {
-   
-    },
+    entities: {},
    }
   ),
  reducers: {},
@@ -58,7 +56,7 @@ const articleDetailsCommentsSlice = createSlice({
   );
  },
 });
-export const { reducer: articleDetailsCommentsReducer } =
- articleDetailsCommentsSlice;
-export const { actions: articleDetailsCommentsActions } =
- articleDetailsCommentsSlice;
+export const {
+ reducer: articleDetailsCommentsReducer,
+ actions: articleDetailsCommentsActions,
+} = articleDetailsCommentsSlice;

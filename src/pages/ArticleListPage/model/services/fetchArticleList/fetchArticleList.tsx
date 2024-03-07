@@ -8,7 +8,7 @@ export const fetchArticleList = createAsyncThunk<
  { rejectValue: string; extra: ThunkExtraArgs }
 >(
  "articleListPage/fetchArticleList",
- async (articleId, thunkAPI) => {
+ async (_, thunkAPI) => {
   try {
    const response = await thunkAPI.extra.api.get<Article[]>(
     `/articles`,
