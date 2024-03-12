@@ -6,5 +6,6 @@ export function buildDevServer(
  return {
   port,
   open: true,
+  historyApiFallback: true,
  };
 }

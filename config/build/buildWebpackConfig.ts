@@ -20,7 +20,7 @@ export function buildWebpackConfig({
    clean: true,
   },
   module: {
-   rules: buildLoaders(),
+   rules: buildLoaders(isDev),
   },
   plugins: buildPlugins(paths),
   resolve: buildResolvers(),

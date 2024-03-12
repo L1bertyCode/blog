@@ -9,7 +9,7 @@ export default (env: BuildEnv) => {
  const paths = {
   template: path.resolve(__dirname, "public", "index.html"),
   favicon: path.resolve(__dirname, "public", "favicon.ico"),
-  entry: path.resolve(__dirname, "src", "index.ts"),
+  entry: path.resolve(__dirname, "src", "index.tsx"),
   output: path.resolve(__dirname, "dist"),
  };
  const PORT = env.port || 5050;
