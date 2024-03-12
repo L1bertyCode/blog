@@ -1,4 +1,5 @@
 import { RuleSetRule } from "webpack";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export function buildLoaders(
  isDev: boolean
@@ -11,14 +12,14 @@ export function buildLoaders(
  const scssLoader = {
   test: /\.s[ac]ss$/i,
   use: [
-   "style-loader",
+   isDev ? "style-loader" : MiniCssExtractPlugin.loader,
    {
     loader: "css-loader",
     options: {
      modules: {
       auto: /\.module\.\w+$/i,
       localIdentName: isDev
-       ? "[path][name]__[local]--[hash:base64:8]"
+       ? "[path][name]__[local]--[hash:base64:5]"
        : "[hash:base64:8]",
      },
     },
