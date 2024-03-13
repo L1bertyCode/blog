@@ -1,7 +1,17 @@
-* {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
+@import "./reset";
+@import "./variables";
+@import "./themes/dark";
+@import "./themes/light";
+html,
+body {
+ width: 100%;
+ min-height: 100vh;
 }
-// .app {
-// }
+
+.app {
+ min-height: 100vh;
+
+ font: var(--font-m);
+ background: var(--bg-color);
+ color: var(--primary-color);
+}
