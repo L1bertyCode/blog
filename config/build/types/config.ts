@@ -10,6 +10,7 @@ export interface BuildPaths {
  favicon: string;
  entry: string;
  output: string;
+ src: string;
 }
 
 export interface BuildOptions {
