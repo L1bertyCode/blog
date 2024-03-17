@@ -12,12 +12,15 @@ import {
 } from "@/shared/context/ThemeContext";
 import { LOCAL_STORAGE_THEME_KEY } from "@/shared/const/const";
 import { useTheme } from "@/shared/hooks/useTheme";
+import { classNames } from "@/shared/hooks/classNames";
 
 export function App() {
  const { theme, toggleTheme } = useTheme();
 
  return (
-  <div className={`app app_${theme}_theme`}>
+  <div
+   className={classNames("app", {}, [`app_${theme}_theme`])}
+  >
    <Link to="/">MainPage</Link>
    <Link to="/articles">Articles</Link>
 
