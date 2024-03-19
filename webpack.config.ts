@@ -13,7 +13,7 @@ export default (env: BuildEnv) => {
   output: path.resolve(__dirname, "dist"),
   src: path.resolve(__dirname, "src"),
  };
- const PORT = env.port || 5050;
+ const PORT = env.port || 5040;
  const config: Configuration = buildWebpackConfig({
   mode,
   paths,

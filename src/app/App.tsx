@@ -12,7 +12,9 @@ import {
 } from "@/shared/context/ThemeContext";
 import { LOCAL_STORAGE_THEME_KEY } from "@/shared/const/const";
 import { useTheme } from "@/shared/hooks/useTheme";
-import { classNames } from "@/shared/hooks/classNames";
+import { classNames } from "@/shared/lib/classNames";
+import { AppRouter } from "./providers/router";
+import { Navbar } from "@/widjets/Navbar";
 
 export function App() {
  const { theme, toggleTheme } = useTheme();
@@ -21,19 +23,10 @@ export function App() {
   <div
    className={classNames("app", {}, [`app_${theme}_theme`])}
   >
-   <Link to="/">MainPage</Link>
-   <Link to="/articles">Articles</Link>
-
-   <Suspense fallback={<div>Loading...</div>}>
-    <Routes>
-     <Route path="/" element={<MainPage />} />
-     <Route
-      path="/articles"
-      element={<ArticlesListPage />}
-     />
-     <Route path="*" element={<NotFoundPage />} />
-    </Routes>
-   </Suspense>
+   <div className="mainLayout">
+    <Navbar />
+    <AppRouter />
+   </div>
    <button onClick={toggleTheme}>change theme</button>
   </div>
  );

@@ -1,8 +1,8 @@
 type Mods = Record<string, string | boolean | undefined>;
 export const classNames = (
  str: string,
- mods: Mods,
- additional: Array<string>
+ mods: Mods = {},
+ additional: Array<string | undefined> = []
 ): string => {
  return [
   str,

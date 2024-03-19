@@ -10,5 +10,7 @@ export function buildResolvers(
    "@": paths.src,
   },
   preferAbsolute: true,
+  modules: [paths.src, "node_modules"],
+  mainFiles: ["index"],
  };
 }
