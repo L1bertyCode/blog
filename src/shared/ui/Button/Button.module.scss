@@ -1,5 +1,8 @@
 .button {
  cursor: pointer;
+ :hover {
+  opacity: var(--opacity-50);
+ }
 }
 .clear {
  margin: 0;
@@ -7,4 +10,10 @@
  background: none;
  outline: none;
  border: none;
+}
+.outlined {
+ background: none;
+ outline: none;
+ padding: 4px 8px;
+ border-radius: 10px;
 }

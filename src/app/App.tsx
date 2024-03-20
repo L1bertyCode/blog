@@ -16,23 +16,18 @@ import { classNames } from "@/shared/lib/classNames";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "@/widjets/Navbar";
 import { ThemeSwitcher } from "@/widjets/ThemeSwitcher";
+import { MainLayout } from "@/shared/layouts/MainLayout";
+import { Sidebar } from "@/widjets/Sidebar";
 
 export function App() {
- const { theme, toggleTheme } = useTheme();
+ const { theme } = useTheme();
 
  return (
-  <div
+  <MainLayout
    className={classNames("app", {}, [`app_${theme}_theme`])}
-  >
-   <div className="mainLayout">
-    <Navbar />
-    <AppRouter />
-   </div>
-   <div
-   //  className={s.switchers}
-   >
-    <ThemeSwitcher />
-   </div>
-  </div>
+   header={<Navbar />}
+   sidebar={<Sidebar />}
+   main={<AppRouter />}
+  />
  );
 }
