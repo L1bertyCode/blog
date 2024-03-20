@@ -15,6 +15,7 @@ import { useTheme } from "@/shared/hooks/useTheme";
 import { classNames } from "@/shared/lib/classNames";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "@/widjets/Navbar";
+import { ThemeSwitcher } from "@/widjets/ThemeSwitcher";
 
 export function App() {
  const { theme, toggleTheme } = useTheme();
@@ -27,7 +28,11 @@ export function App() {
     <Navbar />
     <AppRouter />
    </div>
-   <button onClick={toggleTheme}>change theme</button>
+   <div
+   //  className={s.switchers}
+   >
+    <ThemeSwitcher />
+   </div>
   </div>
  );
 }
