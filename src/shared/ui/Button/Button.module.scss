@@ -1,5 +1,6 @@
 .button {
  cursor: pointer;
+ color: var(--bg-color);
  &:hover {
   opacity: var(--opacity-50);
  }
