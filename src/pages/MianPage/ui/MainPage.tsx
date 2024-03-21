@@ -1,5 +1,6 @@
+import { Page } from "@/shared/layouts/Page";
 import { memo } from "react";
-
+import s from "./MainPage.module.scss";
 interface MainPageProps {
  className?: string;
 }
@@ -7,9 +8,9 @@ interface MainPageProps {
 const MainPage = memo((props: MainPageProps) => {
  const { className } = props;
  return (
-  <div>
+  <Page className={s.mainPage}>
    <div>MainPage</div>
-  </div>
+  </Page>
  );
 });
 export default MainPage;

@@ -1,3 +1,4 @@
+import { Page } from "@/shared/layouts/Page";
 import { memo } from "react";
 
 interface ArticlesListPageProps {
@@ -8,9 +9,9 @@ const ArticlesListPage = memo(
  (props: ArticlesListPageProps) => {
   const { className } = props;
   return (
-   <div>
+   <Page>
     <div>ArticlesListPage</div>
-   </div>
+   </Page>
   );
  }
 );

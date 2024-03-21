@@ -1,3 +1,4 @@
+import { Page } from "@/shared/layouts/Page";
 import { memo } from "react";
 
 interface NotFoundPageProps {
@@ -7,9 +8,9 @@ interface NotFoundPageProps {
 const NotFoundPage = memo((props: NotFoundPageProps) => {
  const { className } = props;
  return (
-  <div>
+  <Page>
    <div>NotFoundPage</div>
-  </div>
+  </Page>
  );
 });
 export default NotFoundPage;
