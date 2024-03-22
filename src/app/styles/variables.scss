@@ -1,32 +1,32 @@
 :root {
- //Sizes
+ // Sizes
  --navbar-height: 80px;
  --sidebar-width: 300px;
  --sidebar-width-collapsed: 80px;
 
- //Opacity
+ // Opacity
  --opacity-70: 0.7;
  --opacity-50: 0.5;
 
- //Transition
+ // Transition
  --transition-delay: 0.3s;
 
- //Font
- --font-family-main: Consolas, "Times New Roman", Serif;
+ // Font
+ --font-family-main: consolas, "Times New Roman", serif;
 
- //m
+ // m
  --font-size-m: 16px;
  --font-line-m: 24px;
  --font-m: var(--font-size-m) / var(--font-line-m)
   var(--font-family-main);
 
- //l
+ // l
  --font-size-l: 24px;
  --font-line-l: 32px;
  --font-l: var(--font-size-l) / var(--font-line-l)
   var(--font-family-main);
 
- //xl
+ // xl
  --font-size-xl: 32px;
  --font-line-xl: 40px;
  --font-xl: var(--font-size-xl) / var(--font-line-xl)

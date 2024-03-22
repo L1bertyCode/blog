@@ -8,7 +8,7 @@ export const classNames = (
   str,
   ...additional,
   ...Object.entries(mods)
-   .filter(([keyCls, valueCls]) => Boolean(valueCls))
-   .map(([keyCls, valueCls]) => keyCls),
+   .filter(([_, valueCls]) => Boolean(valueCls))
+   .map(([keyCls, _]) => keyCls),
  ].join(" ");
 };

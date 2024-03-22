@@ -1,5 +1,7 @@
 import { Page } from "@/shared/layouts/Page";
+import { classNames } from "@/shared/lib/classNames";
 import { memo } from "react";
+import { useTranslation } from "react-i18next";
 
 interface NotFoundPageProps {
  className?: string;
@@ -7,9 +9,10 @@ interface NotFoundPageProps {
 
 const NotFoundPage = memo((props: NotFoundPageProps) => {
  const { className } = props;
+ const { t } = useTranslation();
  return (
-  <Page>
-   <div>NotFoundPage</div>
+  <Page className={classNames("", {}, [className])}>
+   <div>{t("PageNotFound")}</div>
   </Page>
  );
 });

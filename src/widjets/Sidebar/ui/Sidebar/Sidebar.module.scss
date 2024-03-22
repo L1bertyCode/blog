@@ -8,9 +8,11 @@
  position: relative;
  transition: width var(--transition-delay) ease-in-out;
 }
+
 .collapsed {
  width: var(--sidebar-width-collapsed);
 }
+
 .switcher {
  position: absolute;
  bottom: 20px;
@@ -18,6 +20,7 @@
  flex-direction: column;
  gap: 12px;
 }
+
 .collapsedBtn {
  position: absolute;
  top: 50%;

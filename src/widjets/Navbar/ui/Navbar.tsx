@@ -2,8 +2,9 @@ import { memo } from "react";
 
 import s from "./Navbar.module.scss";
 import { classNames } from "@/shared/lib/classNames";
-import { Link } from "react-router-dom";
+
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
+import { useTranslation } from "react-i18next";
 
 interface NavbarProps {
  className?: string;
@@ -11,12 +12,13 @@ interface NavbarProps {
 
 export const Navbar = memo((props: NavbarProps) => {
  const { className } = props;
+ const { t } = useTranslation();
  return (
   <div className={classNames(s.navbar, {}, [className])}>
-   <AppLink to="/">Logo</AppLink>
+   <AppLink to="/">+</AppLink>
    <div>
-    <AppLink to="/">MainPage</AppLink>
-    <AppLink to="/articles">Articles</AppLink>
+    <AppLink to="/">{t("Main")}</AppLink>
+    <AppLink to="/articles">{t("Articles")}</AppLink>
    </div>
   </div>
  );

@@ -9,11 +9,12 @@ interface MainLayoutProps {
  header?: ReactNode;
  sidebar?: ReactNode;
  main?: ReactNode;
- bar?: ReactNode;
+ rightbar?: ReactNode;
 }
 
 export const MainLayout = memo((props: MainLayoutProps) => {
- const { header, sidebar, main, bar, className } = props;
+ const { header, sidebar, main, rightbar, className } =
+  props;
  return (
   <div
    className={classNames(s.mainLayout, {}, [className])}
@@ -22,6 +23,7 @@ export const MainLayout = memo((props: MainLayoutProps) => {
    <div className={s.content}>
     <>{sidebar}</>
     <main>{main}</main>
+    <>{rightbar ? rightbar : null}</>
    </div>
   </div>
  );

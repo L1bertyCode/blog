@@ -16,6 +16,22 @@ export function buildLoaders(
    },
   ],
  };
+ const babelLoader = {
+  test: /\.(js|jsx|ts|tsx)$/,
+  exclude: /node_modules/,
+  use: {
+   loader: "babel-loader",
+   options: {
+    presets: ["@babel/preset-env"],
+    plugins: [
+     [
+      "i18next-extract",
+      { keyAsDefaultValue: true, locales: ["en", "ru"] },
+     ],
+    ],
+   },
+  },
+ };
  const tsLoader = {
   test: /\.tsx?$/,
   use: "ts-loader",
@@ -36,9 +52,14 @@ export function buildLoaders(
      },
     },
    },
-   ,
    "sass-loader",
   ],
  };
- return [tsLoader, scssLoader, svgrLoader, fileLoader];
+ return [
+  babelLoader,
+  tsLoader,
+  scssLoader,
+  svgrLoader,
+  fileLoader,
+ ];
 }

@@ -2,9 +2,11 @@ header {
  width: 100%;
  height: var(--navbar-height);
 }
+
 .content {
  display: flex;
 }
+
 main {
  flex-grow: 1;
 }
