@@ -1,18 +1,12 @@
 import { routeConfig } from "@/shared/config/routeConfig/routeConfig";
-import { Page } from "@/shared/layouts/Page";
+
+import { PageWiithLoader } from "@/widjets/PageWiithLoader/ui/PageWiithLoader";
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
-interface AppRouterProps {
- className?: string;
-}
-
-export const AppRouter = (props: AppRouterProps) => {
- const { className } = props;
+export const AppRouter = () => {
  return (
-  <Suspense
-   fallback={<Page className={className}>Loading...</Page>}
-  >
+  <Suspense fallback={<PageWiithLoader />}>
    <Routes>
     {Object.values(routeConfig).map(({ element, path }) => (
      <Route key={path} path={path} element={element} />

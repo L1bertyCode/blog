@@ -1,6 +1,7 @@
 {
- "Lang": "En",
- "Main": "Main",
- "Articles": "Articles",
- "PageNotFound": "Page not found"
+  "Lang": "En",
+  "Main": "Main",
+  "Articles": "Articles",
+  "PageNotFound": "Page not found",
+  "Loading": "Loading"
 }
