@@ -1,5 +1,5 @@
 import { useTheme } from "@/shared/hooks/useTheme";
-import { classNames } from "@/shared/lib/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "@/widjets/Navbar";
 

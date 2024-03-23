@@ -1,6 +1,6 @@
 import { ReactNode, memo } from "react";
 
-import { classNames } from "@/shared/lib/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./AppLink.module.scss";
 import { Link, LinkProps } from "react-router-dom";

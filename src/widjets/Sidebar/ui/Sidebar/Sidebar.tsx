@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
 
-import { classNames } from "@/shared/lib/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./Sidebar.module.scss";
 import { ThemeSwitcher } from "@/widjets/ThemeSwitcher";

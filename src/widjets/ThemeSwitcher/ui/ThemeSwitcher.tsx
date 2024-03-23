@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import { classNames } from "@/shared/lib/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import ThemeIcon from "@/shared/assets/theme.svg";
 import s from "./ThemeSwitcher.module.scss";
 import { useTheme } from "@/shared/hooks/useTheme";

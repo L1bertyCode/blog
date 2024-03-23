@@ -1,6 +1,6 @@
 import { ReactNode, memo } from "react";
 
-import { classNames } from "@/shared/lib/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./Page.module.scss";
 

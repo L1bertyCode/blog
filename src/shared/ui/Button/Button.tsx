@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
-import { classNames } from "@/shared/lib/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./Button.module.scss";
 type ButtonVariant = "clear" | "filled" | "outlined";
