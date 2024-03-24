@@ -12,7 +12,7 @@ export const useTheme = (): UseThemeResult => {
  const { theme, setTheme } = useContext(ThemeContext);
 
  const toggleTheme = () => {
-  let newTheme;
+  let newTheme = Theme.DARK;
   switch (theme) {
    case Theme.LIGHT:
     newTheme = Theme.DARK;
@@ -25,6 +25,7 @@ export const useTheme = (): UseThemeResult => {
   }
   setTheme?.(newTheme);
   localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+  document.body.className = newTheme;
  };
  return {
   theme: theme || Theme.DARK,

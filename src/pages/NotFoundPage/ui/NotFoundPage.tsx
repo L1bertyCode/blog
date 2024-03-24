@@ -14,7 +14,7 @@ const NotFoundPage = memo((props: NotFoundPageProps) => {
   <Page
    className={classNames(s.notFoundPage, {}, [className])}
   >
-   <div>{t("PageNotFound")}</div>
+   <div>{t("Page Not Found")}</div>
   </Page>
  );
 });

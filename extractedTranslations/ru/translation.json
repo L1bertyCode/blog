@@ -1,7 +1,15 @@
 {
+  "": "",
+  "An unexpected error occurred": "An unexpected error occurred",
   "Articles": "Articles",
+  "ErrorBoundary": "ErrorBoundary",
   "Lang": "Lang",
   "Loading": "Loading",
   "Main": "Main",
-  "PageNotFound": "PageNotFound"
+  "Page Not Found": "Page Not Found",
+  "Page NotFound": "Page NotFound",
+  "PageNotFound": "PageNotFound",
+  "Reload": "Reload",
+  "Reload ": "Reload ",
+  "Reload page": "Reload page"
 }

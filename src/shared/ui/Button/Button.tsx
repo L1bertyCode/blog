@@ -3,7 +3,11 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./Button.module.scss";
-type ButtonVariant = "clear" | "filled" | "outlined";
+type ButtonVariant =
+ | "clear"
+ | "filled"
+ | "outlined"
+ | "outlined-inverted";
 interface ButtonProps
  extends ButtonHTMLAttributes<HTMLButtonElement> {
  children: ReactNode;

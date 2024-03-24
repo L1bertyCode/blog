@@ -20,4 +20,14 @@
  outline: none;
  padding: 4px 8px;
  border-radius: 10px;
+ border: 1px solid var(--bg-color);
+}
+
+.outlined-inverted {
+ background: none;
+ outline: none;
+ padding: 4px 8px;
+ border-radius: 10px;
+ border: 1px solid var(--inverted-bg-color);
+ color: var(--inverted-bg-color);
 }

@@ -2,6 +2,8 @@
   "Lang": "Ру",
   "Main": "Главная",
   "Articles": "Статьи",
-  "PageNotFound": "Страница не найдена",
-  "Loading": "Загрузка"
+  "Page Not Found": "Страница не найдена",
+  "Loading": "Загрузка",
+  "An unexpected error occurred": "Произошла непредвиденная ошибка",
+  "Reload page": "Перезагрузить страницу"
 }
