@@ -11,8 +11,17 @@ const config: Config = {
  // The test environment that will be used for testing
  testEnvironment: "jsdom",
  // An array of regexp pattern strings used to skip coverage collection
- coveragePathIgnorePatterns: ["\\\\node_modules\\\\"], // An array of directory names to be searched recursively up from the requiring module's location
+ coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
+ // The root directory that Jest should scan for tests and modules within
+ rootDir: "../../",
+ // An array of directory names to be searched recursively up from the requiring module's location
  moduleDirectories: ["node_modules"],
+ modulePaths: ["<rootDir>src"],
+ // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
+ moduleNameMapper: {
+  "\\.(css|scss|less|sass)$": "identity-obj-proxy",
+  "^@/(.*)$": "<rootDir>/src/$1",
+ },
 
  // An array of file extensions your modules use
  moduleFileExtensions: [
@@ -25,10 +34,10 @@ const config: Config = {
   "json",
   "node",
  ],
- // The root directory that Jest should scan for tests and modules within
- rootDir: "../../",
+
  // The glob patterns Jest uses to detect test files
  testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
+ setupFilesAfterEnv: ["<rootDir>config/jest/setupTest.ts"],
 
  // All imported modules in your tests should be mocked automaticallyS
  // automock: false,
@@ -87,9 +96,6 @@ const config: Config = {
 
  // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
  // maxWorkers: "50%",
-
- // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
- // moduleNameMapper: {},
 
  // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
  // modulePathIgnorePatterns: [],
