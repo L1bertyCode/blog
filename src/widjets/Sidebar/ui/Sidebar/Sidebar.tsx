@@ -17,9 +17,11 @@ export const Sidebar = memo((props: SidebarProps) => {
  const [collapsed, setCollapsed] = useState(false);
  const { className } = props;
  const { t } = useTranslation();
-
+ const toggle = async () =>
+  setCollapsed((prevState) => !prevState);
  return (
   <div
+   data-testid="sidebar"
    className={classNames(
     s.sidebar,
     { [s.collapsed]: collapsed },
@@ -30,7 +32,7 @@ export const Sidebar = memo((props: SidebarProps) => {
    <AppLink to="/articles">{t("Articles")}</AppLink>
    <Button
     className={s.collapsedBtn}
-    onClick={() => setCollapsed((prevState) => !prevState)}
+    onClick={toggle}
     variant="outlined"
    >
     {collapsed ? ">" : "<"}
