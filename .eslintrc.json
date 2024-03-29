@@ -16,25 +16,12 @@
   "ecmaVersion": "latest",
   "sourceType": "module"
  },
- "plugins": [
-  "react",
-  "@typescript-eslint",
-  "i18next"
- ],
+ "plugins": ["react", "@typescript-eslint", "i18next"],
  "rules": {
   "indent": "off",
-  "linebreak-style": [
-   "error",
-   "windows"
-  ],
-  "quotes": [
-   "error",
-   "double"
-  ],
-  "semi": [
-   "error",
-   "always"
-  ],
+  "linebreak-style": "off",
+  "quotes": ["error", "double"],
+  "semi": ["error", "always"],
   "react/display-name": "off",
   "@typescript-eslint/no-unused-vars": [
    "warn",
@@ -62,9 +49,7 @@
  },
  "overrides": [
   {
-   "files": [
-    "**/src/**/*.test.{ts,tsx}"
-   ],
+   "files": ["**/src/**/*.test.{ts,tsx}"],
    "rules": {
     "i18next/no-literal-string": "off"
    }

@@ -1,4 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
+import path from "path";
+import { BuildPaths } from "../build/types/config";
 
 const config: StorybookConfig = {
  stories: [
@@ -20,6 +22,35 @@ const config: StorybookConfig = {
  docs: {
   autodocs: "tag",
  },
- webpackFinal
+ webpackFinal: async (config) => {
+  const paths: BuildPaths = {
+   template: "",
+   favicon: "",
+   entry: "",
+   output: "",
+   src: path.resolve(__dirname, "..", "..", "src"),
+  };
+  config!.resolve!.modules?.push(paths.src);
+  config!.resolve!.alias = {
+   "@": paths.src,
+  };
+  config!.resolve!.extensions = [".tsx", ".ts", ".js"];
+  config!.module!.rules!.push({
+   test: /\.s[ac]ss$/i,
+   use: [
+    {
+     loader: "css-loader",
+     options: {
+      modules: {
+       auto: /\.module\.\w+$/i,
+       localIdentName: "[hash:base64:8]",
+      },
+     },
+    },
+    "sass-loader",
+   ],
+  });
+  return config;
+ },
 };
 export default config;
