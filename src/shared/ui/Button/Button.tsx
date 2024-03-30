@@ -5,7 +5,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import s from "./Button.module.scss";
 type ButtonVariant =
  | "clear"
- | "filled"
+//  | "filled"
  | "outlined"
  | "outlined-inverted";
 interface ButtonProps

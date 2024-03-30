@@ -1,6 +1,7 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
 import path from "path";
 import { BuildPaths } from "../build/types/config";
+import { buildScssLoader } from "../build/loaders/buildScssLoader";
 
 const config: StorybookConfig = {
  stories: [
@@ -22,6 +23,15 @@ const config: StorybookConfig = {
  docs: {
   autodocs: "tag",
  },
+ swc: () => ({
+  jsc: {
+   transform: {
+    react: {
+     runtime: "automatic",
+    },
+   },
+  },
+ }),
  webpackFinal: async (config) => {
   const paths: BuildPaths = {
    template: "",
@@ -35,21 +45,7 @@ const config: StorybookConfig = {
    "@": paths.src,
   };
   config!.resolve!.extensions = [".tsx", ".ts", ".js"];
-  config!.module!.rules!.push({
-   test: /\.s[ac]ss$/i,
-   use: [
-    {
-     loader: "css-loader",
-     options: {
-      modules: {
-       auto: /\.module\.\w+$/i,
-       localIdentName: "[hash:base64:8]",
-      },
-     },
-    },
-    "sass-loader",
-   ],
-  });
+  config!.module!.rules!.push(buildScssLoader(true));
   return config;
  },
 };
