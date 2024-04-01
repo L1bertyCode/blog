@@ -5,6 +5,7 @@ import { Navbar } from "@/widjets/Navbar";
 
 import { MainLayout } from "@/shared/layouts/MainLayout";
 import { Sidebar } from "@/widjets/Sidebar";
+import "./app/styles/index.scss";
 
 export function App() {
  const { theme } = useTheme();

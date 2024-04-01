@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Button } from "./Button";
-import "@/app/styles/index.scss";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/shared/context/ThemeContext";
+
 const meta = {
  title: "shared/Button",
  component: Button,
@@ -34,4 +36,5 @@ export const OutlinedInverted: Story = {
   children: "Button",
   variant: "outlined-inverted",
  },
+ decorators: [ThemeDecorator(Theme.DARK)],
 };
