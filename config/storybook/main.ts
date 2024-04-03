@@ -2,6 +2,7 @@ import type { StorybookConfig } from "@storybook/react-webpack5";
 import path from "path";
 import { BuildPaths } from "../build/types/config";
 import { buildScssLoader } from "../build/loaders/buildScssLoader";
+import { RuleSetRule } from "webpack";
 
 const config: StorybookConfig = {
  stories: [
@@ -46,6 +47,13 @@ const config: StorybookConfig = {
   };
   config!.resolve!.extensions = [".tsx", ".ts", ".js"];
   config!.module!.rules!.push(buildScssLoader(true));
+  // config!.module!.rules = config!.module!.rules!.map(
+  //  (rule: RuleSetRule) => {
+  //   if (/svg/.test(rule.test)) {
+  //    return { ...rule, exclude: /\.svg$/i };
+  //   }
+  //  }
+  // );
   return config;
  },
 };

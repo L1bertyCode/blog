@@ -7,9 +7,7 @@ import { Theme } from "@/shared/context/ThemeContext";
 const meta = {
  title: "shared/Button",
  component: Button,
- parameters: {
-  layout: "centered",
- },
+ parameters: {},
  tags: ["autodocs"],
  argTypes: {},
  args: { onClick: fn() },
@@ -24,16 +22,12 @@ export const Clear: Story = {
   variant: "clear",
  },
 };
-export const ClearInverted: Story = {
+export const ClearDark: Story = {
  args: {
   children: "Button",
-  variant: "clear-inverted",
+  variant: "clear",
  },
- render: () => (
-  <div style={{ background: "lightgray" }}>
-   <Button variant="clear-inverted">{"Button"}</Button>
-  </div>
- ),
+ decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const Outlined: Story = {
@@ -42,14 +36,10 @@ export const Outlined: Story = {
   variant: "outlined",
  },
 };
-export const OutlinedInverted: Story = {
+export const OutlinedDark: Story = {
  args: {
   children: "Button",
-  variant: "outlined-inverted",
+  variant: "outlined",
  },
- render: () => (
-  <div style={{ background: "lightgray" }}>
-   <Button variant="outlined-inverted">{"Button"}</Button>
-  </div>
- ),
+ decorators: [ThemeDecorator(Theme.DARK)],
 };
