@@ -24,6 +24,17 @@ export const Clear: Story = {
   variant: "clear",
  },
 };
+export const ClearInverted: Story = {
+ args: {
+  children: "Button",
+  variant: "clear-inverted",
+ },
+ render: () => (
+  <div style={{ background: "lightgray" }}>
+   <Button variant="clear-inverted">{"Button"}</Button>
+  </div>
+ ),
+};
 
 export const Outlined: Story = {
  args: {
@@ -36,5 +47,9 @@ export const OutlinedInverted: Story = {
   children: "Button",
   variant: "outlined-inverted",
  },
- decorators: [ThemeDecorator(Theme.DARK)],
+ render: () => (
+  <div style={{ background: "lightgray" }}>
+   <Button variant="outlined-inverted">{"Button"}</Button>
+  </div>
+ ),
 };

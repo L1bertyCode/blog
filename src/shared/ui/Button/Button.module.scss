@@ -1,18 +1,22 @@
 .button {
  cursor: pointer;
- color: var(--bg-color);
+ color: var(--primary-color);
 
  &:hover {
   opacity: var(--opacity-50);
  }
 }
 
-.clear {
+.clear,
+.clear-inverted {
  margin: 0;
  padding: 0;
  background: none;
  outline: none;
  border: none;
+}
+.clear-inverted {
+ color: var(--inverted-primary-color);
 }
 
 .outlined {
@@ -20,7 +24,7 @@
  outline: none;
  padding: 4px 8px;
  border-radius: 10px;
- border: 1px solid var(--bg-color);
+ border: 1px solid var(--primary-color);
 }
 
 .outlined-inverted {
@@ -28,6 +32,6 @@
  outline: none;
  padding: 4px 8px;
  border-radius: 10px;
- border: 1px solid var(--inverted-bg-color);
- color: var(--inverted-bg-color);
+ border: 1px solid var(--inverted-primary-color);
+ color: var(--inverted-primary-color);
 }

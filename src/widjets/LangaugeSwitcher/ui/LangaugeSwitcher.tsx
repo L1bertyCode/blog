@@ -21,7 +21,7 @@ export const LangaugeSwitcher = memo(
      {},
      [className]
     )}
-    variant="outlined"
+    variant="outlined-inverted"
     onClick={() => {
      i18n.changeLanguage(
       i18n.language === "en" ? "ru" : "en"
