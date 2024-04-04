@@ -5,7 +5,7 @@ import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from "@/shared/context/ThemeContext";
 
 const meta = {
- title: "widget/PageError",
+ title: "widjets/PageError",
  component: PageError,
  parameters: {},
  tags: ["autodocs"],

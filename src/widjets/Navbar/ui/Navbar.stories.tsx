@@ -5,7 +5,7 @@ import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from "@/shared/context/ThemeContext";
 
 const meta = {
- title: "widget/Navbar",
+ title: "widjets/Navbar",
  component: Navbar,
  parameters: {},
  tags: ["autodocs"],
