@@ -4,7 +4,6 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./PageError.module.scss";
 import { Button } from "@/shared/ui/Button/Button";
-import { Page } from "@/shared/layouts/Page";
 
 interface PageErrorProps {
  className?: string;

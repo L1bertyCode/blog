@@ -43,17 +43,33 @@ const config: StorybookConfig = {
   };
   config!.resolve!.modules?.push(paths.src);
   config!.resolve!.alias = {
+   ...config!.resolve!.alias,
    "@": paths.src,
   };
   config!.resolve!.extensions = [".tsx", ".ts", ".js"];
   config!.module!.rules!.push(buildScssLoader(true));
-  // config!.module!.rules = config!.module!.rules!.map(
-  //  (rule: RuleSetRule) => {
-  //   if (/svg/.test(rule.test)) {
-  //    return { ...rule, exclude: /\.svg$/i };
-  //   }
-  //  }
-  // );
+
+  if (config?.module?.rules) {
+   const imageRule = config.module?.rules?.find((rule) => {
+    if (rule) {
+     if (
+      typeof rule !== "string" &&
+      rule.test instanceof RegExp
+     ) {
+      return rule.test.test(".svg");
+     }
+    }
+   });
+
+   if (imageRule && typeof imageRule !== "string") {
+    imageRule.exclude = /\.svg$/;
+   }
+   config.module?.rules?.push({
+    test: /\.svg$/,
+    use: ["@svgr/webpack"],
+   });
+  }
+
   return config;
  },
 };

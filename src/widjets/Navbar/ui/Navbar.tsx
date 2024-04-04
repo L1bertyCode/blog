@@ -15,10 +15,16 @@ export const Navbar = memo((props: NavbarProps) => {
  const { t } = useTranslation();
  return (
   <div className={classNames(s.navbar, {}, [className])}>
-   <AppLink to="/">+</AppLink>
+   <AppLink colorType="inverted" to="/">
+    +
+   </AppLink>
    <div>
-    <AppLink to="/">{t("Main")}</AppLink>
-    <AppLink to="/articles">{t("Articles")}</AppLink>
+    <AppLink colorType="inverted" to="/">
+     {t("Main")}
+    </AppLink>
+    <AppLink colorType="inverted" to="/articles">
+     {t("Articles")}
+    </AppLink>
    </div>
   </div>
  );

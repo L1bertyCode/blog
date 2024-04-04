@@ -4,7 +4,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./AppLink.module.scss";
 import { Link, LinkProps } from "react-router-dom";
-type ColorType = "primary" | "secodary";
+type ColorType = "primary" | "inverted";
 interface AppLinkProps extends LinkProps {
  className?: string;
  children: ReactNode;
