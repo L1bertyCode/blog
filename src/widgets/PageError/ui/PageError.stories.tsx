@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Navbar } from "./Navbar";
+import { PageError } from "./PageError";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/context/ThemeContext";
 
 const meta = {
- title: "widjets/Navbar",
- component: Navbar,
+ title: "widgets/PageError",
+ component: PageError,
  parameters: {},
  tags: ["autodocs"],
  argTypes: {},
  args: {},
-} satisfies Meta<typeof Navbar>;
+} satisfies Meta<typeof PageError>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

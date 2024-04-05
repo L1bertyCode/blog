@@ -1,4 +1,4 @@
-import { PageError } from "@/widjets/PageError";
+import { PageError } from "@/widgets/PageError";
 import {
  Component,
  ErrorInfo,

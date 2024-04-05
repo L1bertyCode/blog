@@ -23,7 +23,7 @@ const MainPage = memo((props: MainPageProps) => {
    {/* eslint-disable
    i18next/no-literal-string */}
    <Button
-    variant="outlined-inverted"
+    variant="outlined"
     onClick={() => setError(true)}
    >
     throw error

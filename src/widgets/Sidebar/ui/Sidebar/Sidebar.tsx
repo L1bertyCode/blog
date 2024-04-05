@@ -5,8 +5,8 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import s from "./Sidebar.module.scss";
 import { Button } from "@/shared/ui/Button/Button";
 import { useTranslation } from "react-i18next";
-import { ThemeSwitcher } from "@/widjets/ThemeSwitcher";
-import { LangaugeSwitcher } from "@/widjets/LangaugeSwitcher";
+import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
+import { LangaugeSwitcher } from "@/widgets/LangaugeSwitcher";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 
 interface SidebarProps {

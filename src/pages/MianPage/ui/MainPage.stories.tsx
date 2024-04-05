@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Sidebar } from "./Sidebar";
+import MainPage from "./MainPage";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/context/ThemeContext";
 
 const meta = {
- title: "widjets/Sidebar",
- component: Sidebar,
+ title: "pages/MainPage",
+ component: MainPage,
  parameters: {},
  tags: ["autodocs"],
  argTypes: {},
  args: {},
-} satisfies Meta<typeof Sidebar>;
+} satisfies Meta<typeof MainPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

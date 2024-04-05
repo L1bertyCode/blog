@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { PageError } from "./PageError";
+import NotFoundPage from "./NotFoundPage";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/context/ThemeContext";
 
 const meta = {
- title: "widjets/PageError",
- component: PageError,
+ title: "pages/NotFoundPage",
+ component: NotFoundPage,
  parameters: {},
  tags: ["autodocs"],
  argTypes: {},
  args: {},
-} satisfies Meta<typeof PageError>;
+} satisfies Meta<typeof NotFoundPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
