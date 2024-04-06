@@ -38,7 +38,8 @@ export const Sidebar = memo((props: SidebarProps) => {
     data-testid="sidebar-toggle"
     className={s.collapsedBtn}
     onClick={toggle}
-    variant="outlined-inverted"
+    variant="outlined"
+    colorType="background"
    >
     {collapsed ? ">" : "<"}
    </Button>

@@ -28,7 +28,6 @@ const MainPage = memo((props: MainPageProps) => {
    >
     throw error
    </Button>
-   <Button>Btnm</Button>
   </Page>
  );
 });
