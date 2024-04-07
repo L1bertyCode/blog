@@ -4,6 +4,7 @@ import s from "./MainPage.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/shared/ui/Button/Button";
+import { Text } from "@/shared/ui/Text/Text";
 interface MainPageProps {
  className?: string;
 }
@@ -19,6 +20,7 @@ const MainPage = memo((props: MainPageProps) => {
  }, [error]);
  return (
   <Page className={classNames(s.mainPage, {}, [className])}>
+   <Text title={t("Main")} />
    <div>{t("Main")}</div>
    {/* eslint-disable
    i18next/no-literal-string */}

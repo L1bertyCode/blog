@@ -1,0 +1,20 @@
+.text {
+ &.s {
+  font: var(--font-s);
+ }
+ &.m {
+  font: var(--font-m);
+ }
+ &.l {
+  font: var(--font-l);
+ }
+ &.xl {
+  font: var(--font-xl);
+ }
+ &.xxl {
+  font: var(--font-xxl);
+ }
+ &.xxxl {
+  font: var(--font-xxxl);
+ }
+}
