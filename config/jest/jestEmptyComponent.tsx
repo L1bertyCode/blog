@@ -1,5 +1,5 @@
 import React from "react";
 
 export const JestEmptyComponent = () => {
- return <div />;
+ return <div></div>;
 };

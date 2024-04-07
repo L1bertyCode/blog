@@ -18,14 +18,7 @@ export const Navbar = memo((props: NavbarProps) => {
    <AppLink colorType="inverted" to="/">
     +
    </AppLink>
-   <div>
-    <AppLink colorType="inverted" to="/">
-     {t("Main")}
-    </AppLink>
-    <AppLink colorType="inverted" to="/articles">
-     {t("Articles")}
-    </AppLink>
-   </div>
+   <div>/</div>
   </div>
  );
 });
