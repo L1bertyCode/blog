@@ -9,6 +9,26 @@
  transition: width var(--transition-delay) ease-in-out;
 }
 
+.link {
+ display: flex;
+ align-items: center;
+ justify-content: flex-start;
+ gap: 12px;
+}
+
+.icon {
+ width: 20px;
+ height: 20px;
+ svg {
+  width: 20px;
+  height: 20px;
+  path {
+   width: 20px;
+   height: 20px;
+  }
+ }
+}
+
 .collapsed {
  width: var(--sidebar-width-collapsed);
 }

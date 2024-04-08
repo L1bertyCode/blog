@@ -8,6 +8,9 @@ import { useTranslation } from "react-i18next";
 import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
 import { LangaugeSwitcher } from "@/widgets/LangaugeSwitcher";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
+import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
+import MainIcon from "@/shared/assets/main-20-20.svg";
+import ArticlesIcon from "@/shared/assets/article.svg";
 
 interface SidebarProps {
  className?: string;
@@ -28,12 +31,25 @@ export const Sidebar = memo((props: SidebarProps) => {
     [className]
    )}
   >
-   <AppLink colorType="inverted" to="/">
-    {t("Main")}
-   </AppLink>
-   <AppLink colorType="inverted" to="/articles">
-    {t("Articles")}
-   </AppLink>
+   <nav>
+    <AppLink
+     className={s.link}
+     colorType="inverted"
+     to={RoutePath.main}
+    >
+     <MainIcon className={s.icon} />
+     {!collapsed ? t("Main") : null}
+    </AppLink>
+    <AppLink
+     className={s.link}
+     colorType="inverted"
+     to={RoutePath.articles}
+    >
+     <ArticlesIcon className={s.icon} />
+
+     {!collapsed ? t("Articles") : null}
+    </AppLink>
+   </nav>
    <Button
     data-testid="sidebar-toggle"
     className={s.collapsedBtn}

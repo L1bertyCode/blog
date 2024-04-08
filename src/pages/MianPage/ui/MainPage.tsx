@@ -21,7 +21,6 @@ const MainPage = memo((props: MainPageProps) => {
  return (
   <Page className={classNames(s.mainPage, {}, [className])}>
    <Text title={t("Main")} />
-   <div>{t("Main")}</div>
    {/* eslint-disable
    i18next/no-literal-string */}
    <Button
