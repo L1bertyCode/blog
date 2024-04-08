@@ -11,6 +11,7 @@ import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
 import MainIcon from "@/shared/assets/main-20-20.svg";
 import ArticlesIcon from "@/shared/assets/article.svg";
+import { Icon } from "@/shared/ui/Icon/Icon";
 
 interface SidebarProps {
  className?: string;
@@ -37,7 +38,7 @@ export const Sidebar = memo((props: SidebarProps) => {
      colorType="inverted"
      to={RoutePath.main}
     >
-     <MainIcon className={s.icon} />
+     <Icon className={s.icon} Svg={MainIcon} />
      {!collapsed ? t("Main") : null}
     </AppLink>
     <AppLink
@@ -45,7 +46,7 @@ export const Sidebar = memo((props: SidebarProps) => {
      colorType="inverted"
      to={RoutePath.articles}
     >
-     <ArticlesIcon className={s.icon} />
+     <Icon className={s.icon} Svg={ArticlesIcon} />
 
      {!collapsed ? t("Articles") : null}
     </AppLink>
