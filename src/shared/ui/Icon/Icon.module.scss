@@ -1,0 +1,11 @@
+.icon {
+ &.priamry {
+  fill: var(--primary-color);
+  color: var(--primary-color);
+ }
+
+ &.background {
+  fill: var(--bg-color);
+  color: var(--bg-color);
+ }
+}

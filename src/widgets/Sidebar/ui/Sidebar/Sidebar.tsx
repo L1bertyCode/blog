@@ -39,7 +39,7 @@ export const Sidebar = memo((props: SidebarProps) => {
      colorType="inverted"
      to={RoutePath.main}
     >
-     <Icon className={s.icon} Svg={MainIcon} />
+     <Icon Svg={MainIcon}  />
 
      <Text className={s.text} text={t("Main")} />
     </AppLink>
@@ -49,9 +49,10 @@ export const Sidebar = memo((props: SidebarProps) => {
      to={RoutePath.articles}
     >
      <Icon
-      className={s.icon}
       Svg={ArticlesIcon}
       viewBox="5 5 20 20"
+      width="20px"
+      height="20px"
      />
 
      <Text className={s.text} text={t("Articles")} />
