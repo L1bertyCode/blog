@@ -9,15 +9,37 @@
  transition: width var(--transition-delay) ease-in-out;
 }
 
+nav {
+ display: flex;
+ flex-direction: column;
+}
+
 .link {
  display: flex;
  align-items: center;
  justify-content: flex-start;
  gap: 12px;
+ padding: 6px 12px;
+ transition: 0.2s linear;
+}
+
+.text {
+ opacity: 1;
 }
 
 .collapsed {
  width: var(--sidebar-width-collapsed);
+
+ .link {
+  transition: 0.2s linear;
+  gap: 0;
+ }
+
+ .text {
+  opacity: 0;
+  width: 0;
+  transition: 0.2s linear;
+ }
 }
 
 .switcher {

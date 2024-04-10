@@ -12,6 +12,7 @@ import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
 import MainIcon from "@/shared/assets/main-20-20.svg";
 import ArticlesIcon from "@/shared/assets/article.svg";
 import { Icon } from "@/shared/ui/Icon/Icon";
+import { Text } from "@/shared/ui/Text/Text";
 
 interface SidebarProps {
  className?: string;
@@ -39,16 +40,21 @@ export const Sidebar = memo((props: SidebarProps) => {
      to={RoutePath.main}
     >
      <Icon className={s.icon} Svg={MainIcon} />
-     {!collapsed ? t("Main") : null}
+
+     <Text className={s.text} text={t("Main")} />
     </AppLink>
     <AppLink
      className={s.link}
      colorType="inverted"
      to={RoutePath.articles}
     >
-     <Icon className={s.icon} Svg={ArticlesIcon} />
+     <Icon
+      className={s.icon}
+      Svg={ArticlesIcon}
+      viewBox="5 5 20 20"
+     />
 
-     {!collapsed ? t("Articles") : null}
+     <Text className={s.text} text={t("Articles")} />
     </AppLink>
    </nav>
    <Button
