@@ -5,5 +5,7 @@
   "Loading": "Loading",
   "An unexpected error occurred": "An unexpected error occurred",
   "Page Not Found": "Page Not Found",
-  "Reload page": "Reload page"
+  "Reload page": "Reload page",
+  "Login": "Login",
+  "Logout": "Logout"
 }

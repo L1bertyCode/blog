@@ -4,7 +4,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./AppLink.module.scss";
 import { Link, LinkProps } from "react-router-dom";
-type ColorType = "none" | "primary" | "inverted";
+type ColorType = "clear" | "primary" | "inverted";
 interface AppLinkProps extends LinkProps {
  className?: string;
  children: ReactNode;
@@ -17,7 +17,7 @@ export const AppLink = memo((props: AppLinkProps) => {
   className,
   to = "/",
   children,
-  colorType = "none",
+  colorType = "clear",
   ...otherProps
  } = props;
  return (
