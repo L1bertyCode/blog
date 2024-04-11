@@ -20,7 +20,7 @@ nav {
  justify-content: flex-start;
  gap: 12px;
  padding: 6px 12px;
- transition: 0.2s linear;
+ transition: var(--transition-delay) linear;
 }
 
 .text {
@@ -31,14 +31,14 @@ nav {
  width: var(--sidebar-width-collapsed);
 
  .link {
-  transition: 0.2s linear;
+  transition: var(--transition-delay) linear;
   gap: 0;
  }
 
  .text {
   opacity: 0;
   width: 0;
-  transition: 0.2s linear;
+  transition: var(--transition-delay) linear;
  }
 }
 
@@ -53,5 +53,5 @@ nav {
 .collapsedBtn {
  position: absolute;
  top: 50%;
- right: 8px;
+ right: 4px;
 }

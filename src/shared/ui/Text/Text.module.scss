@@ -1,21 +1,21 @@
 .text {
- .primary {
+ &.primary {
   color: var(--primary-color);
  }
 
- .secondary {
+ &.secondary {
   color: var(--secondary-color);
  }
 
- .inverted {
+ &.inverted {
   color: var(--inverted-primary-color);
  }
 
- .background {
+ &.background {
   color: var(--bg-color);
  }
 
- .backgroundInverted {
+ &.backgroundInverted {
   color: var(--inverted-bg-color);
  }
 

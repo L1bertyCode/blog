@@ -34,28 +34,29 @@ export const Sidebar = memo((props: SidebarProps) => {
    )}
   >
    <nav>
-    <AppLink
-     className={s.link}
-     colorType="inverted"
-     to={RoutePath.main}
-    >
-     <Icon Svg={MainIcon}  />
+    <AppLink className={s.link} to={RoutePath.main}>
+     <Icon Svg={MainIcon} colorType="inverted" />
 
-     <Text className={s.text} text={t("Main")} />
+     <Text
+      className={s.text}
+      text={t("Main")}
+      colorType="inverted"
+     />
     </AppLink>
-    <AppLink
-     className={s.link}
-     colorType="inverted"
-     to={RoutePath.articles}
-    >
+    <AppLink className={s.link} to={RoutePath.articles}>
      <Icon
       Svg={ArticlesIcon}
       viewBox="5 5 20 20"
       width="20px"
       height="20px"
+      colorType="inverted"
      />
 
-     <Text className={s.text} text={t("Articles")} />
+     <Text
+      className={s.text}
+      text={t("Articles")}
+      colorType="inverted"
+     />
     </AppLink>
    </nav>
    <Button
