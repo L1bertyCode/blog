@@ -13,6 +13,7 @@
  pointer-events: none;
 }
 .content {
+ position: relative;
  transition: var(--transition-delay) transform;
  transform: scale(0.5);
  max-width: 60%;
@@ -20,10 +21,20 @@
  border-radius: 12px;
  background: var(--bg-color);
 }
+.closeBtn {
+ position: absolute;
+ top: -12px;
+ right: -8px;
+}
 .isOpen {
  opacity: 1;
  pointer-events: all;
  .content {
   transform: scale(1);
+ }
+}
+.isClosing {
+ .content {
+  transform: scale(0.2);
  }
 }
