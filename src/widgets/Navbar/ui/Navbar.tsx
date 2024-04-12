@@ -15,6 +15,7 @@ interface NavbarProps {
 
 export const Navbar = memo((props: NavbarProps) => {
  const [isAuth, setIsAuth] = useState(false);
+ const [isOpen, setIsOpen] = useState(false);
  const { className } = props;
  const { t } = useTranslation();
  const toggleModal = (bool: boolean) => {
@@ -25,16 +26,29 @@ export const Navbar = memo((props: NavbarProps) => {
    <AppLink colorType="inverted" to="/">
     +
    </AppLink>
-   <Button onClick={() => toggleModal(true)}>
+   <Button onClick={() => setIsOpen(true)}>
     {isAuth ? (
      <Text text={t("Logout")} colorType="inverted" />
     ) : (
      <Text text={t("Login")} colorType="inverted" />
     )}
    </Button>
-   {isAuth ? (
-    <Modal onClose={() => toggleModal(false)}>1</Modal>
-   ) : null}
+   <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+    Lorem ipsum dolor, sit amet consectetur adipisicing
+    elit. Tempora autem culpa praesentium illo expedita et
+    quia laborum voluptas eveniet tenetur voluptate est
+    ullam dolorem totam nulla, harum deserunt, dolorum
+    numquam, eos sit quibusdam provident ea ipsam? Provident
+    cupiditate sit atque optio! Eius, vero quisquam quod,
+    totam impedit fugiat, minima illo blanditiis placeat
+    possimus pariatur. Maiores illo, quae delectus tempore
+    nisi non harum iure sit deleniti tenetur asperiores
+    neque quia eligendi repellat a et, fugiat corporis
+    molestias. Dolores velit architecto neque aut quibusdam
+    numquam. Vel tenetur enim nam magnam est explicabo
+    mollitia consectetur illo dicta expedita. Vel
+    consequuntur magni velit repellat?
+   </Modal>
   </div>
  );
 });

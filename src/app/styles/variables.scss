@@ -1,4 +1,10 @@
 :root {
+ //Color
+ --overlay-color: #00000095;
+
+ //Z-index
+ --modal-z-index: 10;
+
  // Sizes
  --navbar-height: 80px;
  --sidebar-width: 300px;
@@ -11,7 +17,7 @@
  // Transition
  --transition-delay: 0.3s;
 
- // Font
+ // Fonts
  --font-family-main: consolas, "Times New Roman", serif;
 
  // s

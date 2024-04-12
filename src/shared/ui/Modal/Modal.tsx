@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { MouseEvent, ReactNode } from "react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 
@@ -7,17 +7,25 @@ import s from "./Modal.module.scss";
 interface ModalProps {
  children: ReactNode;
  className?: string;
- onClose: () => void;
+ isOpen: boolean;
+ onClose?: () => void;
 }
 
 export const Modal = (props: ModalProps) => {
- const { children, onClose, className } = props;
+ const { children, isOpen, onClose, className } = props;
  return (
   <div
-   onClick={onClose}
-   className={classNames(s.modal, {}, [className])}
+   onClick={() => onClose?.()}
+   className={classNames(s.modal, { [s.isOpen]: isOpen }, [
+    className,
+   ])}
   >
-   {children}
+   <div
+    onClick={(e: MouseEvent) => e.stopPropagation()}
+    className={s.content}
+   >
+    {children}
+   </div>
   </div>
  );
 };

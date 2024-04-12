@@ -4,5 +4,26 @@
  bottom: 0;
  left: 0;
  right: 0;
- background-color: #00000090;
+ z-index: var(--modal-z-index);
+ background: var(--overlay-color);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ opacity: 0;
+ pointer-events: none;
+}
+.content {
+ transition: var(--transition-delay) transform;
+ transform: scale(0.5);
+ max-width: 60%;
+ padding: 20px;
+ border-radius: 12px;
+ background: var(--bg-color);
+}
+.isOpen {
+ opacity: 1;
+ pointer-events: all;
+ .content {
+  transform: scale(1);
+ }
 }
