@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useCallback, useState } from "react";
 
 import s from "./Navbar.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
@@ -18,22 +18,18 @@ export const Navbar = memo((props: NavbarProps) => {
  const [isOpen, setIsOpen] = useState(false);
  const { className } = props;
  const { t } = useTranslation();
- const toggleModal = (bool: boolean) => {
-  setIsAuth(bool);
- };
+ const toggleModal = useCallback(() => {
+  setIsAuth((prev) => !prev);
+ }, []);
  return (
   <div className={classNames(s.navbar, {}, [className])}>
    <AppLink colorType="inverted" to="/">
     +
    </AppLink>
-   <Button onClick={() => setIsOpen(true)}>
-    {isAuth ? (
-     <Text text={t("Logout")} colorType="inverted" />
-    ) : (
-     <Text text={t("Login")} colorType="inverted" />
-    )}
+   <Button onClick={toggleModal} colorType="inverted">
+    {isAuth ? t("Logout") : t("Login")}
    </Button>
-   <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+   <Modal isOpen={isAuth} onClose={toggleModal}>
     {
      "5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 5 5 20 20 "
     }

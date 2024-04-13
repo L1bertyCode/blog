@@ -11,6 +11,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./Modal.module.scss";
 import { Button } from "../Button/Button";
+import { Portal } from "../Portal/Portal";
 
 interface ModalProps {
  children: ReactNode;
@@ -50,23 +51,28 @@ export const Modal = (props: ModalProps) => {
   };
  }, [isOpen, onKeyDown]);
  return (
-  <div
-   onClick={onCloseHandler}
-   className={classNames(
-    s.modal,
-    { [s.isOpen]: isOpen, [s.isClosing]: isClosing },
-    [className]
-   )}
-  >
+  <Portal>
    <div
-    onClick={(e: MouseEvent) => e.stopPropagation()}
-    className={s.content}
+    onClick={onCloseHandler}
+    className={classNames(
+     s.modal,
+     { [s.isOpen]: isOpen, [s.isClosing]: isClosing },
+     [className]
+    )}
    >
-    <Button onClick={onCloseHandler} className={s.closeBtn}>
-     {"+"}
-    </Button>
-    {children}
+    <div
+     onClick={(e: MouseEvent) => e.stopPropagation()}
+     className={s.content}
+    >
+     {/* <Button
+      onClick={onCloseHandler}
+      className={s.closeBtn}
+     >
+      {"+"}
+     </Button> */}
+     {children}
+    </div>
    </div>
-  </div>
+  </Portal>
  );
 };

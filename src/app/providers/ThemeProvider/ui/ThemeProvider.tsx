@@ -3,7 +3,7 @@ import {
  Theme,
  ThemeContext,
 } from "@/shared/context/ThemeContext";
-import { ReactNode, memo, useMemo, useState } from "react";
+import { ReactNode, useMemo, useState } from "react";
 
 interface ThemeProviderProps {
  children?: ReactNode;
