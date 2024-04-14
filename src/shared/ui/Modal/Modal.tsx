@@ -6,11 +6,10 @@ import {
  useRef,
  useState,
 } from "react";
-
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./Modal.module.scss";
-import { Button } from "../Button/Button";
+
 import { Portal } from "../Portal/Portal";
 
 interface ModalProps {

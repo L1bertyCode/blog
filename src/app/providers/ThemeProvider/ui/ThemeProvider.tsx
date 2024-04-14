@@ -3,7 +3,12 @@ import {
  Theme,
  ThemeContext,
 } from "@/shared/context/ThemeContext";
-import { ReactNode, useMemo, useState } from "react";
+import {
+ ReactNode,
+ useEffect,
+ useMemo,
+ useState,
+} from "react";
 
 interface ThemeProviderProps {
  children?: ReactNode;
@@ -16,7 +21,9 @@ export const ThemeProvider = ({
  children,
 }: ThemeProviderProps) => {
  const [theme, setTheme] = useState<Theme>(defaultTheme);
-
+ useEffect(() => {
+  document.body.className = `app_${defaultTheme}_theme`;
+ }, []);
  const defaultValue = useMemo(
   () => ({
    theme,

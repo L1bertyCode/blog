@@ -3,7 +3,13 @@ import { ReactNode, memo } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./AppLink.module.scss";
-import { Link, LinkProps } from "react-router-dom";
+import {
+ Link,
+ LinkProps,
+ useLocation,
+ useNavigate,
+ useParams,
+} from "react-router-dom";
 type AppLinkColorType =
  | "primary"
  //  | "secondary"
@@ -19,7 +25,7 @@ interface AppLinkProps extends LinkProps {
  variant?: AppLinkVariant;
 }
 
-export const AppLink = memo((props: AppLinkProps) => {
+export const AppLink = (props: AppLinkProps) => {
  const {
   className,
   to = "/",
@@ -28,17 +34,22 @@ export const AppLink = memo((props: AppLinkProps) => {
   variant = "clear",
   ...otherProps
  } = props;
+//  const { pathname } = useLocation();
+//  console.log(pathname, to);
+
  return (
   <Link
    {...otherProps}
    to={to}
-   className={classNames(s.appLink, {}, [
-    className,
-    s[colorType],
-    s[variant],
-   ])}
+   className={classNames(
+    s.appLink,
+    {
+    //  [s.active]: pathname === to,
+    },
+    [className, s[colorType], s[variant]]
+   )}
   >
    {children}
   </Link>
  );
-});
+};

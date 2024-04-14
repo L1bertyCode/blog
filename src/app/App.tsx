@@ -6,13 +6,10 @@ import { Navbar } from "@/widgets/Navbar";
 import { MainLayout } from "@/shared/layouts/MainLayout";
 import { Sidebar } from "@/widgets/Sidebar";
 import "./styles/index.scss";
-import { useEffect } from "react";
 
 export function App() {
  const { theme } = useTheme();
- useEffect(() => {
-  document.body.className = `app_${theme}_theme`;
- }, [theme]);
+
 
  return (
   <MainLayout

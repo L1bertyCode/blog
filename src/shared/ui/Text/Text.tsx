@@ -32,16 +32,17 @@ export const Text = (props: TextProps) => {
   text,
   colorType = "primary",
   className,
+  ...otherProps
  } = props;
- //  const HeaderTag = size ? mapSizeToHeader[size] : "h5";
+//  const HeaderTag = size ? mapSizeToHeader[size] : "h5";
 
- //  console.log(typeof HeaderTag);
- //  console.log(HeaderTag);
+//  console.log(HeaderTag);
 
  return (
   <>
    {title ? (
     <p
+     {...otherProps}
      className={classNames(s.title, {}, [
       className,
       s[colorType],
@@ -52,6 +53,7 @@ export const Text = (props: TextProps) => {
    ) : null}
    {text ? (
     <p
+     {...otherProps}
      className={classNames(s.text, {}, [
       className,
       s[size],
