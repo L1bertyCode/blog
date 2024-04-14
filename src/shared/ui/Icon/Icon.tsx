@@ -5,7 +5,7 @@ import { FunctionComponent, SVGAttributes } from "react";
 type IconColorType =
  | "primary"
  | "secondary"
- | "inverted"
+ | "primaryInverted"
  | "background"
  | "backgroundInverted";
 interface IconProps {

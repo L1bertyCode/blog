@@ -1,9 +1,6 @@
 .modal {
  position: absolute;
- top: 0;
- bottom: 0;
- left: 0;
- right: 0;
+ inset: 0;
  z-index: var(--modal-z-index);
  background: var(--overlay-color);
  display: flex;
@@ -12,6 +9,7 @@
  opacity: 0;
  pointer-events: none;
 }
+
 .content {
  position: relative;
  transition: var(--transition-delay) transform;
@@ -21,18 +19,22 @@
  border-radius: 12px;
  background: var(--bg-color);
 }
+
 .closeBtn {
  position: absolute;
  top: -12px;
  right: -8px;
 }
+
 .isOpen {
  opacity: 1;
  pointer-events: all;
+
  .content {
   transform: scale(1);
  }
 }
+
 .isClosing {
  .content {
   transform: scale(0.2);

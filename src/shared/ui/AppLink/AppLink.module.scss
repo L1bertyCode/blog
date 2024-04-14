@@ -8,11 +8,16 @@
 
 .primary {
  color: var(--primary-color);
+
+ &.active {
+  color: var(--secondary-color);
+ }
 }
 
-.inverted {
+.primaryInverted {
  color: var(--inverted-primary-color);
-}
-.active {
- color: var(--secondary-color);
+
+ &.active {
+  color: var(--inverted-secondary-color);
+ }
 }

@@ -1,19 +1,13 @@
-import { ReactNode, memo } from "react";
+import { ReactNode } from "react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import s from "./AppLink.module.scss";
-import {
- Link,
- LinkProps,
- useLocation,
- useNavigate,
- useParams,
-} from "react-router-dom";
+import { Link, LinkProps } from "react-router-dom";
 type AppLinkColorType =
  | "primary"
  //  | "secondary"
- | "inverted";
+ | "primaryInverted";
 //  | "background"
 //  | "backgroundInverted";
 type AppLinkVariant = "clear";
@@ -34,8 +28,8 @@ export const AppLink = (props: AppLinkProps) => {
   variant = "clear",
   ...otherProps
  } = props;
-//  const { pathname } = useLocation();
-//  console.log(pathname, to);
+ //  const { pathname } = useLocation();
+ //  console.log(pathname, to);
 
  return (
   <Link
@@ -44,7 +38,7 @@ export const AppLink = (props: AppLinkProps) => {
    className={classNames(
     s.appLink,
     {
-    //  [s.active]: pathname === to,
+     //  [s.active]: pathname === to,
     },
     [className, s[colorType], s[variant]]
    )}

@@ -5,7 +5,7 @@ type TextSize = "s" | "m" | "l" | "xl";
 type TextColorType =
  | "primary"
  | "secondary"
- | "inverted"
+ | "primaryInverted"
  | "background"
  | "backgroundInverted";
 

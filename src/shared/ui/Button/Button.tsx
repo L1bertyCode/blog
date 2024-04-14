@@ -7,7 +7,7 @@ type ButtonVariant = "clear" | "outlined";
 type ButtonColorType =
  | "primary"
  | "secondary"
- | "inverted"
+ | "primaryInverted"
  | "background"
  | "backgroundInverted";
 interface ButtonProps

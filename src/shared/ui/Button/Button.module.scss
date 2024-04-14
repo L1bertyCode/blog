@@ -29,7 +29,7 @@
   color: var(--inverted-bg-color);
  }
 
- &.inverted {
+ &.primaryInverted {
   color: var(--inverted-primary-color);
  }
 }
@@ -60,7 +60,7 @@
   border: 1px solid var(--inverted-bg-color);
  }
 
- &.inverted {
+ &.primaryInverted {
   color: var(--inverted-bg-color);
   border: 1px solid var(--inverted-bg-color);
  }

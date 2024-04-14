@@ -5,7 +5,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import { useTranslation } from "react-i18next";
-import { Text } from "@/shared/ui/Text/Text";
+
 import { Button } from "@/shared/ui/Button/Button";
 import { Modal } from "@/shared/ui/Modal/Modal";
 
@@ -15,7 +15,7 @@ interface NavbarProps {
 
 export const Navbar = memo((props: NavbarProps) => {
  const [isAuth, setIsAuth] = useState(false);
- const [isOpen, setIsOpen] = useState(false);
+
  const { className } = props;
  const { t } = useTranslation();
  const toggleModal = useCallback(() => {
@@ -23,10 +23,10 @@ export const Navbar = memo((props: NavbarProps) => {
  }, []);
  return (
   <div className={classNames(s.navbar, {}, [className])}>
-   <AppLink colorType="inverted" to="/">
+   <AppLink colorType="primaryInverted" to="/">
     +
    </AppLink>
-   <Button onClick={toggleModal} colorType="inverted">
+   <Button onClick={toggleModal} colorType="primaryInverted">
     {isAuth ? t("Logout") : t("Login")}
    </Button>
    <Modal isOpen={isAuth} onClose={toggleModal}>
