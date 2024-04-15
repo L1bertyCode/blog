@@ -10,7 +10,7 @@ const meta = {
  tags: ["autodocs"],
  argTypes: {},
  args: {
-  children: <div>123</div>,
+  children: "Modal",
   isOpen: true,
  },
 } satisfies Meta<typeof Modal>;

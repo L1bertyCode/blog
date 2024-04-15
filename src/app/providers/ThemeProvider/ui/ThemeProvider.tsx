@@ -12,6 +12,7 @@ import {
 
 interface ThemeProviderProps {
  children?: ReactNode;
+ initialTheme?: Theme;
 }
 const defaultTheme =
  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) ||
@@ -19,11 +20,14 @@ const defaultTheme =
 
 export const ThemeProvider = ({
  children,
+ initialTheme,
 }: ThemeProviderProps) => {
- const [theme, setTheme] = useState<Theme>(defaultTheme);
+ const [theme, setTheme] = useState<Theme>(
+  initialTheme || defaultTheme
+ );
  useEffect(() => {
-  document.body.className = `app_${defaultTheme}_theme`;
- }, []);
+  document.body.className = `app_${theme}_theme`;
+ }, [theme]);
  const defaultValue = useMemo(
   () => ({
    theme,
