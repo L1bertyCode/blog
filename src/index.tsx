@@ -8,13 +8,16 @@ const domContainer = document.getElementById(
  "root"
 ) as HTMLElement;
 import "./app/styles/index.scss";
+import { StoreProvider } from "./app/providers/StoreProvider";
 const root = createRoot(domContainer);
 root.render(
- <ThemeProvider>
-  <ErrorBoundary>
-   <BrowserRouter>
-    <App />
-   </BrowserRouter>
-  </ErrorBoundary>
- </ThemeProvider>
+ <StoreProvider>
+  <ThemeProvider>
+   <ErrorBoundary>
+    <BrowserRouter>
+     <App />
+    </BrowserRouter>
+   </ErrorBoundary>
+  </ThemeProvider>
+ </StoreProvider>
 );
