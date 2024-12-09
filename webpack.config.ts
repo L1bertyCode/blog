@@ -4,6 +4,7 @@ import { Configuration } from "webpack";
 import { buildPlugins } from "./config/build/buildPlugins";
 import { buildLoaders } from "./config/build/buildLoaders";
 import { buildResolvers } from "./config/build/buildResolvers";
+import { buildDevServer } from "./config/build/buildDevServer";
 
 
 
@@ -11,9 +12,10 @@ module.exports = (env: BuildEnv): Configuration => {
 
   const mode = env.mode || "development";
   const isDev = mode === "development";
+  const PORT = env.port || 3000;
 
   const paths: BuildPaths = {
-    entry: path.resolve(__dirname, "index.ts"),
+    entry: path.resolve(__dirname, "index.tsx"),
     build: path.resolve(__dirname, 'build'),
     html: path.resolve(__dirname, "public", "index.html"),
     favicon: path.resolve(__dirname, "public", "favicon.ico"),
@@ -32,5 +34,6 @@ module.exports = (env: BuildEnv): Configuration => {
     },
     resolve: buildResolvers(),
     devtool: isDev ? 'inline-source-map' : undefined,
+    devServer: isDev ? buildDevServer(PORT) : undefined
   };
 };
