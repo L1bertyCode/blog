@@ -20,8 +20,19 @@ export const buildLoaders = (isDev: boolean): RuleSetRule[] => {
   const scssLoader = {
     test: /\.(sc|sa|c)ss$/i,
     use: [
-      isDev ? "style-loader" : MiniCssExtractPlugin,
-      "css-loader",
+      isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+      {
+        loader: "css-loader",
+        options: {
+          modules: {
+            auto: /\.module\.\w+$/i,
+            namedExport: false,
+            exportLocalsConvention: 'as-is',
+            localIdentName: isDev ? "[path][name]__[local]--[hash:base64:5]" : "[hash:base64:8]"
+          },
+
+        },
+      }, ,
       "sass-loader",
     ],
   };

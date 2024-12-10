@@ -14,8 +14,8 @@ export const buildPlugins = (paths: BuildPaths): WebpackPluginInstance[] => {
     }),
     new ProgressPlugin(),
     new MiniCssExtractPlugin({
-      filename: "css/[name].[contenthash].css",
-      chunkFilename: "css/[name].[contenthash].css",
+      filename: "css/[name].[contenthash:8].css",
+      chunkFilename: "css/[name].[contenthash:8].css",
     })
   ];
 };
