@@ -1,5 +1,13 @@
+@use "variables/global";
+@use "themes/dark";
+@use "themes/light";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.app {
+  font: var(--font-m);
 }
