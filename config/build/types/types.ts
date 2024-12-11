@@ -8,6 +8,7 @@ export type BuildPaths = {
   build: string;
   html: string;
   favicon: string;
+  src: string;
 };
 
 export type BuildOptions = {

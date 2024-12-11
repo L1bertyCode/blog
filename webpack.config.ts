@@ -20,6 +20,7 @@ export default (() => (env: BuildEnv): Configuration => {
     build: path.resolve(__dirname, 'build'),
     html: path.resolve(__dirname, "public", "index.html"),
     favicon: path.resolve(__dirname, "public", "favicon.ico"),
+    src: path.resolve(__dirname, "src",),
   };
 
   return {
@@ -34,7 +35,7 @@ export default (() => (env: BuildEnv): Configuration => {
     module: {
       rules: buildLoaders(isDev)
     },
-    resolve: buildResolvers(),
+    resolve: buildResolvers(paths),
     devtool: isDev ? 'inline-source-map' : undefined,
     devServer: isDev ? buildDevServer(PORT) : undefined
   };
