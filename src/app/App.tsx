@@ -6,8 +6,8 @@ import { Suspense, useState } from "react";
 import { ProfilePage } from "@/pages/ProfilePage";
 import { MainPage } from "@/pages/MainPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
-import { useTheme } from "./context/useTheme/useTheme";
-import { Theme } from "./context/ThemeContect/ThemeContect";
+import { useTheme } from "./context/ThemeProvider";
+
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 interface AppProps { };
