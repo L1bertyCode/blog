@@ -1,14 +1,10 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import s from "./App.module.scss";
 
-
-import { Suspense, useState } from "react";
-import { ProfilePage } from "@/pages/ProfilePage";
-import { MainPage } from "@/pages/MainPage";
-import { NotFoundPage } from "@/pages/NotFoundPage";
-import { useTheme } from "./context/ThemeProvider";
+import { useTheme } from "./providers/ThemeProvider";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { AppRouter } from "./providers/router/AppRouter";
 
 interface AppProps { };
 export const App = ({ }: AppProps) => {
@@ -21,13 +17,7 @@ export const App = ({ }: AppProps) => {
         <Link to="/profile">Profile</Link>
         <button onClick={toggleTheme}>Theme</button>
       </nav>
-      <Suspense fallback={<div>Loding...</div>}>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </Suspense>
+      <AppRouter />
     </div>
   );
 };
