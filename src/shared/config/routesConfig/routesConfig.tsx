@@ -14,14 +14,18 @@ export const RoutePath: Record<ApRoutes, string> = {
   [ApRoutes.NOT_FOUND]: "*"
 };
 
-export const routesConfig: Record<ApRoutes, RouteProps> = {
+export const routesConfig: Record<ApRoutes, RouteProps & {
+  name?: string;
+}> = {
   [ApRoutes.MAIN]: {
     path: RoutePath.main,
-    element: <MainPage />
+    element: <MainPage />,
+    name: "Home"
   },
   [ApRoutes.PROFILE]: {
     path: RoutePath.profile,
-    element: <ProfilePage />
+    element: <ProfilePage />,
+    name: "Profile"
   },
   [ApRoutes.NOT_FOUND]: {
     path: RoutePath["not-found"],

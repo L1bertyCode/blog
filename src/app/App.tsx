@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import s from "./App.module.scss";
-
 import { useTheme } from "./providers/ThemeProvider";
+import { AppRouter } from "./providers/router/AppRouter";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { AppRouter } from "./providers/router/AppRouter";
+import s from "./App.module.scss";
+import { Navbar } from "@/widgets/Navbar";
+
 
 interface AppProps { };
 export const App = ({ }: AppProps) => {
@@ -12,11 +13,7 @@ export const App = ({ }: AppProps) => {
 
   return (
     <div className={classNames(`app app_${theme}_theme`, {}, [])}>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/profile">Profile</Link>
-        <button onClick={toggleTheme}>Theme</button>
-      </nav>
+      <Navbar />
       <AppRouter />
     </div>
   );
