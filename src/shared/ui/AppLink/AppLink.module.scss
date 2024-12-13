@@ -1,0 +1,43 @@
+.appLink {
+  text-decoration: none;
+}
+
+.primary {
+  color: var(--primary-color);
+
+  &:hover {
+    color: var(--secondary-color)
+  }
+}
+
+.secondary {
+  color: var(--secondary-color);
+
+  &:hover {
+    color: var(--primary-color)
+  }
+}
+
+.invertedPrimary {
+  color: var(--inverted-primary-color);
+
+  &:hover {
+    color: var(--inverted-secondary-color)
+  }
+}
+
+.invertedSecondary {
+  color: var(--inverted-seccondary-color);
+
+  &:hover {
+    color: var(--inverted-primary-color)
+  }
+}
+
+.invertedSecondary {
+  color: var(--inverted-secondary-color);
+
+  &:hover {
+    color: var(--secondary-color)
+  }
+}
