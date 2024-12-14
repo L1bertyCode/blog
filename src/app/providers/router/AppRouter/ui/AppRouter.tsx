@@ -10,7 +10,10 @@ export const AppRouter = ({ }: AppRouterProps) => {
     <Suspense fallback={<div>Loding...</div>}>
       <Routes>
         {Object.values(routesConfig).map(r => (
-          <Route path={r.path} element={r.element} />
+          <Route
+            key={r.path}
+            path={r.path} element={r.element}
+          />
         ))}
       </Routes>
     </Suspense>

@@ -9,7 +9,7 @@ import { Navbar } from "@/widgets/Navbar";
 
 interface AppProps { };
 export const App = ({ }: AppProps) => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={classNames(`app app_${theme}_theme`, {}, [])}>
