@@ -1,0 +1,16 @@
+.appButton {
+  cursor: pointer;
+}
+
+.clear {
+  background: none;
+  border: none;
+
+  &.background {
+    color: var(--bg-color);
+  }
+
+  &.backgroundInverted {
+    color: var(--inverted-bg-color);
+  }
+}
