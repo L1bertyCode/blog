@@ -5,6 +5,9 @@ import { routesConfig } from "@/shared/config/routesConfig/routesConfig";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import { ThemeSwitcher } from "@/feature/ThemeSwitcher";
+import { useTranslation } from 'react-i18next';
+import { AppButton } from "@/shared/ui/AppButton/AppButton";
+
 
 interface NavbarProps {
   className?: string;
@@ -13,10 +16,10 @@ interface NavbarProps {
 export const Navbar = ({
   className
 }: NavbarProps) => {
-
+  const { t, i18n } = useTranslation();
   return (
     <div className={classNames(s.navbar, {}, [className])}>
-      <AppLink to={"/"}>{"Logo"}</AppLink>
+      <AppLink to={"/"}>{t("Logo")}</AppLink>
       <div>
         {Object.values(routesConfig).map((r) => (
           r.name && <AppLink
@@ -26,7 +29,12 @@ export const Navbar = ({
           >
             {r.name}</AppLink>
         ))}
+      </div>
+      <div className={s.switchers}>
         <ThemeSwitcher />
+        <AppButton onClick={() => {
+          i18n.changeLanguage(i18n.language === "en" ? "ru" : "en");
+        }}>{t("Lang")}</AppButton>
       </div>
     </div>
   );
