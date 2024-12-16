@@ -8,12 +8,19 @@ export const buildLoaders = (isDev: boolean): RuleSetRule[] => {
     exclude: /node_modules/,
   };
   const babelLoader = {
-    test: /\.m?js$/,
+    test: /\.(js|jsx|ts|tsx)$/,
     exclude: /node_modules/,
     use: {
       loader: "babel-loader",
       options: {
-        presets: ['@babel/preset-env']
+        presets: ['@babel/preset-env'],
+        plugins: [
+          ["i18next-extract", {
+            locales: ["en", "ru"],
+            keyAsDefaultValue: true
+          }
+          ],
+        ]
       }
     }
   };
