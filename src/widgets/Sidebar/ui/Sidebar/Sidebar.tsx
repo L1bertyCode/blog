@@ -5,13 +5,15 @@ import { routesConfig } from "@/shared/config/routesConfig/routesConfig";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import { ThemeSwitcher } from "@/feature/ThemeSwitcher";
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
+import { LangSwitcher } from "@/feature/LangSwitcher/LangSwitcher";
+import { useTranslation } from "react-i18next";
 interface SidebarProps {
   className?: string;
 };
 
 export const Sidebar = ({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState<boolean>(true);
-
+  const { t } = useTranslation();
   return (
     <div className={classNames(s.sidebar, { [s.collapsed]: collapsed }, [className])}>
       <nav>
@@ -21,7 +23,8 @@ export const Sidebar = ({ className }: SidebarProps) => {
             className={s.link}
             to={r.path || "/"}
           >
-            {r.name}</AppLink>
+            {`${t(r.name)}`}
+          </AppLink>
         ))}
       </nav>
       <AppButton
@@ -35,6 +38,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </AppButton>
       <div className={s.switchers}>
         <ThemeSwitcher />
+        <LangSwitcher />
       </div>
     </div>
   );

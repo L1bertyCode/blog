@@ -1,3 +1,5 @@
+declare const __IS_DEV__: boolean;
+
 declare module "*.svg" {
   const content: React.FC<React.SVGAttributes<SVGElement>>;
   export default content;

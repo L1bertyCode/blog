@@ -31,7 +31,10 @@ export default (() => (env: BuildEnv): Configuration => {
       filename: '[name][contenthash].js',
       clean: true
     },
-    plugins: buildPlugins(paths),
+    plugins: buildPlugins({
+      paths,
+      isDev
+    }),
     module: {
       rules: buildLoaders(isDev)
     },

@@ -28,3 +28,8 @@ nav {
   background: var(--inverted-bg-color);
   padding: 10px;
 }
+
+.switchers {
+  display: flex;
+  flex-direction: column;
+}

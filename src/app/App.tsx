@@ -5,6 +5,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import s from "./App.module.scss";
 import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
+import { Suspense } from "react";
 
 
 interface AppProps { };
@@ -13,11 +14,13 @@ export const App = ({ }: AppProps) => {
 
   return (
     <div className={classNames(`app app_${theme}_theme`, {}, [])}>
-      <Navbar />
-      <div className={s.content}>
-        <Sidebar />
-        <AppRouter />
-      </div>
+      <Suspense fallback={<></>}>
+        <Navbar />
+        <div className={s.content}>
+          <Sidebar />
+          <AppRouter />
+        </div>
+      </Suspense>
     </div>
   );
 };
