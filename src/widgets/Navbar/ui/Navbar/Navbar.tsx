@@ -18,7 +18,7 @@ export const Navbar = ({
   return (
     <div className={classNames(s.navbar, {}, [className])}>
       <AppLink to={"/"}>{t("Logo")}</AppLink>
-      <AppLink to={"/"}>dkjf</AppLink>
+
       <div>
         {Object.values(routesConfig).map((r) => (
           r.name && <AppLink
