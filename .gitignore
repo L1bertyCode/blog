@@ -3,4 +3,5 @@
 /build
 .env
 .idea
-.vscode
+.
+vscode

@@ -39,7 +39,7 @@ export const buildLoaders = (isDev: boolean): RuleSetRule[] => {
           },
 
         },
-      }, ,
+      }, 
       "sass-loader",
     ],
   };
