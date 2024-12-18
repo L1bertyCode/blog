@@ -1,3 +1,4 @@
+import { Loader } from "@/shared/ui/Loader/Loader";
 import s from "./MainPage.module.scss";
 interface MainPageProps { };
 const MainPage = ({ }: MainPageProps) => {
