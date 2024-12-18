@@ -7,7 +7,9 @@ export const Counter = ({ }: CounterProps) => {
   return (
     <div className={s.counter}>
       <h1 style={{ color: "green" }}>{count}</h1>
-      <button onClick={() => setCount(count + 1)}>
+      {/* eslint-disable*/}
+      <button onClick={() =>
+        setCount(count + 1)}>
         Increment
       </button>
     </div>

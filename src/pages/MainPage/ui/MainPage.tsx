@@ -3,6 +3,7 @@ interface MainPageProps { };
 const MainPage = ({ }: MainPageProps) => {
   return (
     <div className={s.mainPage}>
+      {/* eslint-disable-next-line */}
       <div>MainPage</div>
     </div>
   );

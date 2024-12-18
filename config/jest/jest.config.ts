@@ -3,9 +3,47 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type {Config} from 'jest';
+import type { Config } from 'jest';
 
 const config: Config = {
+
+  // Automatically clear mock calls, instances, contexts and results before every test
+  clearMocks: true,
+
+  // The test environment that will be used for testing
+  testEnvironment: "jsdom",
+
+  // An array of regexp pattern strings used to skip coverage collection
+  coveragePathIgnorePatterns: [
+    "\\\\node_modules\\\\"
+  ],
+
+
+  // An array of directory names to be searched recursively up from the requiring module's location
+  moduleDirectories: [
+    "node_modules"
+  ],
+
+  // An array of file extensions your modules use
+  moduleFileExtensions: [
+    "js",
+    "mjs",
+    "cjs",
+    "jsx",
+    "ts",
+    "tsx",
+    "json",
+    "node"
+  ],
+
+  // The root directory that Jest should scan for tests and modules within
+  rootDir: "../../",
+
+
+  // The glob patterns Jest uses to detect test files
+  testMatch: [
+    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
+  ],
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -16,7 +54,7 @@ const config: Config = {
   // cacheDirectory: "C:\\Users\\Prog\\AppData\\Local\\Temp\\jest",
 
   // Automatically clear mock calls, instances, contexts and results before every test
-  clearMocks: true,
+  // clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
@@ -146,7 +184,7 @@ const config: Config = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "jsdom",
+  // testEnvironment: "jsdom",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
