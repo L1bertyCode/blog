@@ -44,6 +44,14 @@ const config: Config = {
   testMatch: [
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
   ],
+
+  moduleNameMapper: {
+    '@/(.*)': "<rootDir>src/$1"
+  },
+  transform: {
+    '\\.[jt]sx?$': 'babel-jest',
+    '\\.css$': 'some-css-transformer',
+  },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
