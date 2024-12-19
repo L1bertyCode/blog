@@ -1,4 +1,6 @@
 {
+  "": "",
+  "An unexpected error occurred": "An unexpected error occurred",
   "Language": "Language",
   "Loding": {
     "": {
@@ -8,5 +10,8 @@
     }
   },
   "Logo": "Logo",
-  "Page Not Found": "Page Not Found"
+  "Page Not Found": "Page Not Found",
+  "Reload page": "Reload page",
+  "Rl": "Rl",
+  "Throw error": "Throw error"
 }

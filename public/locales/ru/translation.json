@@ -3,5 +3,9 @@
   "Language":"Ru",
   "Home":"Главная",
   "Profile":"Проофиль",
-   "Page Not Found": "Страница не найдена"
+   "Page Not Found": "Страница не найдена",
+    "An unexpected error occurred": "Произошла непредвиденная ошибка",
+  "Reload page": "Обновить страницу",
+  "Throw error": "Выдать ошибку"
+
 }
