@@ -6,7 +6,6 @@
 import type { Config } from 'jest';
 
 const config: Config = {
-
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
 
@@ -44,14 +43,14 @@ const config: Config = {
   testMatch: [
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
   ],
-
   moduleNameMapper: {
-    '@/(.*)': "<rootDir>src/$1"
+    '^@/(.*)$': "<rootDir>/src/$1",
+   '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/__mocks__/fileMock.js',
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
-  transform: {
-    '\\.[jt]sx?$': 'babel-jest',
-    '\\.css$': 'some-css-transformer',
-  },
+  modulePaths: ["<rootDir>src"],
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts']
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 

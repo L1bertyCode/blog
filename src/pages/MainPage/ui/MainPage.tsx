@@ -1,4 +1,3 @@
-import { Loader } from "@/shared/ui/Loader/Loader";
 import s from "./MainPage.module.scss";
 import { BugButton } from "@/app/providers/ErrorBoundary";
 interface MainPageProps { };
