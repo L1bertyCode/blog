@@ -15,7 +15,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState<boolean>(true);
   const { t } = useTranslation();
   return (
-    <div className={classNames(s.sidebar, { [s.collapsed]: collapsed }, [className])}>
+    <div
+      data-testid="sidebar"
+      className={classNames(s.sidebar, { [s.collapsed]: collapsed }, [className])}>
       <nav>
         {Object.values(routesConfig).map((r) => (
           r.name && <AppLink
@@ -28,6 +30,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         ))}
       </nav>
       <AppButton
+        data-testid="sidebar-toggle"
         className={s.btn}
         onClick={() => {
           setCollapsed((prev) => !prev);

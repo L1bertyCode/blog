@@ -16,9 +16,11 @@ beforeEach(() => {
 describe('Sidebar', () => {
   test('Sidebar render', () => {
     render(
-      <MemoryRouter><Sidebar />
+      <MemoryRouter>
+        <Sidebar />
       </MemoryRouter>
     );
+    // expect(screen.getByTestId("sidebar")).toBeInTheDocument();
     screen.debug();
   });
 
