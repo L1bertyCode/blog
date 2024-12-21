@@ -5,13 +5,16 @@ import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import { ThemeSwitcher } from "@/feature/ThemeSwitcher";
 import { useTranslation } from 'react-i18next';
 import { LangSwitcher } from "@/feature/LangSwitcher/LangSwitcher";
+import { AppButton } from "@/shared/ui/AppButton/AppButton";
 
 
 interface NavbarProps {
+  onOpen?: () => void;
   className?: string;
 };
 
 export const Navbar = ({
+  onOpen,
   className
 }: NavbarProps) => {
   const { t } = useTranslation();
@@ -29,10 +32,8 @@ export const Navbar = ({
             {r.name}</AppLink>
         ))}
       </div>
-      <div className={s.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher />
-      </div>
+      <AppButton onClick={onOpen}>Войти...</AppButton>
+
     </div>
   );
 };

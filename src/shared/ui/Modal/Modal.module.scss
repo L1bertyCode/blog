@@ -5,6 +5,8 @@
   left: 0;
   top: 0;
   bottom: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .overlay {
@@ -20,4 +22,9 @@
   padding: 20px;
   border-radius: 12px;
   background-color: var(--bg-color);
+}
+
+.opened {
+  pointer-events: auto;
+  opacity: 1;
 }

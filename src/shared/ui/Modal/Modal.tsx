@@ -5,16 +5,30 @@ import { ReactNode } from "react";
 interface ModalProps {
   children?: ReactNode;
   className?: string;
+  isOpen?: boolean;
+  onClose?: () => void;
 };
 export const Modal = ({
   children,
-  className
+  className,
+  isOpen,
+  onClose
 }: ModalProps) => {
   const { t } = useTranslation();
   return (
-    <div className={classNames(s.modal, {}, [className])}>
-      <div className={s.overlay}>
-        <div className={s.content}>
+    <div className={classNames(s.modal, { [s.opened]: isOpen }, [className])}>
+      <div
+        onClick={() => {
+          onClose?.();
+        }}
+        className={s.overlay}
+      >
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+          className={s.content}>
+          123
           {children}
         </div>
       </div>
