@@ -54,6 +54,7 @@ export default [
       '@typescript-eslint/no-empty-object-type': 'off',
       'no-empty-pattern': 'off',
       '@typescript-eslint/ban-ts-comment': 'off',
+      "no-undef": "off"
     },
     // globals: {
     //     __IS_DEV__: true,

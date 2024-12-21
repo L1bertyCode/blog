@@ -6,10 +6,10 @@ interface LangSwitcherProps {
 };
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
-
+  const lang = async () => {
+    i18n.changeLanguage(i18n.language === "en" ? "ru" : "en");
+  };
   return (
-    <AppButton onClick={() => {
-      i18n.changeLanguage(i18n.language === "en" ? "ru" : "en");
-    }}>{t("Language")}</AppButton>
+    <AppButton onClick={lang}>{t("Language")}</AppButton>
   );
 };

@@ -46,13 +46,21 @@ const config: Config = {
   ],
   moduleNameMapper: {
     '^@/(.*)$': "<rootDir>/src/$1",
-    // '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-    //   '<rootDir>config/jest/fileMock.js',
-    // "\\.svg": path.resolve(__dirname, "fileMock.js"),
+    "\\.svg": path.resolve(__dirname, "fileMock.jsx"),
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
   modulePaths: ["<rootDir>src"],
-  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts']
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+  transform: {
+    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest",
+    // "^.+\\.svg$": "jest-svg-transformer",
+    ".+\\.(svg|css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
+
+  },
+  "globals": {
+    "__IS_DEV__": true
+  }
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
