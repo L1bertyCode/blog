@@ -3,6 +3,10 @@ import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import i18next from 'eslint-plugin-i18next';
+import reactHooks from "eslint-plugin-react-hooks";
+
+import { fixupPluginRules } from "@eslint/compat";
+
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -17,23 +21,23 @@ export default [
   //     browser: true,
   //     es2021: true,
   // },
-  // extends: [
-  //     'plugin:react/recommended',
-  //     'airbnb',
-  // ],
-  // parser: '@typescript-eslint/parser',
-  // parserOptions: {
-  //     ecmaFeatures: {
-  //         jsx: true,
-  //     },
-  //     ecmaVersion: 'latest',
-  //     sourceType: 'module',
-  // },
-  // plugins: [
-  //     'react',
-  //     '@typescript-eslint',
-  // ],
+    // extends: [
+    //   'plugin:react/recommended'
+    // ],
+    // parser: '@typescript-eslint/parser',
+    // parserOptions: {
+    //     ecmaFeatures: {
+    //         jsx: true,
+    //     },
+    //     ecmaVersion: 'latest',
+    //     sourceType: 'module',
+    // },
+    plugins: {
 
+    "react-hooks": fixupPluginRules(ReactHooks),
+    },
+
+ 
     rules: {
       'react/jsx-indent': [2, 2],
       'react/jsx-indent-props': [2, 2],
@@ -54,7 +58,8 @@ export default [
       '@typescript-eslint/no-empty-object-type': 'off',
       'no-empty-pattern': 'off',
       '@typescript-eslint/ban-ts-comment': 'off',
-      "no-undef": "off"
+      "no-undef": "off" ,
+      ...reactHooks.configs.recommended.rules,
     },
     // globals: {
     //     __IS_DEV__: true,
