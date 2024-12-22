@@ -1,12 +1,12 @@
 .modal {
   position: fixed;
-  z-index: var(--modal-z-index);
   right: 0;
   left: 0;
   top: 0;
   bottom: 0;
   opacity: 0;
   pointer-events: none;
+  z-index: -1;
 }
 
 .overlay {
@@ -22,9 +22,23 @@
   padding: 20px;
   border-radius: 12px;
   background-color: var(--bg-color);
+  transition: var(--transition-delay) transform;
+  transform: scale(0.5);
+  max-width: 60%;
 }
 
 .opened {
   pointer-events: auto;
   opacity: 1;
+  z-index: var(--modal-z-index);
+
+  .content {
+    transform: scale(1.0);
+  }
+}
+
+.isClosing {
+  .content {
+    transform: scale(0.2);
+  }
 }

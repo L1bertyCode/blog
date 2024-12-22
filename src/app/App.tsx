@@ -23,7 +23,7 @@ export const App = ({ }: AppProps) => {
         <Modal
           isOpen={isOpen}
           onClose={modalToggle}
-        />
+        >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio doloribus rem sequi ratione. Iusto dolore quos, rerum alias id, nemo autem vel eveniet optio repellat tempora quod eligendi voluptates veniam?...</Modal>
         <div className={s.content}>
           <Sidebar />
           <AppRouter />
