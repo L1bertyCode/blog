@@ -1,12 +1,13 @@
 import { useTranslation } from "react-i18next";
 import s from "./NotFoundPage.module.scss";
+import { Page } from "@/widgets/Page";
 interface NotFoundPageProps { };
 const NotFoundPage = ({ }: NotFoundPageProps) => {
   const { t } = useTranslation();
   return (
-    <div className={s.notFoundPage}>
+    <Page className={s.notFoundPage}>
       {t("Page Not Found")}
-    </div>
+    </Page>
   );
 };
 
