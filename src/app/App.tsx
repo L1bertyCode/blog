@@ -7,6 +7,7 @@ import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
 import { Suspense, useState } from "react";
 import { Modal } from "@/shared/ui/Modal/Modal";
+import { MainLayout } from "@/shared/layouts/MainLayout";
 
 
 interface AppProps { };
@@ -18,16 +19,17 @@ export const App = ({ }: AppProps) => {
   };
   return (
     <div className={classNames(`app app_${theme}_theme`, {}, [])}>
+      <Modal
+        isOpen={isOpen}
+        onClose={modalToggle}
+      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio doloribus rem sequi ratione. Iusto dolore quos, rerum alias id, nemo autem vel eveniet optio repellat tempora quod eligendi voluptates veniam?...</Modal>
       <Suspense fallback={<></>}>
-        <Navbar onOpen={modalToggle} />
-        <Modal
-          isOpen={isOpen}
-          onClose={modalToggle}
-        >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio doloribus rem sequi ratione. Iusto dolore quos, rerum alias id, nemo autem vel eveniet optio repellat tempora quod eligendi voluptates veniam?...</Modal>
-        <div className={s.content}>
-          <Sidebar />
-          <AppRouter />
-        </div>
+
+        <MainLayout
+          header={<Navbar onOpen={modalToggle} />}
+          main={<AppRouter />}
+          sidebar={<Sidebar />}
+        />
       </Suspense>
     </div>
   );

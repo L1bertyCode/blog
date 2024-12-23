@@ -33,7 +33,6 @@ export default [
     //     sourceType: 'module',
     // },
     plugins: {
-
     "react-hooks": fixupPluginRules(ReactHooks),
     },
 
