@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import s from "./Modal.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import { Portal } from "../Portal/Portal";
 
 interface ModalProps {
   children?: ReactNode;
@@ -22,13 +23,14 @@ export const Modal = ({
 
   const [isClosing, setIsClosing] = useState<boolean>(false);
 
-  const closeHadndler = () => {
+  const closeHadndler = useCallback(() => {
     setIsClosing(true);
     timerRef.current = setTimeout(() => {
       onClose?.();
       setIsClosing(false);
     }, 300);
-  };
+  }, [onClose]);
+
   const onKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === "Escape") {
       closeHadndler();
@@ -47,19 +49,22 @@ export const Modal = ({
 
 
   return (
-    <div className={classNames(s.modal, { [s.opened]: isOpen, [s.isClosing]: isClosing }, [className])}>
-      <div
-        onClick={closeHadndler}
-        className={s.overlay}
-      >
+    <Portal>
+      <div className={classNames(s.modal, { [s.opened]: isOpen, [s.isClosing]: isClosing }, [className])}>
         <div
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-          className={s.content}>
-          {children}
+          onClick={closeHadndler}
+          className={s.overlay}
+        >
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+            className={s.content}>
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </Portal>
+
   );
 };
