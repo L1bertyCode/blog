@@ -23,5 +23,4 @@ describe('Sidebar', () => {
     // expect(screen.getByTestId("sidebar")).toBeInTheDocument();
     screen.debug();
   });
-
 });

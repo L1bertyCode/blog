@@ -5,6 +5,7 @@
 
 import type { Config } from 'jest';
 import path from 'path';
+import fileMock from './fileMock';
 
 const config: Config = {
   // Automatically clear mock calls, instances, contexts and results before every test
@@ -55,6 +56,7 @@ const config: Config = {
     "^.+\\.tsx?$": "ts-jest",
     "^.+\\.(js|jsx)$": "babel-jest",
     // "^.+\\.svg$": "jest-svg-transformer",
+    // "^.+\\.svg$": path.resolve(__dirname, "fileMock.jsx"),
     ".+\\.(svg|css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
 
   },
