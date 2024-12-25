@@ -8,7 +8,6 @@ import { ErrorBoundary } from './app/providers/ErrorBoundary';
 import { StoreProvder } from './app/providers/StoreProvder';
 
 
-
 const root = createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <StoreProvder>
