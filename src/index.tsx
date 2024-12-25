@@ -5,16 +5,19 @@ import { App } from './app/App';
 import { ThemeProvider } from './app/providers/ThemeProvider';
 import '@/shared/config/i18n/i18n';
 import { ErrorBoundary } from './app/providers/ErrorBoundary';
+import { StoreProvder } from './app/providers/StoreProvder';
 
 
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <BrowserRouter>
-    <ThemeProvider>
+  <StoreProvder>
+    <BrowserRouter>
       <ErrorBoundary>
-        <App />
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
       </ErrorBoundary>
-    </ThemeProvider>
-  </BrowserRouter>
+    </BrowserRouter>
+  </StoreProvder>
 );
