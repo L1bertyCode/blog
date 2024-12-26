@@ -1,0 +1,1 @@
+export const getCounterValue = useSelector((state: StateSchema) => state.counter);
