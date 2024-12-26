@@ -1,21 +1,13 @@
-import { StateSchema } from '@/app/providers/StoreProvder/config/StateSchema';
+
 import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
+import { CounterSchema } from '../types/counterSchema';
 
-
-
-interface CounterState {
-  value: number;
-}
-
-
-const initialState: CounterState = {
+const initialState: CounterSchema = {
   value: 0,
 };
 
 export const counterSlice = createSlice({
   name: 'counter',
-
   initialState,
   reducers: {
     increment: (state) => {
@@ -24,8 +16,6 @@ export const counterSlice = createSlice({
     decrement: (state) => {
       state.value -= 1;
     },
-
-
   },
 });
 

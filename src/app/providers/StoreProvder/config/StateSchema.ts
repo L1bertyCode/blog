@@ -1,6 +1,5 @@
-// export interface CounterSchema {
-//   value: number;
-// }
+import { CounterSchema } from "@/entities/Counter/model/types/counterSchema";
+
 export interface StateSchema {
-  // counter: CounterSchema;
+  counter: CounterSchema;
 }
