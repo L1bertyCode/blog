@@ -1,4 +1,3 @@
-import { StateSchema } from "@/app/providers/StoreProvder/config/StateSchema";
-import { useSelector } from "react-redux";
+import { StateSchema } from "@/app/providers/StoreProvder";
 
-export const getCounter = useSelector((state: StateSchema) => state.counter);
+export const getCounter = (state: StateSchema) => state.counter;

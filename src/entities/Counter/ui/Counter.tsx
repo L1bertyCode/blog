@@ -2,14 +2,15 @@ import s from "./Counter.module.scss";
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
 import { useDispatch, useSelector } from "react-redux";
 import { counterActions } from "../model/slices/counterSlice";
-import { StateSchema } from "@/app/providers/StoreProvder/config/StateSchema";
+import { StateSchema } from "@/app/providers/StoreProvder";
+import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
 
 interface CounterProps { };
 export const Counter = ({ }: CounterProps) => {
   const dispatch = useDispatch();
 
-  const counterValue = useSelector((state: StateSchema) => state.counter.value);
-  
+  const counterValue = useSelector(getCounterValue);
+
   const increment = () => { dispatch(counterActions.increment()); };
   const decrement = () => {
     dispatch(counterActions.decrement());
