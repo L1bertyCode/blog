@@ -16,7 +16,7 @@ export const App = ({ }: AppProps) => {
   const { theme } = useTheme();
 
   return (
-    <div className={classNames(`app app_${theme}_theme`, {}, [])}>
+    <div className={classNames(`app ${theme}`, {}, [])}>
       <Suspense fallback={<></>}>
         <MainLayout
           header={<Navbar/>}
