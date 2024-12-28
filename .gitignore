@@ -5,3 +5,4 @@
 .idea
 .vscode
 *storybook.log
+src/feature/AuthByUsername
