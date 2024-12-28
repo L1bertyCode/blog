@@ -3,10 +3,19 @@ import { Modal } from "@/shared/ui/Modal/Modal";
 import { LoginForm } from "../LoginForm/LoginForm";
 interface LoginModalProps {
   className?: string;
+  isOpen?: boolean;
+  onClose?: () => void;
 };
-export const LoginModal = ({ className }: LoginModalProps) => {
+export const LoginModal = ({
+  isOpen,
+  onClose,
+  className
+}: LoginModalProps) => {
   return (
-    <Modal className={s.loginModal}>
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      className={s.loginModal}>
       <LoginForm />
     </Modal>
   );

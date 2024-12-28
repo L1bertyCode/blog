@@ -8,6 +8,7 @@ import { LangSwitcher } from "@/feature/LangSwitcher/LangSwitcher";
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
 import { Modal } from "@/shared/ui/Modal/Modal";
 import { useState } from "react";
+import { LoginModal } from "@/feature/AuthByUsername";
 
 
 interface NavbarProps {
@@ -39,11 +40,11 @@ export const Navbar = ({
             {r.name}</AppLink>
         ))}
       </div>
-      <AppButton  onClick={onToggleModal}>Войти...</AppButton>
-      <Modal
+      <AppButton onClick={onToggleModal}>{t("Login")}</AppButton>
+      <LoginModal
         isOpen={isAuthModal}
         onClose={onToggleModal}
-      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio doloribus rem sequi ratione. Iusto dolore quos, rerum alias id, nemo autem vel eveniet optio repellat tempora quod eligendi voluptates veniam?...</Modal>
+      />
 
     </div>
   );
