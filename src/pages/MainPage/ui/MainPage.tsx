@@ -17,6 +17,7 @@ const MainPage = ({ }: MainPageProps) => {
         placeholder="1234"
         value={value}
         onChange={(val: string) => setValue(val)}
+        autoFocus={true}
       />
       <h1>{value}</h1>
     </Page>

@@ -11,9 +11,12 @@ export const LoginForm = ({ className }: LoginFormProps) => {
     <div className={s.loginForm}>
       <AppInput
         className={s.input}
+        placeholder={t("Enter username")}
+        autoFocus={true}
       />
       <AppInput
         className={s.input}
+        placeholder={t("Enter password")}
       />
 
       <AppButton
