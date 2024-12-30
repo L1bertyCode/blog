@@ -1,4 +1,4 @@
-import { ChangeEvent, InputHTMLAttributes, memo, useEffect, useState } from "react";
+import { ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState } from "react";
 import s from "./AppInput.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
@@ -19,16 +19,21 @@ export const AppInput = memo(({
   ...otherProps
 }: AppInputProps) => {
   const [isFocus, setIsFocus] = useState<boolean>(false);
-  console.log("autoFocus", autoFocus);
 
-  // useEffect(() => {
-  //   autoFocus && setIsFocus(autoFocus);
-  // }, [autoFocus]);
+  const ref = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (autoFocus) {
+      setIsFocus(true);
+      ref.current?.focus();
+    }
+  }, [autoFocus]);
   return (
     <div className={classNames(s.appInputWrapper, {}, [])}
     >
       {placeholder && <div className={s.placeholder}>{`${placeholder}>`}</div>}
       <input
+        ref={ref}
         className={s.appInput}
         type={type}
         value={value}

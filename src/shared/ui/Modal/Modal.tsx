@@ -9,19 +9,30 @@ interface ModalProps {
   className?: string;
   isOpen?: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 };
 
 export const Modal = ({
   children,
   className,
   isOpen,
-  onClose
+  onClose,
+  lazy
 }: ModalProps) => {
 
   const { t } = useTranslation();
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const [isClosing, setIsClosing] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
+
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+
+  }, [isOpen]);
 
   const closeHadndler = useCallback(() => {
     setIsClosing(true);
@@ -47,7 +58,9 @@ export const Modal = ({
     };
   }, [isOpen]);
 
-
+  if (lazy && !isMounted) {
+    return null;
+  }
   return (
     <Portal>
       <div className={classNames(s.modal, { [s.opened]: isOpen, [s.isClosing]: isClosing }, [className])}>

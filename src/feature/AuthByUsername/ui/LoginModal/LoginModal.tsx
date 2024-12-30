@@ -13,6 +13,7 @@ export const LoginModal = ({
 }: LoginModalProps) => {
   return (
     <Modal
+      lazy
       isOpen={isOpen}
       onClose={onClose}
       className={s.loginModal}>

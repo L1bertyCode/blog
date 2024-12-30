@@ -12,7 +12,7 @@ export const LoginForm = ({ className }: LoginFormProps) => {
       <AppInput
         className={s.input}
         placeholder={t("Enter username")}
-        autoFocus={true}
+        autoFocus
       />
       <AppInput
         className={s.input}
