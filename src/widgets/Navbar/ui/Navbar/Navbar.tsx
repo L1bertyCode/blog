@@ -2,11 +2,8 @@ import s from "./Navbar.module.scss";
 import { routesConfig } from "@/shared/config/routesConfig/routesConfig";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
-import { ThemeSwitcher } from "@/feature/ThemeSwitcher";
 import { useTranslation } from 'react-i18next';
-import { LangSwitcher } from "@/feature/LangSwitcher/LangSwitcher";
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
-import { Modal } from "@/shared/ui/Modal/Modal";
 import { useState } from "react";
 import { LoginModal } from "@/feature/AuthByUsername";
 
