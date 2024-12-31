@@ -16,13 +16,13 @@ export const Navbar = ({
   className
 }: NavbarProps) => {
 
+  const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
 
   const onToggleModal = () => {
     setIsAuthModal(prev => !prev);
   };
 
-  const { t } = useTranslation();
   return (
     <div className={classNames(s.navbar, {}, [className])}>
       <AppLink to={"/"}>{t("Logo")}</AppLink>
